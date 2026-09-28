@@ -1,0 +1,104 @@
+artifacts = ["/app/monthly_runoff.csv"]
+
+[task]
+name = "afterquery/sum-station-runoff"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Turning logged stage into monthly runoff is what a field hydrologist or a
+hydrometric technician does at the end of every quarter for a research
+catchment: read each logger's file, put stage through the station's rating,
+and sum the volumes. The data is synthetic and was made truth first. A quarter
+of storms was run across eight stations, 69120 fifteen-minute
+readings in all, each stream rising and falling in its own way, and the
+24 sealed volumes are each station's true stage put through its own
+rating. The logger files and the field sheet were written afterwards. The
+volumes are exact and nothing is computed at marking time.
+
+The hydrologist's note gives every rule the marking uses. Read literally it
+gets 6 of 24, because three files are plainly not as it
+describes: one logger writes centimetres, one millimetres, and one writes its
+levels as negative numbers. Each is obvious on sight and each spoils at least
+a station's three monthly lines, where only 2 may be wrong.
+
+The fact that decides the task is on the field sheet. It says which file came
+from which station, and for 4 files it is wrong: two pairs of loggers
+went back into each other's housings after the previous download, and the sheet
+was filled in from the housing labels. One of the four files also has an odd
+notation; the other three are exactly as the note describes. The sheet's
+reading fails silently - a stage is a stage, and every station still gets three
+believable volumes - at a cost of 12 lines. No level shows it:
+the two stations of each pair share a gauge zero and much the same range of
+stage, and every station sees the same storms. What differs is the control. A
+logger in the stilling well behind a weir sees flat water, and one in a natural
+rated section sees the surge of the riffle below it, so from one reading to the
+next the stage in a section is restless where a weir's is still: set against
+the mean of its two neighbours, the stillest rated section is 7.0 times as
+restless as the most restless weir. Four files show the other kind of control
+from the station the sheet gives them, and within a gauge zero that settles
+which is which. The station list has to give each station's control,
+because a weir and a rated section are rated by different formulas, but the
+note never says what a control does to a record, and no monthly sum ever looks
+at how one reading stands to the next.
+
+tests/catchment_check.py measures all of this against the sealed volumes and
+refuses to pass otherwise: of 16 readings of the files the right one
+gets 24 and the best other 21, against a bar of 22.
+"""
+
+solution_explanation = """
+solution/water_balance.py reads only /app and writes /app/monthly_runoff.csv
+with the standard library. It brings each file to metres by the size and sign
+of its readings. For each file it takes the middle distance of a reading from
+the mean of the readings either side, ranks the files by it, and calls the
+stiller half weirs and the rest rated sections; a file that shows the other
+kind of control from the station on the field sheet is given to the other such
+station with the same gauge zero. Each reading's head is its stage less the
+gauge zero, its discharge the coefficient times the head to the exponent, held
+for fifteen minutes, and a month's runoff is the sum in thousands of cubic
+metres. In the task's own container it gets 24 of 24.
+"""
+
+verification_explanation = """
+The verifier reads /app/monthly_runoff.csv with the csv module and compares
+each station-month with /tests/sealed.json, accepting half of one per cent
+either way; at most 2 of the 24 lines may be wrong. None
+of the agent's code is imported or run. The sealed volumes exist only in the
+verifier image, /tests is mode 700 there, and the agent's container never
+mounts it. Half a per cent covers the rounding of a logged stage and the order
+of summation and nothing else: the reference reproduces every sealed volume to
+the last digit, while the two stations of a crossed pair differ severalfold in
+volume, so the sheet's reading gets none of their lines right by chance.
+Nothing in the agent's container attests any volume and no catchment total is
+shipped; a return made on the field sheet is as self-consistent as the right
+one. The reward is binary and is written to /logs/verifier/reward.txt on every
+path; an empty container scores 0 and the reference scores 1. The generator is
+seeded and shipped.
+"""
+
+category = "Science"
+subcategory = "Hydrology"
+tags = ["hydrology", "stage-discharge", "field-data", "data-cleaning", "python"]
+expert_time_estimate_hours = 4
+relevant_experience = """
+Anyone who has run a gauging network has put a logger back in the wrong
+housing, met a file in millimetres, and knows a stilling-well trace from a
+riffle trace at a glance.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
