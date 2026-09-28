@@ -1,0 +1,115 @@
+artifacts = ["/app/no2_report.csv"]
+
+[task]
+name = "afterquery/project-facade-no2"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+This is a local-authority air quality officer's or an air quality consultant's
+job at reporting time: average each continuous analyser's nitrogen dioxide
+over the period, and for roadside sites carry the mean from the monitor to the
+nearest facade with the fall-off-with-distance adjustment, which needs the
+site's kerb distances and mapped background. The data is synthetic and made
+truth first. Ten inlets - five roadside, five urban background - were given
+5376 quarter-hour means over eight weeks: the town's weather over a common
+daily shape, and at roadside inlets exhaust plumes on top. Each sealed line is
+the team note's own arithmetic on the record really made at that site. The
+downloads and the site list were written afterwards; nothing is estimated at
+marking time.
+
+Some of the work is ordinary tidying. Three downloads are plainly not as the
+note describes - one column is in parts per billion, one in milligrams per
+cubic metre, one file has semicolons and decimal commas - and the headers and
+values say so at a glance. Calibration and fault rows are flagged and the note
+says to leave them out. A reading of the note to the letter gets
+6 of 10 sites; with the downloads tidied, 8.
+
+The rest cannot be got by tidying. The site list says which analyser stands at
+which site, and for 2 analysers it is out of date: after a service one
+roadside and one background analyser went back to each other's cabinets. A
+background record then receives a roadside site's fall-off adjustment and a
+roadside record receives none, and each of the two sites comes out at least
+15.4 per cent wrong while looking entirely reasonable - a quiet
+road and a busy district have levels of the same kind, and every background
+record here has the same relative spread as the roads' have, so a summary of
+a download does not say what sort of inlet made it. What does say it is how a
+quarter-hour stands to the ones either side. A kerbside inlet catches passing
+exhaust plumes, so its record is full of single quarter-hours standing well
+clear of their neighbours; a background inlet's record moves only as the
+weather moves. Taken as the root-mean-square distance of a reading from the
+mean of its two neighbours over the spread of the record, the five roadside
+records come to 0.39 or more and the five background records to
+0.15 or less - and one analyser listed at a road is quiet and one
+listed at a background site is lively. A period mean never compares
+neighbouring readings, so the reporting arithmetic does not meet this; someone
+who has looked at roadside and background traces side by side knows to look.
+The note says the site types come from the consultants' network review, so it
+is the analyser column that gives way, and with one odd record of each kind
+the two analysers can only have changed places with each other.
+
+tests/town_check.py marks 5 other stances on the downloads against the
+sealed means and asserts that the reference gets 10 and none of the
+others more than 9.
+"""
+
+solution_explanation = """
+solution/no2_report.py, standard library only, reads /app and writes
+/app/no2_report.csv. It reads each download with its own delimiter and decimal
+mark, converts a ppb column at 1.9125 and a milligram column by a thousand, and
+keeps the rows whose status is ok. For each record it takes the root mean
+square of a reading's distance from the mean of its two neighbours, over the
+record's spread, ranks the ten records and calls the five liveliest roadside.
+The two analysers whose records contradict the type of the site they are
+listed at are taken to have changed places. Each site's monitor mean is then
+the mean of the record that was really made there, and a roadside site's
+facade mean follows
+from the note's fall-off formula with that site's distances and background. It
+gets 10 of 10 in the task's container.
+"""
+
+verification_explanation = """
+tests/grader.py reads /app/no2_report.csv with the csv module and sets each
+site's monitor_mean and facade_mean against /tests/sealed.json. A site is
+right when both are within 0.5 per cent; test_no2_report.py passes only when
+no site is out, so the reward is 1 for ten right sites and 0 otherwise. The
+agent's code is not imported or run. The sealed means exist only in the
+verifier image under /tests (mode 700), which the agent's container never
+mounts. Half a per cent is far more than a correct reading needs - it
+reproduces the sealed figures to the third decimal, the only slack being the
+rounding of a ppb column - and far less than any wrong one costs: a site
+worked from the wrong analyser's record is at least 15.4 per cent
+out, and an untidied unit is out by a factor of two or a thousand. Nothing in
+/app gives or implies any site's mean, and there is no total, duplicate or
+reference series to test an answer against; the right reading has to be
+reasoned to. test.sh writes 0 to /logs/verifier/reward.txt first and 1 only
+after pytest passes, so an empty container scores 0; the reference solution
+scores 1. The generator is seeded and is shipped with the tests.
+"""
+
+category = "Science"
+subcategory = "Air Quality"
+tags = ["air-quality", "nitrogen-dioxide", "monitoring-network", "time-series", "python"]
+expert_time_estimate_hours = 3
+relevant_experience = """
+Officers who run a continuous monitoring network have carried roadside means
+to facades with the fall-off calculator, know what a kerbside trace looks like
+next to a background one, and have found an analyser in the wrong cabinet
+after a service round.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
