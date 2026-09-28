@@ -1,0 +1,106 @@
+formula,ingredient,inclusion_pct
+F101,wheat,14.5
+F101,distillers grains,16.2
+F101,sugar beet pulp,19.3
+F101,sunflower meal,11.4
+F101,oats,15.4
+F101,oat hulls,9.0
+F101,limestone,8.0
+F101,molasses,6.2
+F102,rapeseed meal,7.8
+F102,wheatfeed,6.9
+F102,peas,17.7
+F102,distillers grains,16.2
+F102,oats,11.1
+F102,barley,6.5
+F102,maize,16.8
+F102,limestone,3.7
+F102,molasses,13.3
+F103,oat hulls,5.3
+F103,barley,10.0
+F103,sunflower meal,15.2
+F103,oats,11.7
+F103,sugar beet pulp,19.8
+F103,field beans,18.3
+F103,distillers grains,5.0
+F103,limestone,14.7
+F104,oats,11.1
+F104,maize,10.4
+F104,distillers grains,14.6
+F104,oat hulls,16.0
+F104,rapeseed meal,11.9
+F104,limestone,20.8
+F104,molasses,15.2
+F105,peas,11.5
+F105,distillers grains,11.0
+F105,maize,15.3
+F105,rapeseed meal,19.8
+F105,sugar beet pulp,10.8
+F105,sunflower meal,12.3
+F105,limestone,4.7
+F105,molasses,14.6
+F106,barley,7.0
+F106,sunflower meal,7.2
+F106,peas,4.6
+F106,sugar beet pulp,19.5
+F106,oats,17.5
+F106,distillers grains,11.8
+F106,limestone,14.8
+F106,molasses,17.6
+F107,peas,16.3
+F107,sugar beet pulp,15.4
+F107,wheatfeed,26.7
+F107,oat hulls,13.4
+F107,soya bean meal,6.1
+F107,wheat,6.3
+F107,limestone,5.1
+F107,molasses,10.7
+F108,sugar beet pulp,11.3
+F108,rapeseed meal,11.4
+F108,barley,13.9
+F108,field beans,19.6
+F108,sunflower meal,22.2
+F108,limestone,21.6
+F109,maize,20.9
+F109,wheatfeed,3.8
+F109,oats,15.7
+F109,soya bean meal,19.9
+F109,field beans,10.7
+F109,sugar beet pulp,5.2
+F109,limestone,9.8
+F109,molasses,14.0
+F110,distillers grains,10.6
+F110,peas,18.6
+F110,sugar beet pulp,8.7
+F110,rapeseed meal,18.9
+F110,oat hulls,14.6
+F110,limestone,12.8
+F110,molasses,15.8
+F111,soya bean meal,19.4
+F111,oat hulls,13.8
+F111,barley,13.0
+F111,sugar beet pulp,5.1
+F111,rapeseed meal,22.4
+F111,sunflower meal,21.2
+F111,limestone,5.1
+F112,soya bean meal,15.7
+F112,distillers grains,14.6
+F112,peas,14.6
+F112,wheat,14.0
+F112,field beans,10.1
+F112,oats,10.3
+F112,limestone,17.3
+F112,molasses,3.4
+F113,oat hulls,20.2
+F113,maize,19.0
+F113,wheat,14.8
+F113,sugar beet pulp,9.7
+F113,distillers grains,21.3
+F113,limestone,15.0
+F114,oat hulls,14.4
+F114,barley,17.4
+F114,peas,10.5
+F114,rapeseed meal,12.3
+F114,field beans,6.6
+F114,limestone,15.6
+F114,molasses,23.2
