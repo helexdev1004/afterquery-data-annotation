@@ -1,0 +1,105 @@
+artifacts = ["/app/reject_reels.csv"]
+
+[task]
+name = "afterquery/trace-reject-reels"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+A carton plant's quality technician or production planner does this whenever a
+claim is raised against a board mill: rejected sheets have to be tied to the
+reel they were cut from, and the only link between the die-cutter's count and
+the press's count is how the pallet travelled between the two machines. The
+data here is synthetic and was made truth first - 54763 sheets were printed
+reel after reel onto 6 pallets, each sheet keeping its reel and its
+caliper, and only then was each pallet fed through the die-cutter and the
+die-cutter's record written. The 42 sealed lines are read from the press's
+side and are exact; nothing is computed at marking time.
+
+Three of the six pallets are not recorded as the pressroom's note describes,
+and nobody could miss it: their calipers are in thousandths of an inch, in
+millimetres and in tenths of a micrometre. Each is a setting and nothing more.
+Left alone, each spoils a pallet's seven lines, and only 4 lines may
+be out; with the note believed on every point the score is 14 of
+42.
+
+The deciding fact is that 2 pallets never went through the pallet
+turner. The note says every pallet is turned, so that the first-printed sheet
+is fed first; these two were fed last-printed first, and a reject's count on
+the die-cutter is its count from the other end of the press's stack. No record
+says so, and the note's reading fails silently - every count still lands on
+some reel - at a cost of 14 lines; one of the two pallets also has an
+odd gauge setting and the other is recorded exactly as the note says. The
+level of the caliper is no guide: all the board is one grade, the reading
+wanders by several micrometres with the room over a job, and the reel-by-reel
+means on a pallet differ by up to 12.0 um for that reason alone, in no
+relation to the reels. A reel does differ from the next in how even it is from
+sheet to sheet. Taking each sheet's distance from the mean of its neighbours,
+and comparing the middle value over the 400 sheets either side of
+each reel change the press booked, the evenness steps by at least 2.02
+times as much with a pallet read the right way round as the wrong way. Feeder
+hiccups throw short bursts of wild readings across every reel, so a table of
+spread by reel is blurred in either orientation; and because a reel runs on
+from one pallet to the next, both ends of a pallet look alike.
+
+tests/floor_check.py measures all of this against the sealed lines and refuses
+to pass otherwise: of 16 readings the record's own gets 42 and the
+best other 35, against a bar of 38.
+"""
+
+solution_explanation = """
+solution/claim.py reads only /app and writes /app/reject_reels.csv with the
+standard library. It parses the press ticket into pallets and booked reel
+changes, groups the die-cutter's record by pallet, and tells each pallet's
+gauge setting from the middle of its readings. For each pallet it computes
+every sheet's distance from the mean of the sheets fed before and after it, and
+scores the booked reel changes twice - once as if the pallet was turned, once
+as if it was not - by how far the middle of that distance moves across each
+change; the better score says which way the pallet was fed. A reject's count
+is then carried to the press's count, the ticket gives its reel, and the
+record gives its caliper. In the task's own container it places 42 of
+42.
+"""
+
+verification_explanation = """
+The verifier reads /app/reject_reels.csv with the csv module and compares each
+reject's reel, as a string, and caliper, within 2 micrometres, with
+/tests/sealed.json; at most 4 of the 42 lines may be out.
+Nothing the agent wrote is imported or executed. The sealed lines exist only in
+the verifier image, where /tests is mode 700, and the agent's container never
+mounts it. Two micrometres covers the rounding of a reading converted from
+thousandths of an inch and nothing else. On the two pallets that were not
+turned, the rejects were drawn only from sheets whose count from the other end
+falls on a different reel, so none is right by chance, and no reject lies
+within 300 sheets of either end of a pallet. No reel is attested anywhere in
+the agent's container and nothing has to balance: a claim made on the note's
+reading is as self-consistent as the right one. The reward is binary and is
+written to /logs/verifier/reward.txt on every path; an empty container scores 0
+and the reference scores 1. The generator is seeded and shipped.
+"""
+
+category = "Operations"
+subcategory = "Carton Printing"
+tags = ["print-production", "traceability", "quality-claims", "data-cleaning", "python"]
+expert_time_estimate_hours = 4
+relevant_experience = """
+Anyone who has run a sheet-fed carton line knows the pallet turner that is out
+of action for a shift, the gauge a night shift left in inches, and that board
+from one reel can be as flat as glass and from the next anything but.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0

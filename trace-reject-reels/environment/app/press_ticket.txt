@@ -1,0 +1,41 @@
+JOB 58114  folding carton, 400 gsm board, one grade
+
+pallet P1  9274 sheets
+    reel R301 from sheet 1
+    reel R302 from sheet 1842
+    reel R305 from sheet 4979
+    reel R307 from sheet 7802
+
+pallet P2  8950 sheets
+    reel R307 from sheet 1
+    reel R308 from sheet 667
+    reel R311 from sheet 3715
+    reel R312 from sheet 6477
+
+pallet P3  8270 sheets
+    reel R312 from sheet 1
+    reel R314 from sheet 586
+    reel R315 from sheet 3642
+    reel R317 from sheet 5701
+    reel R320 from sheet 7978
+
+pallet P4  10330 sheets
+    reel R320 from sheet 1
+    reel R323 from sheet 1969
+    reel R324 from sheet 5268
+    reel R325 from sheet 8698
+
+pallet P5  9338 sheets
+    reel R325 from sheet 1
+    reel R328 from sheet 189
+    reel R329 from sheet 3342
+    reel R332 from sheet 5084
+    reel R334 from sheet 6950
+    reel R335 from sheet 8981
+
+pallet P6  8601 sheets
+    reel R335 from sheet 1
+    reel R338 from sheet 1864
+    reel R340 from sheet 3974
+    reel R343 from sheet 6870
+
