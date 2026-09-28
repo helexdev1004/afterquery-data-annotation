@@ -1,0 +1,9 @@
+stream,service
+s01,svc-accounts
+s02,svc-billing
+s03,svc-catalog
+s04,svc-checkout
+s05,svc-ledger
+s06,svc-notify
+s07,svc-search
+s08,svc-session
