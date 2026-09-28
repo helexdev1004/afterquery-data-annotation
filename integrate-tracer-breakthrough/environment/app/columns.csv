@@ -1,9 +1,0 @@
-column,soil,length_cm,flow_ml_min,detector
-C1,coarse sand,30,12.0,GM-2207
-C2,coarse sand,30,12.0,SC-0413
-C3,fine sand,30,8.0,SC-0398
-C4,fine sand,30,8.0,GM-2214
-C5,silt loam,30,5.0,GM-2188
-C6,silt loam,30,5.0,SC-0420
-C7,sandy loam,30,3.5,SC-0377
-C8,sandy loam,30,3.5,GM-2231

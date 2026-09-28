@@ -1,9 +1,0 @@
-detector,type,dead_time_us,scaler_channel
-GM-2207,GM,150,1
-SC-0413,NaI,5,2
-SC-0398,NaI,5,3
-GM-2214,GM,150,4
-GM-2188,GM,150,5
-SC-0420,NaI,5,6
-SC-0377,NaI,5,7
-GM-2231,GM,150,8

@@ -1,9 +1,0 @@
-service,runtime,latency_objective_ms,target_good_pct
-svc-accounts,jvm,350,99.5
-svc-billing,native,400,99.0
-svc-catalog,jvm,300,99.5
-svc-checkout,native,250,99.5
-svc-ledger,native,300,99.5
-svc-notify,jvm,400,99.0
-svc-search,native,200,99.0
-svc-session,jvm,250,99.5

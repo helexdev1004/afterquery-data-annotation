@@ -1,9 +1,0 @@
-station,control,coefficient,exponent,gauge_zero_m
-G1,v-notch weir,1.38,,0.000
-G2,natural riffle,3.10,1.9,0.120
-G3,v-notch weir,1.38,,0.000
-G4,natural riffle,5.60,1.7,0.250
-G5,v-notch weir,1.42,,0.120
-G6,natural riffle,4.20,1.8,0.080
-G7,natural riffle,2.70,2.0,0.050
-G8,v-notch weir,1.35,,0.250
