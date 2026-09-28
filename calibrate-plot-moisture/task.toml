@@ -1,0 +1,116 @@
+artifacts = ["/app/plot_moisture.json"]
+
+[task]
+name = "afterquery/calibrate-plot-moisture"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+The job belongs to a soil physicist or an irrigation agronomist writing up a
+field trial: turn each plot's hourly permittivity record into volumetric water
+content with the calibration that suits the buried probe - the Topp equation
+for a TDR probe after its cable offset, the laboratory's own square-root line
+for a capacitance probe - and report the six-week mean and the driest day.
+
+The data is synthetic, made truth first. Ten plots under three irrigation
+treatments were each given an hourly water content for 1008 hours: wetted
+by irrigation and rain, drained, then dried steadily. Each plot's probe turned
+that into permittivity as its kind does, and the sealed figures are the trial
+note's own arithmetic on each plot's real record with its real probe's
+constants. The files, the installation sheet and the probe list were written
+afterwards, and nothing is estimated at marking time.
+
+Three logger files are laid out differently from the note and show it on
+sight: one has a four-line Campbell-style preamble and a record-number column,
+one stores the refractive index, the square root of permittivity, under that
+name, one stores permittivity in hundredths as whole numbers. With nothing
+undone the note gets 6 of 10 plots; with all three undone
+and the installation sheet believed, 8.
+
+The last 2 plots fail silently. The installation sheet has the
+probes of two plots under the same treatment the wrong way round, one a TDR
+probe and one a capacitance probe, so each record is put through the other
+kind's calibration and comes out at least 0.033 away in water content -
+a believable figure for that treatment either way, since capacitance probes in
+this clay loam read a higher permittivity for the same water and the plots'
+ranges overlap freely. Level, range and spread say nothing. What tells the
+kinds apart is a property the calibration never touches: a capacitance probe's
+electronics follow soil temperature slightly, so its reading swells through
+the afternoon and shrinks overnight by a few parts in a thousand, inside the
+hour-to-hour scatter of any one day. Laid over a 24-hour running mean and
+taken hour by hour across the six weeks, the swell is at least
+0.74 per cent of the reading for the five capacitance
+records and at most 0.18 per cent for the five TDR records - and
+one plot listed with a TDR probe swells while one listed with a capacitance
+probe does not. Means of water content never overlay the hours of different
+days, so the reporting work does not come across it; someone who has run both
+kinds of probe side by side knows the signature. The note says the kinds and
+constants come from the calibration laboratory's certificates, so it is the
+sheet's pairing of plot and probe that gives way, and with one odd record of
+each kind the two probes can only have changed places.
+
+tests/trial_check.py marks 5 other readings of the records against
+the sealed figures and asserts that none gets more than 9 of
+10 while the reference gets them all.
+"""
+
+solution_explanation = """
+solution/plot_moisture.py is standard-library Python that reads /app and
+writes /app/plot_moisture.json. It reads each logger file, skipping a
+preamble when the first cell is TOA5, squaring a refractive_index column and
+dividing a column of values above a hundred by a hundred. For each record it
+subtracts a centred 24-hour running mean, takes the median departure for each
+hour of the day and halves the range of the 24 medians, as a share of the
+record's mean. The five records with the largest share are taken to come from
+capacitance probes. The two plots whose record contradicts the kind of the
+probe the sheet gives them have their probes exchanged. Each plot's readings
+then go through its own probe's calibration as the note sets it out, and the
+mean of all rows and the lowest daily mean are written. In the task's
+container it gets 10 of 10.
+"""
+
+verification_explanation = """
+tests/grader.py loads /app/plot_moisture.json with the json module and
+compares each plot's mean_vwc and driest_daily_vwc with /tests/sealed.json; a
+plot is right when both are within 0.002, and tests/test_plot_moisture.py
+passes only if no plot is out, so the reward is 1 for ten right plots and 0
+otherwise. The agent's code is never imported or run. The sealed figures are
+in the verifier image only, under /tests with mode 700, and the agent's
+container does not mount it. A tolerance of 0.002 in water content is about
+ten times what a correct reading needs - the only slack in it is the rounding
+of the refractive-index file - and about a fifteenth of the smallest error a
+wrong reading makes: the exchanged probes put their two plots at least
+0.033 out, and an unhandled file layout is out by far more or cannot be
+read. /app holds no totals, replicates or expected ranges to test a figure
+against, so an answer can be worked out but not checked. test.sh writes 0 to
+/logs/verifier/reward.txt before pytest runs and 1 only after a clean pass; an
+empty container scores 0 and the reference solution 1. The seeded generator is
+shipped in /tests.
+"""
+
+category = "Science"
+subcategory = "Soil Physics"
+tags = ["soil-moisture", "tdr", "capacitance-probe", "calibration", "python"]
+expert_time_estimate_hours = 3
+relevant_experience = """
+Anyone who has buried TDR and capacitance probes in the same field has seen
+the capacitance traces breathe with soil temperature while the TDR traces stay
+still, and has had to reconcile an installation sheet with what is actually in
+the ground.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0

@@ -1,0 +1,42 @@
+{
+ "P01": {
+  "driest_daily_vwc": 0.24394,
+  "mean_vwc": 0.30933
+ },
+ "P02": {
+  "driest_daily_vwc": 0.19333,
+  "mean_vwc": 0.27885
+ },
+ "P03": {
+  "driest_daily_vwc": 0.24247,
+  "mean_vwc": 0.3026
+ },
+ "P04": {
+  "driest_daily_vwc": 0.2204,
+  "mean_vwc": 0.29592
+ },
+ "P05": {
+  "driest_daily_vwc": 0.17578,
+  "mean_vwc": 0.21201
+ },
+ "P06": {
+  "driest_daily_vwc": 0.18366,
+  "mean_vwc": 0.22421
+ },
+ "P07": {
+  "driest_daily_vwc": 0.21957,
+  "mean_vwc": 0.29379
+ },
+ "P08": {
+  "driest_daily_vwc": 0.23799,
+  "mean_vwc": 0.29737
+ },
+ "P09": {
+  "driest_daily_vwc": 0.16624,
+  "mean_vwc": 0.20535
+ },
+ "P10": {
+  "driest_daily_vwc": 0.2083,
+  "mean_vwc": 0.27141
+ }
+}

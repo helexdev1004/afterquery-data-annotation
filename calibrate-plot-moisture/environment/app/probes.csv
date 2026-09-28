@@ -1,0 +1,11 @@
+probe,kind,cable_offset,lab_slope,lab_intercept
+SN-4105,TDR,0.31,,
+SN-4118,TDR,0.18,,
+SN-4123,TDR,0.42,,
+SN-4131,TDR,0.26,,
+SN-4146,TDR,0.37,,
+SN-4262,capacitance,,0.1046,-0.1630
+SN-4277,capacitance,,0.1061,-0.1702
+SN-4290,capacitance,,0.1038,-0.1594
+SN-4304,capacitance,,0.1055,-0.1668
+SN-4315,capacitance,,0.1049,-0.1641
