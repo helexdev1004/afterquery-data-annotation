@@ -1,0 +1,9 @@
+run,global_batch,gpus,learning_rate,log_file
+R1,256,8,3e-4,run_a.log
+R2,256,16,3e-4,run_b.log
+R3,256,32,3e-4,run_c.log
+R4,256,64,3e-4,run_d.log
+R5,512,8,4.2e-4,run_e.log
+R6,512,16,4.2e-4,run_f.log
+R7,512,32,4.2e-4,run_g.log
+R8,512,64,4.2e-4,run_h.log
