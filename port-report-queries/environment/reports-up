@@ -1,0 +1,25 @@
+#!/bin/bash
+# Bring the database up and load the reporting dataset.
+#
+#   reports-up              boot and seed, then return
+#   reports-up --reseed     put the data back as it shipped
+#   reports-up --foreground boot, seed, then wait (this is the image's CMD)
+set -euo pipefail
+
+/usr/local/bin/pgboot.sh
+
+if ! psql -h 127.0.0.1 -U postgres -lqt | cut -d'|' -f1 | grep -qw reports; then
+    psql -h 127.0.0.1 -U postgres -q -c "CREATE DATABASE reports" >/dev/null
+    RESEED=1
+fi
+
+if [ "${1:-}" = "--reseed" ] || [ -n "${RESEED:-}" ]; then
+    psql -h 127.0.0.1 -U postgres -d reports -q -v ON_ERROR_STOP=1 \
+        -f /app/data/reports.sql >/dev/null
+    echo "reports database loaded"
+fi
+
+if [ "${1:-}" = "--foreground" ]; then
+    echo "ready. queries in /app/queries, expected output in /app/expected"
+    tail -f /dev/null
+fi
