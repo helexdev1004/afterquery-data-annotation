@@ -1,0 +1,206 @@
+artifacts = ["/app/connections.csv"]
+
+[task]
+name = "afterquery/connect-borough-drains"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+This is a drainage connection survey, which is real and ordinary work: when a
+borough adopts the private drains on an estate it has to prove where each one
+discharges before it can charge for them, and it proves it from levels, gauged
+flows and a dye trace. Drainage engineers, their survey contractors and the
+water companies run exactly this exercise, and the awkward parts of it here -
+a gauge that was stopped off midway, a level book worked to a datum nobody
+carried forward, a tracer run that caught a storm - are the ones they meet
+rather than invented ones.
+
+The data is synthetic and was built truth first. The connection of every drain
+was chosen before anything was surveyed, and the chamber book, the flow survey
+and the tracer log were then written the way a survey of that estate would
+have come out. Every answer is therefore exact by construction rather than a
+judgement made afterwards, and the records are static files, so nothing is
+computed at marking time.
+
+The estate has 18 chambers and 52 private drains. The borough
+already has 12 of the connections on record; the other 40 are what
+is asked for. The answer for each is the name of the chamber it discharges
+into, matched exactly, and 37 of the 40 must be right.
+
+Nothing about the method is withheld. DRAINAGE.md gives all of it: how levels
+are booked and what the old borough datum is worth, the fall a drain is laid
+to, how the flow survey was taken and what a gauge reads, how the dye is dosed
+and how fast it travels, and that the estate surcharges in heavy rain. There is
+no rule for the solver to guess and the arithmetic is subtraction.
+
+The difficulty is that the drains cannot be worked out one at a time. A gauge
+reads every drain standing above it, so the drains on a chamber are that
+chamber's reading less the readings of the chambers that flow into it - and
+choosing a chamber for one drain changes how much is left over for its
+neighbours. Each kind of evidence narrows the answer without deciding it: the
+levels say which chambers a drain could fall to, because a drain is laid at
+between 1 in 100 and 1 in 30, but usually leave several; a dye sighting says the
+drain is somewhere above that observer, not which chamber it is on. Only the
+levels, the flows and the traces taken together pick out one answer, and the
+answer is a name rather than a number, so there is no coefficient to fit and
+nothing to regress. Working each drain on its own and taking the nearest
+chamber that is low enough - the obvious approach - gets 6 of 40.
+
+On top of that, three things went wrong with the survey itself. None of them is
+written down anywhere, each has to be found in the records, and each spoils a
+different part of the evidence.
+
+First, the gauge in chamber MH08 was set in the incoming channel instead of
+the outgoing one, so it reads only the drains on that chamber and not the whole
+of what stands above it. It reads 235 litres an hour while the
+chambers that fall into it read 465 between them, which nothing
+standing above them could ever do. There is no bad reading to discard here and
+no average that repairs it - the gauge reads the same whenever it is visited, so
+a solver has to work out what the figure actually means and change how that
+chamber's load, and its parent's, are reckoned.
+
+Second, one of the two level books was worked to the old borough datum, which
+the standing instructions state is 2.740 m below Ordnance datum. Nothing in the
+book says which one it is. It can be worked out because a sewer must fall to
+its outfall: as the levels are booked, 3 chambers stand at or above the
+chamber they are supposed to drain into, which is impossible. Lowering book B
+by 2740 mm removes all 3 of those impossibilities; lowering the
+other book instead leaves 3.
+
+Third, it rained. The estate is on a combined system and surcharges in heavy
+rain, and a surcharged sewer is full and under head, so the dye does not keep
+to the fall of the pipe and backs up into branches it could never otherwise
+reach. 13 sightings in the tracer log cannot be reached from their
+own drain at all, and every one of them was made while the rain gauge was
+reading heavy. Those sightings must not be treated as ordinary evidence. What
+decides whether a trace was affected is when the dye was SEEN, not when it was
+put in, because the dye is travelling down the pipe for the whole of its run
+and what matters is the state of the sewer as it passed. 10 traces
+were dosed before the rain began and seen during it, and that is the one point
+where the two readings give different answers. None of the borough's 12
+recorded connections is among those traces, so a solver cannot settle the
+question by checking which reading reproduces the records it already has; it
+has to be reasoned out from what a sewer does when it is full.
+
+tests/ladder.py scores all 24 combinations of ways to read those three
+points against the sealed connections, and every figure quoted here is taken
+from its output. Taking the records at face value gets 11 of 40
+right. The best reading that is not the correct one gets 18. The
+correct reading gets all 40. The bar is set at 37, which sits in the
+lower third of the gap between those last two, so a solver who has understood
+the estate and slips on a chamber or two still passes, while no partial reading
+comes close. Approximate repairs are scored as well as outright omissions:
+clamping the impossible chamber's load to nothing gets 18, discarding
+the individual sightings made in the rain gets 10, and taking every
+sighting at face value gets 10.
+
+tests/generic.py goes further and scores the solver somebody writes who does not
+understand the records at all - correct the levels by the uphill test, bin any
+trace constraint nothing satisfies, and patch the impossible gauge by clamping
+it, taking its size, or dropping that chamber and its parent out of the
+reckoning altogether. The best of those accounts gets 22 of 40. A
+defect that any of those moves happens to repair is decoration however
+load-bearing an omission ladder makes it look, which is why that account is
+scored separately and the bundle is not built if it reaches the bar.
+"""
+
+solution_explanation = """
+solution/connect.py reads only what the agent's container carries and writes
+/app/connections.csv. With solution/world.py and solution/solver.py it is about
+three hundred lines and imports nothing outside the standard library.
+
+It reads the chamber book and tries each level book on the old datum, keeping
+the one that leaves every chamber standing above the chamber it falls into. It
+finds the chamber whose gauge reads less than the chambers falling into it and
+reckons that figure as the chamber's own load rather than the whole of what
+stands above it, and takes every other chamber's
+own load as its reading less the readings of the chambers falling into it. It
+marks a trace as spoiled where the dye was SEEN while the rain gauge was
+reading heavy, and takes the sightings of every other trace at face value: a
+chamber is a candidate for a drain only if the observers below it are exactly
+the ones that saw the dye, and only if the drain falls to it at between
+1 in 100 and 1 in 30 on the plan distance, as DRAINAGE.md
+requires.
+
+It then searches for the assignment of drains to chambers that makes every
+chamber's reading come out, the twelve recorded connections held fixed. Where
+the records will not reconcile - which is what happens if one of the three is
+read wrongly - it falls back on the closest fit rather than giving up, which is
+what a surveyor would hand in.
+
+Every quantity is a whole number: levels in millimetres, distances in metres,
+discharges in litres an hour. Nothing turns on floating point. Run against the
+shipped records it settles 40 of 40.
+"""
+
+verification_explanation = """
+The deliverable is a data file. The verifier reads /app/connections.csv and
+never executes, imports or loads anything the submission wrote, so there is
+nothing to sandbox and no way for a submission to influence its own score.
+
+40 answers are marked, one for each unrecorded drain, and each is the name
+of a chamber matched exactly - there is no tolerance to be had on a name.
+37 must be right. The sealed connections live only in the verifier image at
+/tests/truth.json; the agent's container carries the chamber book, the drains,
+the flow survey, the tracer survey, the rain gauge, the twelve recorded
+connections and the standing instructions, and nothing else. cheat/readtruth.py
+confirms /tests is unreadable from the agent's side and cheat/forge_reward.sh
+that the verifier's log cannot be written to.
+
+Two things are asserted in the build rather than argued, and both are shipped so
+they can be re-run.
+
+tests/ladder.py scores all 24 readings of the three unstated matters
+against the sealed connections and refuses to pass if the whole account does not
+settle every drain or if any other account does. Every figure quoted above is
+taken from its output rather than estimated.
+
+tests/decidable.py proves each of the three can be FOUND in the records as
+shipped - the crossed gauge by a chamber reading 235 where the
+chambers above it read 465, the datum by 3 chambers standing
+above the ones that fall
+into them, the surcharge by 13 sightings that cannot be reached from
+their own drain and all of them in the wet. It also asserts that none of the
+12 recorded connections is among the 10 traces that straddle the
+storm, so the one genuinely two-sided question cannot be fitted to the attested
+set and has to be reasoned.
+
+The records are static files from a seeded generator, so nothing is computed at
+marking time and the answer cannot drift between runs. The reference was run
+against the shipped bundle in the task's own container and settled 40 of
+40; an empty container scores 0, the nearest-low-enough-chamber solver in
+cheat/naive.py scores 6 and cheat/flat.py scores 1.
+"""
+
+category = "Science"
+subcategory = "Engineering"
+tags = ["drainage", "survey", "record-forensics", "constraint-search", "python"]
+expert_time_estimate_hours = 7
+relevant_experience = """
+Anyone who has had to take over somebody else's survey will know the shape of
+this. The standing instructions cover the ordinary case and the records are what
+they are: a gauge that was stopped off midway, a level book on a datum nobody
+carried forward, a tracer run that caught a storm. Drainage connection surveys
+are the classic instance - a borough inheriting private drains has to prove
+where each one goes from levels, gauged flows and dye, and the flows are what
+tie the answer together because a chamber reads everything above it. Reading a
+level book against a datum, knowing that a sewer surcharges in storm and that
+what is in a full sewer does not keep to the fall of the pipe, is ordinary work
+for anyone who has worked a drainage record.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
