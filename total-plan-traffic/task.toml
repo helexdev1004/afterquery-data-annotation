@@ -1,0 +1,106 @@
+artifacts = ["/app/plan_volumes.csv"]
+
+[task]
+name = "afterquery/total-plan-traffic"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Reckoning how much traffic each signal plan actually served is routine work for
+a traffic signals engineer or a transport data analyst reviewing an adaptive
+control system: the system's log says when each junction changed plan, the
+count site on the junction's exit says what passed, and the two are laid
+against each other. The data is synthetic and was made truth first. One week
+was run at 5 junctions on a single clock - 289 booked changes of
+plan, and a count every twenty seconds at every site - and the 40 sealed
+counts are summed from that. Only afterwards was each counter's log written,
+in that counter's own way of writing one and stamped by that counter's own
+clock. The sealed counts are exact by construction and nothing is computed at
+marking time.
+
+The team's note gives the one rule the marking uses. Followed to the letter it
+gets 8 of the 40, because three logs cannot be right against it
+and each is glaring: one detector writes an hourly rate and not a count, one
+splits its count over two lane columns, one writes its dates day first in a
+semicolon file. Each is a notation and no more, and each costs a site's eight runs
+against an allowance of 4.
+
+What decides the task is the clocks. At 2 of the 5 sites the
+counter's clock was set by hand and stands most of an hour from the control
+system's, one fast and one slow; one of the two is a counter with an odd
+notation and the other is logged exactly as the note says. Nothing records it
+and the stamped reading fails silently - every plan run still gets a count of a
+believable size - at a cost of 16 of the 40. No mean shows it. A
+plan is chosen for the network and not for the street, so the flow in the
+twenty-five minutes after a change is, in the middle of all the changes, within
+one in a hundred of the flow before it; every street has a day of its own, so
+no two sites' peaks can be laid side by side; plans change on the run, so no
+gap marks a change; and no two logs begin together. What a plan does change is
+second order: how tightly the traffic is bunched when it reaches the counter.
+From one twenty seconds to the next the counts are more ragged under one plan
+than another, and the booked plans sort that raggedness best when the clock is
+set back by the right amount - at every site at least 1.5 times better
+than at any setting half an hour or more away. The street's own slow wander and
+the odd few minutes of upset from a bus or a delivery are larger than the
+effect, so a table of flow and spread by plan shows nothing.
+
+tests/town_check.py measures all of this against the sealed counts and refuses
+to pass otherwise: of 16 readings of the logs the right one gets
+40 and the best other 32 against a bar of 36.
+"""
+
+solution_explanation = """
+solution/serve.py reads only /app and writes /app/plan_volumes.csv with the
+standard library. It tells each detector's notation from the file itself - a
+second count column, dates with slashes in them, counts that are all whole
+multiples of 180 - and undoes it. For every twenty
+seconds it takes how far the count stands from the counts around it, squared,
+over what a steady stream of that size would give; then, for each setting-back
+of the counter's clock from ninety minutes fast to ninety slow, how well the
+booked plans sort those figures, and keeps the best. A plan run's vehicles are
+the counts whose twenty seconds began within the run on the clock so corrected.
+In the task's own container it gets 40 of 40.
+"""
+
+verification_explanation = """
+The verifier reads /app/plan_volumes.csv with the csv module and compares each
+asked-about run's vehicles with /tests/sealed.json; a run is right within two
+in a hundred and at most 4 of the 40 may be out. No code of the
+agent's is imported or run. The sealed counts exist only in the verifier image,
+/tests is mode 700 there, and the agent's container never mounts it. Two in a
+hundred leaves room for a clock found to within a couple of minutes, which
+moves a run's count by a fraction of that; the runs asked about at the two
+sites in question were chosen so that the stamped reading misses each of them
+by more than six in a hundred, so none comes right by chance. Nothing in the
+agent's container attests any run's count, no total has to balance, and a sheet
+made on the stamped clocks is as self-consistent as the right one. The reward
+is binary and is written to /logs/verifier/reward.txt on every path; an empty
+container scores 0 and the reference scores 1. The generator is seeded and
+shipped.
+"""
+
+category = "Operations"
+subcategory = "Traffic Engineering"
+tags = ["traffic-signals", "count-data", "time-alignment", "data-cleaning", "python"]
+expert_time_estimate_hours = 5
+relevant_experience = """
+A signals engineer has seen all of it: roadside counters of three makes, a
+clock somebody set from a wristwatch on a wet morning, and the way a long cycle
+sends traffic down the next street in platoons.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
