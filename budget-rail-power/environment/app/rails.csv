@@ -1,0 +1,9 @@
+rail,nominal_v,regulator,sense_mohm,efficiency_pct
+V_CORE_1V1,1.1,buck,10,88
+V_IO_1V8,1.8,buck,20,90
+V_MEM_1V2,1.2,buck,10,87
+V_MCU_3V3,3.3,buck,20,92
+V_RF_2V8,2.8,LDO,50,
+V_ANA_1V8,1.8,LDO,100,
+V_PLL_1V0,1.0,LDO,100,
+V_SENS_3V3,3.3,LDO,50,

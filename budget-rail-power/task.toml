@@ -1,0 +1,114 @@
+artifacts = ["/app/rail_power.csv"]
+
+[task]
+name = "afterquery/budget-rail-power"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Turning a bench logger's recordings into a per-rail power budget is ordinary
+bring-up work for a hardware or power-integrity engineer on a battery product:
+sense voltage over sense resistor gives current, and the regulator decides what
+that current costs the bus. The data is synthetic and was made truth first. A
+board with eight rails - four buck converters and four LDOs on a 5 V bus - was
+run through sleep, idle and active, 2400 samples a phase, and the 24
+sealed figures come from each rail's own voltage and current. The logger's
+files and the probe map were written afterwards. The figures are exact and
+nothing is computed at marking time.
+
+The team's note gives every rule the marking uses. Read literally it gets
+6 of 24, because three logger channels plainly do not record as
+it says: one voltage channel is in millivolts, one sense channel is in
+microvolts and one sense channel is clipped backwards and reads negative. Each
+is obvious on sight and each costs three lines where only two may be wrong.
+
+What decides the task is the probe map. For 4 probe pairs it is wrong:
+on two pairs of rails the probes were clipped to each other's test points. One
+of the four also has an odd channel; the other three record exactly as the
+note says. The map's reading fails silently - every rail still shows a
+believable current at its own nominal voltage - and gets 12 of the
+24 lines wrong. Nothing first-order shows it. The two rails of each pair
+share a nominal voltage, so a probe's level says nothing, and their sense
+voltages are of one size, so the current the wrong sense resistor gives is as
+plausible as the right one. What differs is the regulator. A buck converter's
+rail carries switching ripple of several millivolts from one sample to the
+next; an LDO's rail is flat to a fraction of a millivolt. Every rail also
+drifts slowly by some ten millivolts over a phase, so the spread and the range
+of a probe's voltage column are alike for both kinds and a column summary shows
+nothing; only how one sample stands to the next does. Set against the mean
+of its two neighbours, the middle distance of a voltage sample splits the
+eight probes into four noisy and four quiet with a factor of 11 between the
+groups, and under the map two buck rails are quiet and two LDO rails are
+noisy. The budget only ever takes a mean of voltage times current and never
+looks at how one sample stands to the next, and the regulator type is a column
+the bus power needs anyway. The note says the regulator types come from the
+released schematic, so when a probe's ripple disagrees with its rail's
+regulator it is the map that is wrong, not the rails list.
+
+tests/bench_check.py measures all of this against the sealed figures and
+refuses to pass otherwise: of 16 readings of the recordings the right
+one gets 24 and the best other 21, short of the 22 the budget
+needs.
+"""
+
+solution_explanation = """
+solution/power_budget.py reads only /app and writes /app/rail_power.csv with
+the standard library. It finds each channel's habit in the active recording -
+a voltage column whose middle value is above 50 is in millivolts, a sense
+column with a negative mean is reversed, a sense column far above anything a
+sense resistor here could drop is in microvolts - and undoes it in all three
+phases. For each probe it measures the middle distance of a voltage sample
+from the mean of its two neighbours, as a share of the level, and calls the
+four quietest probes LDO rails and the rest buck rails. A probe whose kind
+contradicts its mapped rail's regulator is given to the rail of the other such
+probe at the same nominal voltage. Current is sense millivolts over milliohms;
+an LDO rail draws current times 5.00 V, a buck rail its own power over its
+efficiency; the mean over a phase is the figure. In the task's own container
+it gets 24 of 24.
+"""
+
+verification_explanation = """
+The verifier reads /app/rail_power.csv with the csv module and compares each
+rail's mean milliwatts in each phase with /tests/sealed.json; a line is right
+within 0.5 per cent and no more than two of the 24 lines may be wrong.
+None of the agent's code is imported or run. The sealed figures exist only in
+the verifier image, /tests is mode 700 there, and the agent's container never
+mounts it. Half a per cent is fair because the sealed figure is the mean of
+the same rounded samples the agent reads, so a right reading lands within a
+hundredth of a milliwatt; it is there for summation order and rounding only.
+The allowance of two is below the cost of any single misreading: each odd
+channel costs three lines and the crossed probes cost 12, since the
+rails of a crossed pair differ in sense resistor and in regulator and no
+phase of either comes within tolerance by chance. Nothing in the agent's
+container attests any figure and nothing has to balance; a budget made on the
+probe map as written is as self-consistent as the right one. The reward is
+binary and is written to /logs/verifier/reward.txt on every path; an empty
+container scores 0 and the reference scores 1. The generator is seeded and
+shipped.
+"""
+
+category = "Hardware"
+subcategory = "Power Integrity"
+tags = ["power-budget", "current-sense", "bench-logger", "regulators", "python"]
+expert_time_estimate_hours = 4
+relevant_experience = """
+Anyone who has budgeted a battery board from a bench logger has met channels
+left in the wrong unit, a sense pair clipped backwards and probes on the wrong
+test point, and knows a switching rail from a linear one by the ripple on it.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
