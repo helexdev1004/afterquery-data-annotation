@@ -1,0 +1,115 @@
+artifacts = ["/app/drying_times.json"]
+
+[task]
+name = "afterquery/reckon-resin-drying"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Reckoning how long resin had been on the dryer when a part was shot is ordinary
+work for a process engineer or a quality technician in a moulding shop: it is
+the first thing asked when nylon parts come back brittle, and it is done from
+what ships here - the planning system's refill bookings, the controllers' shot
+logs and the shop's drying procedure. The data is synthetic and was made truth
+first: 184 refills and 84962 shots were laid down in site time, each of
+the 40 housings was given its drying time and resin from those, and only
+then was each controller's log written out in its own way and by its own clock.
+The answers are exact by construction and the records are static, so nothing
+is computed at marking time.
+
+The procedure states every rule the marking applies. Applied to the logs as
+written it reckons 0 of 40 housings, because four controllers
+write a time in a way the procedure does not: seconds since 1970, a
+spreadsheet's day numbers, the continental form with a decimal comma, and no
+time at all but the length of each shot, to be counted on from the time the log
+began. Each is glaring and each is only a notation; leaving any one undecoded
+costs eight housings against an allowance of 4.
+
+The thing that decides the task is a clock. The procedure says the shop works
+in site time throughout, and the planning system does; 2 of the
+5 controllers are an hour behind it, one of them a controller with an odd
+notation and one the controller that otherwise keeps to the procedure. Nothing
+in the records says so and nothing breaks: every shot still falls after some
+refill and gets a drying time, an hour short, so the procedure's own reading
+fails silently and costs 16 of the 40. No first-order figure
+gives the hour away. A dryer is refilled on the run, so no stoppage marks a
+refill; a machine's cycle is set, and its mean differs between resins by no
+more than 0.41 in a hundred on either clock; no two logs begin or end
+together or on a round moment; and a table of cycle statistics by resin comes
+out the same on either clock, because a refill lasts hours and the clock is out
+by one. What the blend does leave is second order and local. Regrind
+plasticises unevenly, so the cycle wavers from one shot to the next more the
+more regrind is in the blend, and the waver steps up or down at a refill that
+changes the blend. Measured as how far a cycle stands from the mean of the
+cycles either side of it, and compared over the forty minutes before and after
+each such refill, the step is at least 0.5 times the log's usual
+waver on the true clock for every machine, and at most 0.1 on either
+wrong one. The slow drift of the cycle with mould temperature and the robot's
+odd few minutes of fuss are several times larger than the waver itself, which
+is why nothing short of that comparison shows it.
+
+tests/proof.py measures all of this and refuses to pass otherwise. It scores
+all 64 combinations of readings against the sealed table: the right
+one reckons 40, the next best 32 against a bar of 36, every
+controller taken an hour behind 16, and the best constant answer
+3.
+"""
+
+solution_explanation = """
+solution/reckon.py, with solution/dryrules.py, reads only /app and writes
+/app/drying_times.json, using the standard library alone. It tells each
+controller's notation from the look of its first time and decodes it, counting
+the shot lengths on from the log's beginning where there are no times. For each
+machine it takes every cycle's distance from the mean of its two neighbours,
+leaving out stoppages, and for each refill that changes the blend compares the
+middle value over the forty minutes after with the forty minutes before, signed
+by whether the blend got more or less regrind - once taking the controller at
+site time, once an hour behind and once an hour ahead - and keeps the clock
+under which the steps come out largest. It then puts each housing's shot on the
+site clock, finds the last refill before it, and gives the hours since and the
+resin. Run in the task's own container it reckons 40 of 40.
+"""
+
+verification_explanation = """
+The verifier parses /app/drying_times.json as JSON and compares each housing's
+entry with the sealed table in /tests/sealed.json: the resin as a string and
+the hours within 0.1. At most 4 of the 40 may be wrong.
+Nothing the agent wrote is imported or executed; the sealed table exists only
+in the verifier image, /tests is mode 700 there, and the agent's container
+never mounts it. The tenth of an hour is rounding room only: every housing was
+chosen at least a quarter of an hour clear of any refill on the true clock and
+on its controller's, and a wrong clock moves every affected answer by a whole
+hour. Nothing in the agent's container attests any drying time, no total has to
+balance, and a wrong table is as self-consistent as the right one, so the table
+has to be worked out. The reward is binary and written to
+/logs/verifier/reward.txt on every path; an empty container scores 0 and the
+reference scores 1. The generator is seeded and shipped, so the records and the
+sealed table can be rebuilt.
+"""
+
+category = "Operations"
+subcategory = "Plastics Manufacturing"
+tags = ["injection-moulding", "machine-logs", "time-alignment", "data-cleaning", "python"]
+expert_time_estimate_hours = 5
+relevant_experience = """
+A moulding process engineer will know every part of this: controllers from four
+makers that each write a time their own way, the one controller nobody put
+forward in the spring, and the way a regrind blend shows in the shot-to-shot
+steadiness of the cycle long before it shows in the parts.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
