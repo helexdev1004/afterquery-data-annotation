@@ -1,0 +1,177 @@
+artifacts = ["/app/grades.csv"]
+
+[task]
+name = "afterquery/grade-pulled-boards"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Grading sawn hardwood is real and ordinary work. A mill sells on grade, and the
+grade of a board is settled by laying out the clear cuttings its face will
+yield between the knots, the shakes and the wane. Graders do it by eye at the
+bench and buyers argue about it afterwards; it is the kind of thing a timber
+merchant, a sawmill manager or a grading inspector does every day, and the
+awkward parts of it here - a bench that books a knot the wrong way about, a
+book that runs in centimetres, boards measured before they were dried - are the
+ones a mill record actually has in it rather than invented ones.
+
+The data is synthetic and was built truth first. 485 boards were sawn and
+the defects laid on them before anything was written down, and their grades were
+then worked out from those boards. The stock book was written afterwards, the
+way four benches over forty years would have written it. Every grade is
+therefore exact by construction rather than a judgement made later, and the
+records are static files, so nothing is computed at marking time.
+
+The buyer has pulled 40 boards and wants a grade against each, spelled as
+the standard spells it, marked exactly. 36 of the 40 carry the task.
+The forty are drawn evenly across the six grades, so naming one grade for all of
+them gets 11 and the best guess from anything a board carries anyway -
+its bench, its size, how many defects are on it, what its parcel was cut for -
+gets 18.
+
+The arithmetic is not withheld. GRADING.md gives all of it: the grades and
+the yield each asks for, the width and least length of a cutting, that the
+cuttings are laid from the sound edge, how the wane comes off and why which edge
+it is on matters, that a board takes the grade of its poorer face, that a knot
+is measured by its greatest dimension, and what oak loses in drying. There is no
+rule for the solver to guess.
+
+The work is in the doing. Every board's face has to be laid out in strips and
+the clear runs between the defects found in each, which is a real computation
+over 3210 defect entries and not a sum; and the answer is a grade rather
+than a number, so there is nothing to fit and nothing to regress. Applying the
+standard faithfully to the book exactly as written gets 5 of 40.
+
+Five things about the stock book have to be got from the records themselves.
+None of them is written down anywhere, and each is settled by something in the
+records that cannot be right otherwise.
+
+The first is that one bench measures a knot across the grain while the standard
+asks for its greatest dimension. A knot in oak is three to six times longer
+along the grain than across it, so that bench's entries come out the wrong way
+about, and no other bench's do.
+
+The second is that boards booked green have not been dried, and the standard is
+written for boards at fifteen per cent. The width moves, and so does the wane
+and where every defect sits across the face - but not the lengths, and not how
+far a defect runs along the board.
+
+The third is that one bench's book runs in centimetres along the board. Every
+defect it records then falls inside the first tenth of its board, which no run
+of timber does.
+
+The fourth is that one bench books the wane as the width LEFT rather than the
+width taken, so its figures sit close to the board's own width instead of being
+small.
+
+The fifth is not a bench's habit at all, and it is the one that decides the
+task. The book takes each face from its own near edge, and the near edge of the
+second face is the far edge of the first, so a face-two figure across the board
+runs the other way about. GRADING.md does not say so - what says so is the
+timber. A knot is a branch, and where it ran right through the log it is booked
+on both faces; 383 of those pairs line up when the second face is read
+the other way about and 4 line up read the same way. The wane, by
+contrast, is booked by the board and not by the face, so the lay-out does not
+turn round with the defects. Reading both faces in one frame costs 13
+of the 40 boards. Unlike the four bench habits, which can each be checked
+against the three benches that keep the book straight, there is no clean
+control for this one: it has to be settled from the through-knots themselves.
+
+tests/gates.py scores all 64 ways of reading those five, together with
+the one detail of the standard that is easy to apply wrongly - laying the
+cuttings from the board's edge rather than the sound one. Every figure quoted
+here comes from its output. The whole account grades all 40. The best
+account that is not the whole one grades 30, so missing any single one
+of them fails. The bar is 36, which leaves four boards of room for a slip and
+still sits 6 clear of every partial account. It also scores the guesses,
+because a stock drawn from one end of the grades would let a solver name that
+grade for everything and carry the task without opening the defect book.
+"""
+
+solution_explanation = """
+solution/grade.py reads only what the agent's container carries and writes
+/app/grades.csv. With solution/mill.py and solution/grader_ref.py it is about
+three hundred lines and imports nothing outside the standard library.
+
+It reads the stock book, the defect book and the wane, and finds the four
+benches' habits from the records rather than assuming them: the bench whose
+knots come out wider than they are long, the bench whose defects all fall in the
+first tenth of their boards, and the bench whose wane is close to the board's
+own width. It puts each right, brings the green boards down to fifteen per cent
+across the grain, and then grades each of the pulled boards by the standard -
+laying the face out in strips from the sound edge, taking the clear runs in each
+strip that are at least a cutting long, working the yield to the nearest whole
+per cent, and taking the poorer of the two faces.
+
+Every quantity is a whole number of millimetres and every division goes through
+one halves-up routine on whole numbers, so nothing anywhere turns on floating
+point and two correct implementations must agree exactly. Run against the
+shipped records it grades 40 of 40.
+"""
+
+verification_explanation = """
+The deliverable is a data file. The verifier reads /app/grades.csv and never
+executes, imports or loads anything the submission wrote, so there is nothing to
+sandbox and no way for a submission to influence its own score.
+
+40 answers are marked, one for each board the buyer pulled, each the name
+of a grade matched exactly - there is no tolerance to be had on a name. 36
+must be right. The sealed grades live only in the verifier image at
+/tests/truth.json; the agent's container carries the works standard, the stock
+book, the defect book, the wane and the list of boards, and nothing else.
+/tests is mode 700 in the verifier image, set at build time so it holds under a
+read-only root, and the agent's container has no mount of it at all; the
+verifier's log directory is likewise unreachable from the agent's side.
+
+There is nothing in the agent's container against which a solver could check an
+answer. No grade is attested anywhere, no total has to come out and nothing has
+to balance, so a wrong set of grades is exactly as self-consistent as the right
+one. The grades have to be worked out; they cannot be searched for.
+
+tests/gates.py is shipped and can be re-run. It scores all 64 readings
+of the stock book against the sealed grades and refuses to pass if the whole
+account does not grade every board, if any other account reaches the bar, or if
+guessing does. It reports the whole account at 40, the best account that
+is not it at 30, the book taken at face value at 5, naming
+one grade for everything at 11, and the best guess from what a board
+carries anyway at 18.
+
+The records are static files from a seeded generator, so nothing is computed at
+marking time and the answer cannot drift between runs. The reference was run
+against the shipped bundle in the task's own container and graded 40 of
+40; an empty container scores 0, the book taken at face value scores
+5, and naming one grade for every board scores 11.
+"""
+
+category = "Science"
+subcategory = "Engineering"
+tags = ["timber", "grading", "record-forensics", "geometry", "python"]
+expert_time_estimate_hours = 7
+relevant_experience = """
+Anyone who has had to work somebody else's stock book will know the shape of
+this. The standard covers the ordinary case and the records are what four
+benches over forty years made them: one man measuring a knot the short way
+about, another writing centimetres in a column of millimetres, a third booking
+the wane as what is left. Hardwood grading is the classic instance - the grade
+turns on the cuttings a face will yield, so the defect map has to be laid out
+properly before any of it means anything, and a board measured green is not the
+board that will be sold. Reading a defect book against a works standard, and
+knowing that oak moves across the grain and not along it, is ordinary work for
+anyone who has graded timber or audited a mill.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
