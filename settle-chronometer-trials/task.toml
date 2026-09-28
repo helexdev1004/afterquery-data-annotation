@@ -1,0 +1,181 @@
+artifacts = ["/app/trials.csv"]
+
+[task]
+name = "afterquery/settle-chronometer-trials"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Forty chronometers on an eight week trial, two thousand one hundred and eleven
+daily comparisons against the observatory's standard clock, and a trial number
+to settle for each. The data is synthetic: the instrument's real behaviour was
+chosen first - its rate on every day, how it answers temperature, how much its
+rate depends on the position it lies in, how unsteady it is - and only then was
+the comparison book written the way that observer wrote it. So every trial
+number is exact by construction rather than a judgement made afterwards.
+
+The method is published in full and has to be applied properly: the rate over
+an interval with the standard clock's own rate put back on, the mean daily
+rate, the variation as the mean step between consecutive rates, the temperature
+coefficient off the two held weeks, and the trial number as the mean plus twice
+the variation plus ten times the coefficient, everything in whole hundredths
+with halves away from zero. Doing that and nothing else settles NONE of the
+forty, which is the point: the arithmetic is not where the work is.
+
+Four things the observatory worked to are not in its method, and each touches a
+different part of the trial.
+
+The first is what the `pos` column is for. It is headed only `pos`, nothing
+anywhere says what it means, and it is the position the instrument lay in. A
+chronometer's rate depends on its position, so a change of position shows up in
+the rates as unsteadiness that is not the instrument's fault - and the
+variation is meant to measure steadiness. The part of each rate belonging to
+its own position has to come off before the steps are measured, which means
+carrying a mean rate per position per instrument. No straightforward reading of
+the method computes such a quantity, and that is deliberate: a practice that is
+merely a direction, an ordering or a basis is a parameter, and a parameter can
+be swept against the certificates. This one cannot, because it is a quantity
+that has to be thought of before it can be estimated.
+
+The second is that a comparison is sometimes missed, so an interval is two days
+and not one. A rate is a rate a day, so that interval is divided by two, and it
+stands for two days when the mean is taken. This is plainly visible: a hundred
+and twenty nine of the intervals are of two days and the rest of one, with none
+longer.
+
+The third is that an instrument put into a held week does not answer the new
+temperature at once, but comes to it over two days. Those two comparisons do
+not belong in the coefficient. They cannot be picked out of the rates - the
+effect is smaller than the instrument's own unsteadiness, at a median of seven
+tenths of its typical step - so the certificates are the only thing that
+settles this one.
+
+The fourth is that the variation is taken over the ordinary-temperature days
+only. The method says "the mean step between consecutive rates" and never says
+whether the held weeks belong in it, and nothing in the sheets can show it
+either.
+
+`certificates.csv` is what settles the unstated parts: eight instruments whose
+trial numbers the observatory published, computed by its own hands off these
+same sheets. `tests/decidable.py` asserts before the bundle ships that of the
+sixteen accounts the observatory might have kept, exactly ONE reproduces all
+eight certificates, and that dropping any single practice contradicts between
+five and eight of them - so none of the four is unevidenced and none is
+decoration.
+
+The practices interact, which is what makes this more than four separate
+observations. They all run through the same rate series: get the interval wrong
+and every step of the variation is wrong and so is every weight in the mean;
+miss the position and the variation is measuring the positions rather than the
+instrument; include the held weeks and it is measuring the temperature.
+
+`tests/ladder.py` scores all sixteen combinations of keeping them, so the bar is
+derived rather than guessed. The method as published settles 0 of 40; the best
+single practice 5; the best pair 9; the best three 22; all four 40. The bar is
+37, fifteen clear of the best partial account and three short of the whole one,
+so a solver with the whole account and a slip on a couple of instruments still
+carries it and no partial account comes near.
+"""
+
+solution_explanation = """
+`solution/trials.py` is about a hundred and forty lines and imports only
+collections, csv, datetime and pathlib. `solution/solve.sh` runs it and
+redirects its output to `/app/trials.csv`.
+
+It reads the forty sheets, the two tables and the certificates, and settles
+each instrument in one pass. The held weeks are not assumed to fall anywhere in
+particular: the ordinary temperature of the room is the commonest thermometer
+reading over the whole trial, and a held week is a run of comparisons whose
+thermometer stands away from it, so the same program would work on a trial run
+to a different calendar.
+
+For each instrument it takes the rate over every interval between consecutive
+comparisons, dividing by the days of the interval and putting the standard
+clock's own rate back on for each of those days. The mean is weighted by the
+interval, so a two-day interval stands for two days. For the variation it takes
+the ordinary-temperature intervals, subtracts from each rate the mean rate of
+its own position, and takes the mean step between consecutive levelled rates.
+For the coefficient it takes the held-week intervals, leaves out the first two
+comparisons of each held run, and divides the difference of the mean rates by
+the difference of the mean thermometers. The trial number is the mean plus
+twice the variation plus ten times the coefficient, all absolute, all in whole
+hundredths.
+
+Every division goes through one half-up routine on whole numbers, so nothing
+turns on floating point anywhere. Run against the shipped sheets it settles 40
+of 40.
+"""
+
+verification_explanation = """
+The deliverable is data. The verifier reads /app/trials.csv and never executes
+anything the submission wrote, never imports it and never loads it into the
+process that decides the score, so there is nothing to sandbox and no way for a
+submission to influence its own grade.
+
+Forty answers are checked, one for each instrument, and each must be exactly
+right: a trial number is a whole number of hundredths and there is no
+tolerance to be had. Thirty seven must be right. The truth is the trial numbers
+the trial was generated from, which live only in the verifier image at
+/tests/truth.json; the agent's image carries the sheets, the two tables, the
+method and the eight certificates and nothing else.
+
+Two things are asserted in the build rather than argued, and both must hold
+before the bundle ships.
+
+`tests/ladder.py` scores all sixteen combinations of the four unstated
+practices against the sealed numbers and refuses to pass if the whole account
+does not settle every instrument or if any partial account does as well. It
+reports 0 of 40 for the method as published, 5 for the best single practice, 9
+for the best pair, 22 for the best three and 40 for all four; every figure in
+the difficulty explanation is quoted from its output rather than estimated.
+
+`tests/decidable.py` asserts that each practice can be found from what ships. Of
+the sixteen accounts, exactly one reproduces all eight published certificates.
+Dropping any single practice contradicts between five and eight of them, so
+every practice is evidenced. Two of the four are also visible in the sheets on
+their own: a hundred and twenty nine intervals of two days against one thousand
+nine hundred and forty two of one with none longer, and thirty five of the
+forty instruments showing their positions spread wider than one and a half
+times their own typical step, at a median of two and a third times. The other
+two - the settling comparisons and whether the held weeks belong in the
+variation - are attested only, and the check says so rather than pretending
+otherwise.
+
+The sheets are static files from a seeded generator, so nothing is computed at
+grading time and the answer cannot drift between runs. The reference was run
+against the shipped bundle, reading only what the agent's container carries,
+and settled 40 of 40.
+"""
+
+category = "Science"
+subcategory = "Physics"
+tags = ["horology", "metrology", "instrument-calibration", "undocumented-practice", "python"]
+expert_time_estimate_hours = 6
+relevant_experience = """
+Anyone who has had to reproduce a laboratory's own figures from its own books
+will know the shape of this. The published method covers the ordinary path and
+the hands that worked it carried the rest, and the only way back to their
+arithmetic is the cases they certificated. Chronometer rating is the classic
+instance: a rate depends on the position the instrument lies in as much as on
+the escapement, an instrument takes days to come to a new temperature, and a
+trial number is a figure of merit whose parts each have to be reckoned on the
+right subset of the run. Reading a comparison book against a standard clock
+whose own rate has to be put back is ordinary work for anyone who has kept an
+instrument log.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
