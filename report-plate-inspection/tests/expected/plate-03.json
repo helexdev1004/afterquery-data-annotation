@@ -1,0 +1,80 @@
+{
+ "plate": "plate-03",
+ "callouts": [
+  {
+   "callout": "flatness",
+   "feature": "A",
+   "actual": 0.06737,
+   "tolerance": 0.04,
+   "pass": false
+  },
+  {
+   "callout": "size",
+   "feature": "H1",
+   "actual": 12.034225,
+   "tolerance": [
+    11.95,
+    12.07
+   ],
+   "pass": true
+  },
+  {
+   "callout": "position",
+   "feature": "H1",
+   "actual": 0.130104,
+   "tolerance": 0.334225,
+   "pass": true
+  },
+  {
+   "callout": "size",
+   "feature": "H2",
+   "actual": 12.04408,
+   "tolerance": [
+    11.95,
+    12.07
+   ],
+   "pass": true
+  },
+  {
+   "callout": "position",
+   "feature": "H2",
+   "actual": 0.280916,
+   "tolerance": 0.34408,
+   "pass": true
+  },
+  {
+   "callout": "size",
+   "feature": "H3",
+   "actual": 12.011682,
+   "tolerance": [
+    11.95,
+    12.07
+   ],
+   "pass": true
+  },
+  {
+   "callout": "position",
+   "feature": "H3",
+   "actual": 0.033738,
+   "tolerance": 0.311682,
+   "pass": true
+  },
+  {
+   "callout": "size",
+   "feature": "H4",
+   "actual": 11.975426,
+   "tolerance": [
+    11.95,
+    12.07
+   ],
+   "pass": true
+  },
+  {
+   "callout": "position",
+   "feature": "H4",
+   "actual": 0.341583,
+   "tolerance": 0.275426,
+   "pass": false
+  }
+ ]
+}
