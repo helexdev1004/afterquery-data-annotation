@@ -1,0 +1,235 @@
+artifacts = ["/app/attribution.json", "/app/tuning.json"]
+
+[task]
+name = "afterquery/sort-bell-spectra"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+This is the work of a bell founder's tuner, or of anyone who has to reconstruct
+a job from an instrument's output after the person who ran it has gone: one
+hundred and forty two analyser runs spread over four tapes in no particular
+order, none of them recording what was under the machine or when, and a
+workshop book that is a partial record rather than an index. The readings are
+synthetic, generated from a seeded script, so no real workshop's data is
+involved; the shape of them - five tuned partials, upper partials that are not
+tuned, the bell on the next pit picked up through the frame, and room noise -
+is what a peak list off an analyser actually looks like.
+
+What is graded is the attribution itself: every one of the hundred and forty
+two runs has to be named. Forty of the jobs on those tapes belong to other
+benches entirely.
+
+And the reason that is not one method applied a hundred and forty two times is
+that the ring contains cases which CONTRADICT the method. Whatever rule places
+most of the runs is wrong about some of them, and nothing flags which.
+
+No single kind of evidence settles a run, and the three kinds available
+disagree.
+
+Pitch does not settle it. A bell drops four to six hundred cents over its run
+of cuts while the ring is spaced two hundred apart, so a bell's early cuts sit
+above its neighbour's late ones and the eight runs interleave across two or
+three neighbours. There are no eight groups to be found on a number line, and
+the jobs from other benches sit inside the same range, so pitch does not even
+separate this ring's work from everyone else's.
+
+What does mostly settle it is a thing the note never mentions: a bell's untuned
+upper partials sit where its casting left them, tuning the five lower partials
+barely moves them, and so they persist across a bell's cuts and differ between
+bells. Finding that is the task's first insight, and nothing points at it. But
+the analyser caught all three of those partials on only about six runs in ten,
+and on three runs it caught none - so the casting names a majority of the runs
+and leaves the rest open.
+
+And the casting is not one bell, one signature. Four of these eight were cast
+from the same moulds, in two pairs, so each pair carries ONE casting between
+them and arrives as a single group of twenty odd; only pitch separates a pair,
+and their runs sit several hundred cents apart with a gap in the middle, which
+is the one place on these tapes where pitch decides anything. A fifth bell
+cracked and was recast partway through the job, so its metal changed and its
+runs carry two different castings, arriving as two groups; nothing in the peaks
+links them and pitch does not either, because the new casting was cut down
+through the same range. Only the book, which names runs in both, says they are
+one bell.
+
+So a group can be two bells and two groups can be one bell, and a solver has to
+settle which group by group. Neither "the eight biggest groups are the ring"
+nor "split whatever group is too wide" survives, and the two cases pull in
+opposite directions.
+
+Two more things break the rule that a bell's pitch falls at every step. A bell
+went back on the frame six times to be measured rather than cut, so the pitch
+did not move; and five runs are the same tape read twice, filed under two ids,
+so two readings are identical. A solver that requires a strictly falling chain
+rejects the true history of any bell that has one of these.
+
+Those remaining runs are why the book cannot be ignored. Its dates are the only
+record of WHEN, and time is load-bearing: cuts take metal off, so a bell's
+pitch falls as its dates advance, and that constraint cannot be applied at all
+without them. A run with a partly recorded casting is placed by asking which
+bell's chain it fits at the date the book gives it. The book also names some
+runs outright - including the three with no casting at all, which nothing else
+can place - and it is a hand-written record that names only thirty eight of the
+hundred and forty two and gets seven of those wrong, so it has to be used and
+distrusted at once.
+
+So the evidence is collective in both directions. A peak means nothing without
+the other peaks in its run - nothing in a list of ten numbers says which is the
+nominal - and a run means nothing without the other runs on the tapes. Adding
+runs does not make the picture clearer; it makes more of them to place.
+
+Measured on this data through the shipped grader, against the one hundred and
+seventy one of one hundred and eighty two required: grouping the nominals in one
+dimension, which is the obvious reading, gets twenty five. Taking the book's
+names at face value and calling the rest other work gets ninety one. Recovering
+the castings correctly but stopping there - never opening the book, never
+splitting the mould twins, never joining the recast bell - gets one hundred and
+thirteen. Every one of those is a program that looks right and runs cleanly.
+"""
+
+solution_explanation = """
+Six passes over the whole set, in this order.
+
+First, read the tapes. A run begins with a `* RUN` line and its peaks follow,
+one to a line; nothing separates one run's peaks from the next but the next run
+header.
+
+Second, find the nominal in each run. For every peak, ask whether four other
+peaks stand beneath it at the intervals true-harmonic tuning fixes; the peak
+all four answer to is the nominal. Where more than one peak accounts for all
+five - the window has to be wide, because an early cut's partials are tens of
+cents out - take the one they fit most closely.
+
+Third, take each run's casting: the offsets, in cents, of the peaks above the
+nominal from their own ratios. These are not tuned, so they are a property of
+the bell rather than of the cut.
+
+Fourth, group the runs whose castings agree. Use only the runs that recorded
+all three upper partials; two runs sharing two components can agree by accident
+and that is enough to merge two different bells.
+
+Then correct the group count in both directions, which is the heart of it.
+Split any group covering far more pitch than the others do - that is two bells
+from one mould, and the split goes at the clear gap in the middle of its range.
+Then, while there are still more groups than bells, join the pair the book
+mostly calls by the same name - that is one bell recast. Split before merging,
+or the book is asked about groups that are themselves two bells. Weigh the
+names rather than trust them: a fifth are wrong, and one coincidence welded two
+unrelated bells together and cost a third of the attribution. Order the eight
+by pitch: heaviest lowest, so bell-01 is the highest and bell-08 the lowest.
+
+Fifth, place the rest against those chains, using the book's dates. A run
+belongs where the pitch does not RISE as the dates advance - not where it
+strictly falls, because a bell measured without being cut and a tape read twice
+both leave a step of nothing - and where the step is the size of a cut rather
+than the distance to the next bell, both of which can be measured off the
+groups already formed. Take the book's name when the descent allows it and
+overrule it when a partly recorded casting says otherwise; seven of the thirty
+eight names are wrong. A run that fits no chain is another bench's work.
+
+Sixth, the last cut of each group, by date, is the bell as it now stands - and
+read it off a run whose attribution rests on a complete casting or on the book,
+never on one placed by the weakest rule. Its partials measured against its own
+nominal are the answer.
+
+The reference is about three hundred lines and uses only the standard library.
+"""
+
+verification_explanation = """
+Both deliverables are data. The verifier reads /app/attribution.json and
+/app/tuning.json and never executes anything the submission wrote, so there is
+nothing to sandbox and no way for a submission to influence how it is graded.
+
+One hundred and eighty two answers are checked: one for each of the hundred and
+forty two runs named, and one for each of the forty partials, the latter twice
+over - the figure within two cents and the in-true verdict. The answers are the
+attribution the tapes were generated from and the deviations the bells were
+generated with, not the output of a preferred implementation, and they are
+baked into the verifier image, which the agent's container never sees. One
+hundred and seventy one must be right.
+
+Two things that could make a correct solver wrong are settled in the
+instruction rather than left to convention. The intervals are stated as exact
+fractions of the nominal, because campanology also reads the same intervals in
+equal temperament - which puts the tierce about sixteen cents lower and the
+quint right on the tolerance - so a solver who placed every run correctly could
+still have lost sixteen partials to a convention nobody had named. And no
+answer sits within the grading tolerance of the in-true boundary: a finished
+partial is within two cents of true and an unfinished one at least six out, so
+a figure inside tolerance can never carry the wrong verdict. The build refuses
+to generate a ring that breaks that guard band.
+
+The design is checked by measurement rather than argument, because an earlier
+version of this task was sound on one draw and not on others. The generator
+takes a seed, and twenty independent draws were built and solved end to end; on
+each one the reference attributed between ninety five and a hundred per cent of
+the runs while the best shortcut stayed near seventy, which is the gap the pass
+mark sits in. Four properties are asserted on every draw. Every ring run's
+nominal is the peak a reader actually identifies, to within two cents - a stray
+peak near the nominal used to win instead, and because every other partial is
+measured from the nominal, one read twenty cents low turned real partials into
+missing ones. Every completely recorded casting is read within fifteen cents of
+what was cast. The eight groups each contain one bell and no other job's work.
+And the reference's figures are within two cents of the generated truth.
+
+Three things had to be constructed rather than left to chance, and each is
+enforced in the build. The bells' castings are placed so that any two of them
+differ over every PAIR of upper partials, not merely on average across the
+three, because a reader only sees the partials the analyser caught. The upper
+partial ratios are chosen not to alias the tuned ones: at an earlier choice,
+doubling the tuned set landed exactly on them, so a peak an octave above the
+nominal accounted for all five partials and was read as the nominal. And the
+three runs with no casting are named correctly in the book, because a bell's
+run of cuts spans more than the distance to its neighbour, so a wrong name on a
+run with no other evidence leaves two readings standing - undecidable rather
+than hard. The book's wrong names fall on runs that did record a casting, where
+the evidence can overrule them.
+
+The tapes are static files from a seeded generator, so nothing is computed at
+grading time and the answer cannot drift between runs. The shipped solution was
+run three times through the shipped grader, against the bundle's own
+environment rather than the build tree, and scored one hundred and seventy
+eight of one hundred and eighty two each time - seven clear of the mark, and
+the same figure on every run.
+
+It is not a perfect score, and that is deliberate rather than overlooked. The
+three it misses are runs whose casting the analyser recorded only in part and
+which the descent does not settle uniquely, and they are the same three every
+time. Demanding perfection of the reference would mean removing exactly the
+runs that make the attribution hard, so the pass mark is set in the measured
+gap instead: the reference scores a hundred and seventy eight, the best
+shortcut a hundred and thirteen, and the mark is a hundred and seventy one.
+
+Its forty partial figures differ from the generated truth by at most half a
+cent, so three quarters of the two-cent tolerance is left for the solver's own
+method.
+"""
+
+category = "Science"
+subcategory = "Physics"
+tags = ["acoustics", "bells", "tuning", "spectra", "campanology"]
+expert_time_estimate_hours = 9
+relevant_experience = """
+Acoustic or vibration measurement: working from an instrument's peak list
+rather than a labelled result, identifying modes by their relationships to each
+other, and reconstructing which measurements belong together when the log that
+said so has been lost. Bell tuning specifically, or any instrument work where
+an inharmonic spectrum has to be sorted out before it can be judged.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0

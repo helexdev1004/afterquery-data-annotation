@@ -1,0 +1,31 @@
+{
+ "bell": "bell-07",
+ "in_true": false,
+ "partials": [
+  {
+   "partial": "hum",
+   "cents": -1.9,
+   "in_true": true
+  },
+  {
+   "partial": "prime",
+   "cents": -14.6,
+   "in_true": false
+  },
+  {
+   "partial": "tierce",
+   "cents": 1.5,
+   "in_true": true
+  },
+  {
+   "partial": "quint",
+   "cents": 1.9,
+   "in_true": true
+  },
+  {
+   "partial": "nominal",
+   "cents": 0.0,
+   "in_true": true
+  }
+ ]
+}
