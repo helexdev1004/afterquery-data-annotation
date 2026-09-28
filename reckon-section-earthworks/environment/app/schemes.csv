@@ -1,0 +1,6 @@
+scheme,name,levelled_by,left_width_m,right_width_m,cut_slope_1_in,fill_slope_1_in
+S1,Hollin Lane link,Varley,5.5,8.0,2.0,2.5
+S2,Carr Bottom bypass,Wadsworth,4.5,8.0,2.0,2.5
+S3,Moor End junction,Yeadon,4.5,9.5,2.0,2.5
+S4,Station Road diversion,Ackroyd,4.0,9.5,2.0,2.5
+S5,Quarry Hill access,Binns,4.5,10.25,2.0,2.5
