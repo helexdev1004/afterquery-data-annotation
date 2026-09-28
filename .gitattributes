@@ -1,0 +1,3 @@
+# Task bundles are byte-exact container inputs: shell scripts, fixtures and
+# binary data must survive a checkout unchanged on every platform.
+* -text
