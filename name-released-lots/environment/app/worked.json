@@ -1,0 +1,6690 @@
+[
+ {
+  "campaign": {
+   "standards": {
+    "ACC56": 75,
+    "ACC23": 75,
+    "ACC74": 75
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC56",
+     "seeds": 233,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 4,
+     "lot": "L002",
+     "accession": "ACC56",
+     "seeds": 636,
+     "test": 77
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L003",
+     "accession": "ACC56",
+     "seeds": 310,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L004",
+     "accession": "ACC56",
+     "seeds": 476,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L005",
+     "accession": "ACC56",
+     "seeds": 348,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L006",
+     "accession": "ACC23",
+     "seeds": 524,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 17,
+     "lot": "L007",
+     "accession": "ACC23",
+     "seeds": 410,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 19,
+     "lot": "L008",
+     "accession": "ACC23",
+     "seeds": 235,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L009",
+     "accession": "ACC23",
+     "seeds": 279,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 22,
+     "lot": "L010",
+     "accession": "ACC23",
+     "seeds": 291,
+     "test": 70
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 24,
+     "lot": "L011",
+     "accession": "ACC74",
+     "seeds": 676,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L012",
+     "accession": "ACC74",
+     "seeds": 567,
+     "test": 74
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 30,
+     "lot": "L013",
+     "accession": "ACC74",
+     "seeds": 442,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 31,
+     "lot": "L014",
+     "accession": "ACC74",
+     "seeds": 370,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L015",
+     "accession": "ACC74",
+     "seeds": 621,
+     "test": 82
+    },
+    {
+     "kind": "TEST",
+     "day": 43,
+     "lot": "L015",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 43,
+     "accession": "ACC74"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 52,
+     "into": "L013",
+     "from": "L011",
+     "seeds": 211
+    },
+    {
+     "kind": "REQUEST",
+     "day": 59,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "TEST",
+     "day": 64,
+     "lot": "L010",
+     "test": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 72,
+     "into": "L008",
+     "from": "L006",
+     "seeds": 171
+    },
+    {
+     "kind": "TEST",
+     "day": 79,
+     "lot": "L005",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 79,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "REGEN",
+     "day": 97,
+     "lot": "L001",
+     "new_lot": "L016",
+     "seeds": 517,
+     "test": 96
+    },
+    {
+     "kind": "REGEN",
+     "day": 115,
+     "lot": "L007",
+     "new_lot": "L017",
+     "seeds": 727,
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 130,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 148,
+     "parent": "L010",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 165,
+     "into": "L013",
+     "from": "L014",
+     "seeds": 175
+    },
+    {
+     "kind": "TEST",
+     "day": 170,
+     "lot": "L002",
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 181,
+     "into": "L018",
+     "from": "L010",
+     "seeds": 64
+    },
+    {
+     "kind": "TOPUP",
+     "day": 197,
+     "into": "L007",
+     "from": "L006",
+     "seeds": 163
+    },
+    {
+     "kind": "TEST",
+     "day": 210,
+     "lot": "L007",
+     "test": 85
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 223,
+     "lot": "L014",
+     "seeds": 173
+    },
+    {
+     "kind": "SPLIT",
+     "day": 242,
+     "parent": "L007",
+     "child": "L019",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 259,
+     "into": "L003",
+     "from": "L004",
+     "seeds": 111
+    },
+    {
+     "kind": "TOPUP",
+     "day": 270,
+     "into": "L015",
+     "from": "L012",
+     "seeds": 176
+    },
+    {
+     "kind": "REGEN",
+     "day": 285,
+     "lot": "L015",
+     "new_lot": "L020",
+     "seeds": 563,
+     "test": 92
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 297,
+     "lot": "L017",
+     "seeds": 128
+    },
+    {
+     "kind": "REQUEST",
+     "day": 309,
+     "accession": "ACC23"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 318,
+     "parent": "L008",
+     "child": "L021",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 322,
+     "into": "L009",
+     "from": "L007",
+     "seeds": 197
+    },
+    {
+     "kind": "TOPUP",
+     "day": 338,
+     "into": "L013",
+     "from": "L020",
+     "seeds": 91
+    },
+    {
+     "kind": "TOPUP",
+     "day": 355,
+     "into": "L004",
+     "from": "L016",
+     "seeds": 121
+    },
+    {
+     "kind": "TEST",
+     "day": 368,
+     "lot": "L017",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 368,
+     "accession": "ACC23"
+    },
+    {
+     "kind": "TEST",
+     "day": 375,
+     "lot": "L017",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 375,
+     "accession": "ACC23"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 384,
+     "lot": "L006",
+     "seeds": 170
+    },
+    {
+     "kind": "TEST",
+     "day": 398,
+     "lot": "L016",
+     "test": 74
+    },
+    {
+     "kind": "REQUEST",
+     "day": 416,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 430,
+     "into": "L004",
+     "from": "L002",
+     "seeds": 137
+    },
+    {
+     "kind": "REGEN",
+     "day": 447,
+     "lot": "L004",
+     "new_lot": "L022",
+     "seeds": 624,
+     "test": 90
+    },
+    {
+     "kind": "TOPUP",
+     "day": 460,
+     "into": "L011",
+     "from": "L013",
+     "seeds": 121
+    },
+    {
+     "kind": "TOPUP",
+     "day": 464,
+     "into": "L004",
+     "from": "L022",
+     "seeds": 98
+    },
+    {
+     "kind": "SPLIT",
+     "day": 475,
+     "parent": "L004",
+     "child": "L023",
+     "seeds": 245
+    },
+    {
+     "kind": "TEST",
+     "day": 481,
+     "lot": "L012",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 481,
+     "accession": "ACC74"
+    },
+    {
+     "kind": "TEST",
+     "day": 494,
+     "lot": "L001",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 494,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 513,
+     "lot": "L012",
+     "seeds": 61
+    },
+    {
+     "kind": "TEST",
+     "day": 521,
+     "lot": "L022",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 521,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 525,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 542,
+     "accession": "ACC56"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 555,
+     "accession": "ACC23"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 559,
+     "accession": "ACC23"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 574,
+     "accession": "ACC74"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 583,
+     "accession": "ACC74"
+    }
+   ]
+  },
+  "answers": [
+   "L011",
+   "L001",
+   "L001",
+   "L002",
+   "L019",
+   "L009",
+   "L009",
+   "L002",
+   "L012",
+   "L002",
+   "L002",
+   "L002",
+   "L022",
+   "L019",
+   "L019",
+   "L012",
+   "L012"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC54": 85,
+    "ACC41": 80,
+    "ACC47": 90
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC54",
+     "seeds": 452,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L002",
+     "accession": "ACC54",
+     "seeds": 639,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L003",
+     "accession": "ACC54",
+     "seeds": 536,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L004",
+     "accession": "ACC54",
+     "seeds": 670,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 15,
+     "lot": "L005",
+     "accession": "ACC54",
+     "seeds": 374,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L006",
+     "accession": "ACC41",
+     "seeds": 521,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L007",
+     "accession": "ACC41",
+     "seeds": 489,
+     "test": 85
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 24,
+     "lot": "L008",
+     "accession": "ACC41",
+     "seeds": 355,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L009",
+     "accession": "ACC41",
+     "seeds": 644,
+     "test": 76
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 29,
+     "lot": "L010",
+     "accession": "ACC41",
+     "seeds": 535,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 30,
+     "lot": "L011",
+     "accession": "ACC47",
+     "seeds": 410,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 32,
+     "lot": "L012",
+     "accession": "ACC47",
+     "seeds": 516,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 33,
+     "lot": "L013",
+     "accession": "ACC47",
+     "seeds": 327,
+     "test": 99
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 37,
+     "lot": "L014",
+     "accession": "ACC47",
+     "seeds": 328,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L015",
+     "accession": "ACC47",
+     "seeds": 345,
+     "test": 88
+    },
+    {
+     "kind": "REQUEST",
+     "day": 66,
+     "accession": "ACC54"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 83,
+     "parent": "L005",
+     "child": "L016",
+     "seeds": 160
+    },
+    {
+     "kind": "TEST",
+     "day": 89,
+     "lot": "L011",
+     "test": 91
+    },
+    {
+     "kind": "TOPUP",
+     "day": 107,
+     "into": "L008",
+     "from": "L009",
+     "seeds": 106
+    },
+    {
+     "kind": "REQUEST",
+     "day": 125,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 140,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 146,
+     "into": "L014",
+     "from": "L011",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 154,
+     "parent": "L006",
+     "child": "L017",
+     "seeds": 99
+    },
+    {
+     "kind": "REGEN",
+     "day": 167,
+     "lot": "L011",
+     "new_lot": "L018",
+     "seeds": 519,
+     "test": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 173,
+     "parent": "L013",
+     "child": "L019",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 184,
+     "lot": "L003",
+     "test": 83
+    },
+    {
+     "kind": "TOPUP",
+     "day": 203,
+     "into": "L002",
+     "from": "L001",
+     "seeds": 89
+    },
+    {
+     "kind": "TEST",
+     "day": 219,
+     "lot": "L005",
+     "test": 80
+    },
+    {
+     "kind": "REQUEST",
+     "day": 223,
+     "accession": "ACC41"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 239,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 204
+    },
+    {
+     "kind": "TOPUP",
+     "day": 256,
+     "into": "L013",
+     "from": "L012",
+     "seeds": 94
+    },
+    {
+     "kind": "TEST",
+     "day": 262,
+     "lot": "L003",
+     "test": 87
+    },
+    {
+     "kind": "TOPUP",
+     "day": 276,
+     "into": "L006",
+     "from": "L009",
+     "seeds": 142
+    },
+    {
+     "kind": "REQUEST",
+     "day": 289,
+     "accession": "ACC54"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 303,
+     "parent": "L005",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 309,
+     "lot": "L013",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 309,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 322,
+     "into": "L010",
+     "from": "L008",
+     "seeds": 75
+    },
+    {
+     "kind": "SPLIT",
+     "day": 328,
+     "parent": "L004",
+     "child": "L021",
+     "seeds": 247
+    },
+    {
+     "kind": "REQUEST",
+     "day": 343,
+     "accession": "ACC41"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 347,
+     "lot": "L013",
+     "seeds": 158
+    },
+    {
+     "kind": "TOPUP",
+     "day": 361,
+     "into": "L013",
+     "from": "L015",
+     "seeds": 167
+    },
+    {
+     "kind": "TEST",
+     "day": 376,
+     "lot": "L003",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 376,
+     "accession": "ACC54"
+    },
+    {
+     "kind": "REGEN",
+     "day": 382,
+     "lot": "L007",
+     "new_lot": "L022",
+     "seeds": 321,
+     "test": 88
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 393,
+     "lot": "L007",
+     "seeds": 72
+    },
+    {
+     "kind": "REGEN",
+     "day": 400,
+     "lot": "L006",
+     "new_lot": "L023",
+     "seeds": 607,
+     "test": 85
+    },
+    {
+     "kind": "TOPUP",
+     "day": 411,
+     "into": "L012",
+     "from": "L011",
+     "seeds": 116
+    },
+    {
+     "kind": "REGEN",
+     "day": 426,
+     "lot": "L015",
+     "new_lot": "L024",
+     "seeds": 570,
+     "test": 92
+    },
+    {
+     "kind": "TOPUP",
+     "day": 440,
+     "into": "L005",
+     "from": "L016",
+     "seeds": 67
+    },
+    {
+     "kind": "TOPUP",
+     "day": 458,
+     "into": "L024",
+     "from": "L011",
+     "seeds": 142
+    },
+    {
+     "kind": "TOPUP",
+     "day": 467,
+     "into": "L007",
+     "from": "L008",
+     "seeds": 171
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 471,
+     "lot": "L020",
+     "seeds": 79
+    },
+    {
+     "kind": "SPLIT",
+     "day": 482,
+     "parent": "L005",
+     "child": "L025",
+     "seeds": 100
+    },
+    {
+     "kind": "SPLIT",
+     "day": 489,
+     "parent": "L021",
+     "child": "L026",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 502,
+     "lot": "L012",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 502,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 511,
+     "lot": "L006",
+     "seeds": 266
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 522,
+     "lot": "L009",
+     "seeds": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 530,
+     "accession": "ACC54"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 537,
+     "accession": "ACC54"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 552,
+     "accession": "ACC41"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 561,
+     "accession": "ACC41"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 577,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 593,
+     "accession": "ACC47"
+    }
+   ]
+  },
+  "answers": [
+   "L004",
+   "L011",
+   "L011",
+   "L006",
+   "L003",
+   "L014",
+   "L006",
+   "L003",
+   "L012",
+   "L003",
+   "L003",
+   "L022",
+   "L022",
+   "L012",
+   "L012"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC11": 75,
+    "ACC79": 90,
+    "ACC28": 85
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC11",
+     "seeds": 388,
+     "test": 90
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 3,
+     "lot": "L002",
+     "accession": "ACC11",
+     "seeds": 680,
+     "test": 90
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L003",
+     "accession": "ACC11",
+     "seeds": 568,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 8,
+     "lot": "L004",
+     "accession": "ACC11",
+     "seeds": 630,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L005",
+     "accession": "ACC11",
+     "seeds": 657,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L006",
+     "accession": "ACC79",
+     "seeds": 312,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L007",
+     "accession": "ACC79",
+     "seeds": 421,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L008",
+     "accession": "ACC79",
+     "seeds": 285,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 26,
+     "lot": "L009",
+     "accession": "ACC79",
+     "seeds": 457,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 31,
+     "lot": "L010",
+     "accession": "ACC79",
+     "seeds": 494,
+     "test": 99
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 32,
+     "lot": "L011",
+     "accession": "ACC28",
+     "seeds": 576,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 37,
+     "lot": "L012",
+     "accession": "ACC28",
+     "seeds": 680,
+     "test": 81
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 39,
+     "lot": "L013",
+     "accession": "ACC28",
+     "seeds": 426,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L014",
+     "accession": "ACC28",
+     "seeds": 408,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 47,
+     "lot": "L015",
+     "accession": "ACC28",
+     "seeds": 688,
+     "test": 95
+    },
+    {
+     "kind": "TEST",
+     "day": 68,
+     "lot": "L003",
+     "test": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 81,
+     "lot": "L010",
+     "test": 94
+    },
+    {
+     "kind": "TOPUP",
+     "day": 95,
+     "into": "L014",
+     "from": "L011",
+     "seeds": 98
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 108,
+     "lot": "L001",
+     "seeds": 215
+    },
+    {
+     "kind": "SPLIT",
+     "day": 118,
+     "parent": "L011",
+     "child": "L016",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 122,
+     "accession": "ACC79"
+    },
+    {
+     "kind": "REGEN",
+     "day": 128,
+     "lot": "L005",
+     "new_lot": "L017",
+     "seeds": 587,
+     "test": 82
+    },
+    {
+     "kind": "SPLIT",
+     "day": 135,
+     "parent": "L005",
+     "child": "L018",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 139,
+     "into": "L009",
+     "from": "L010",
+     "seeds": 171
+    },
+    {
+     "kind": "REGEN",
+     "day": 156,
+     "lot": "L008",
+     "new_lot": "L019",
+     "seeds": 384,
+     "test": 98
+    },
+    {
+     "kind": "TOPUP",
+     "day": 161,
+     "into": "L008",
+     "from": "L009",
+     "seeds": 146
+    },
+    {
+     "kind": "TOPUP",
+     "day": 168,
+     "into": "L014",
+     "from": "L011",
+     "seeds": 100
+    },
+    {
+     "kind": "SPLIT",
+     "day": 187,
+     "parent": "L015",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 200,
+     "lot": "L009",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 200,
+     "accession": "ACC79"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 204,
+     "accession": "ACC11"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 211,
+     "into": "L013",
+     "from": "L014",
+     "seeds": 170
+    },
+    {
+     "kind": "TOPUP",
+     "day": 216,
+     "into": "L002",
+     "from": "L003",
+     "seeds": 181
+    },
+    {
+     "kind": "TOPUP",
+     "day": 233,
+     "into": "L015",
+     "from": "L014",
+     "seeds": 121
+    },
+    {
+     "kind": "TOPUP",
+     "day": 239,
+     "into": "L019",
+     "from": "L006",
+     "seeds": 209
+    },
+    {
+     "kind": "TOPUP",
+     "day": 258,
+     "into": "L019",
+     "from": "L010",
+     "seeds": 109
+    },
+    {
+     "kind": "SPLIT",
+     "day": 268,
+     "parent": "L018",
+     "child": "L021",
+     "seeds": 59
+    },
+    {
+     "kind": "REGEN",
+     "day": 275,
+     "lot": "L019",
+     "new_lot": "L022",
+     "seeds": 725,
+     "test": 91
+    },
+    {
+     "kind": "TEST",
+     "day": 288,
+     "lot": "L014",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 288,
+     "accession": "ACC28"
+    },
+    {
+     "kind": "TEST",
+     "day": 302,
+     "lot": "L014",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 302,
+     "accession": "ACC28"
+    },
+    {
+     "kind": "TEST",
+     "day": 308,
+     "lot": "L018",
+     "test": 74
+    },
+    {
+     "kind": "SPLIT",
+     "day": 317,
+     "parent": "L010",
+     "child": "L023",
+     "seeds": 99
+    },
+    {
+     "kind": "REGEN",
+     "day": 326,
+     "lot": "L015",
+     "new_lot": "L024",
+     "seeds": 380,
+     "test": 94
+    },
+    {
+     "kind": "TOPUP",
+     "day": 345,
+     "into": "L019",
+     "from": "L008",
+     "seeds": 117
+    },
+    {
+     "kind": "TOPUP",
+     "day": 355,
+     "into": "L018",
+     "from": "L005",
+     "seeds": 142
+    },
+    {
+     "kind": "TOPUP",
+     "day": 360,
+     "into": "L017",
+     "from": "L005",
+     "seeds": 78
+    },
+    {
+     "kind": "SPLIT",
+     "day": 379,
+     "parent": "L004",
+     "child": "L025",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 394,
+     "lot": "L002",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 394,
+     "accession": "ACC11"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 403,
+     "into": "L003",
+     "from": "L005",
+     "seeds": 171
+    },
+    {
+     "kind": "TEST",
+     "day": 416,
+     "lot": "L023",
+     "test": 91
+    },
+    {
+     "kind": "TOPUP",
+     "day": 420,
+     "into": "L019",
+     "from": "L007",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 436,
+     "parent": "L009",
+     "child": "L026",
+     "seeds": 236
+    },
+    {
+     "kind": "TOPUP",
+     "day": 444,
+     "into": "L011",
+     "from": "L014",
+     "seeds": 140
+    },
+    {
+     "kind": "TOPUP",
+     "day": 448,
+     "into": "L008",
+     "from": "L009",
+     "seeds": 134
+    },
+    {
+     "kind": "SPLIT",
+     "day": 467,
+     "parent": "L023",
+     "child": "L027",
+     "seeds": 59
+    },
+    {
+     "kind": "TOPUP",
+     "day": 483,
+     "into": "L014",
+     "from": "L011",
+     "seeds": 60
+    },
+    {
+     "kind": "REQUEST",
+     "day": 496,
+     "accession": "ACC28"
+    },
+    {
+     "kind": "TEST",
+     "day": 509,
+     "lot": "L026",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 509,
+     "accession": "ACC79"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 520,
+     "parent": "L017",
+     "child": "L028",
+     "seeds": 223
+    },
+    {
+     "kind": "REQUEST",
+     "day": 529,
+     "accession": "ACC11"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 537,
+     "accession": "ACC11"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 553,
+     "accession": "ACC79"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 557,
+     "accession": "ACC79"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 567,
+     "accession": "ACC28"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 583,
+     "accession": "ACC28"
+    }
+   ]
+  },
+  "answers": [
+   "L006",
+   "L006",
+   "L001",
+   "L011",
+   "L011",
+   "L002",
+   "L024",
+   "L009",
+   "L002",
+   "L002",
+   "L009",
+   "L009",
+   "L024",
+   "L024"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC52": 75,
+    "ACC26": 90,
+    "ACC75": 80
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC52",
+     "seeds": 490,
+     "test": 72
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L002",
+     "accession": "ACC52",
+     "seeds": 335,
+     "test": 69
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 8,
+     "lot": "L003",
+     "accession": "ACC52",
+     "seeds": 321,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L004",
+     "accession": "ACC52",
+     "seeds": 498,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 17,
+     "lot": "L005",
+     "accession": "ACC52",
+     "seeds": 330,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 19,
+     "lot": "L006",
+     "accession": "ACC26",
+     "seeds": 665,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L007",
+     "accession": "ACC26",
+     "seeds": 660,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 24,
+     "lot": "L008",
+     "accession": "ACC26",
+     "seeds": 601,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 27,
+     "lot": "L009",
+     "accession": "ACC26",
+     "seeds": 295,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 30,
+     "lot": "L010",
+     "accession": "ACC26",
+     "seeds": 269,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 33,
+     "lot": "L011",
+     "accession": "ACC75",
+     "seeds": 658,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L012",
+     "accession": "ACC75",
+     "seeds": 618,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 35,
+     "lot": "L013",
+     "accession": "ACC75",
+     "seeds": 641,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 36,
+     "lot": "L014",
+     "accession": "ACC75",
+     "seeds": 556,
+     "test": 90
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 40,
+     "lot": "L015",
+     "accession": "ACC75",
+     "seeds": 550,
+     "test": 76
+    },
+    {
+     "kind": "TEST",
+     "day": 49,
+     "lot": "L007",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 49,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 65,
+     "parent": "L013",
+     "child": "L016",
+     "seeds": 194
+    },
+    {
+     "kind": "TEST",
+     "day": 75,
+     "lot": "L008",
+     "test": 91
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 82,
+     "lot": "L004",
+     "seeds": 238
+    },
+    {
+     "kind": "TEST",
+     "day": 93,
+     "lot": "L005",
+     "test": 95
+    },
+    {
+     "kind": "TEST",
+     "day": 100,
+     "lot": "L007",
+     "test": 91
+    },
+    {
+     "kind": "TOPUP",
+     "day": 117,
+     "into": "L005",
+     "from": "L002",
+     "seeds": 110
+    },
+    {
+     "kind": "TOPUP",
+     "day": 128,
+     "into": "L012",
+     "from": "L011",
+     "seeds": 117
+    },
+    {
+     "kind": "SPLIT",
+     "day": 139,
+     "parent": "L001",
+     "child": "L017",
+     "seeds": 100
+    },
+    {
+     "kind": "SPLIT",
+     "day": 153,
+     "parent": "L017",
+     "child": "L018",
+     "seeds": 60
+    },
+    {
+     "kind": "SPLIT",
+     "day": 168,
+     "parent": "L007",
+     "child": "L019",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 175,
+     "lot": "L018",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 175,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "REGEN",
+     "day": 182,
+     "lot": "L009",
+     "new_lot": "L020",
+     "seeds": 578,
+     "test": 92
+    },
+    {
+     "kind": "TOPUP",
+     "day": 199,
+     "into": "L006",
+     "from": "L009",
+     "seeds": 101
+    },
+    {
+     "kind": "TEST",
+     "day": 203,
+     "lot": "L013",
+     "test": 97
+    },
+    {
+     "kind": "TEST",
+     "day": 219,
+     "lot": "L014",
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 219,
+     "accession": "ACC75"
+    },
+    {
+     "kind": "TEST",
+     "day": 229,
+     "lot": "L017",
+     "test": 95
+    },
+    {
+     "kind": "REQUEST",
+     "day": 235,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "TEST",
+     "day": 241,
+     "lot": "L019",
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 260,
+     "into": "L018",
+     "from": "L005",
+     "seeds": 166
+    },
+    {
+     "kind": "TOPUP",
+     "day": 265,
+     "into": "L008",
+     "from": "L009",
+     "seeds": 142
+    },
+    {
+     "kind": "TOPUP",
+     "day": 270,
+     "into": "L010",
+     "from": "L020",
+     "seeds": 144
+    },
+    {
+     "kind": "TEST",
+     "day": 289,
+     "lot": "L016",
+     "test": 83
+    },
+    {
+     "kind": "REGEN",
+     "day": 306,
+     "lot": "L012",
+     "new_lot": "L021",
+     "seeds": 742,
+     "test": 87
+    },
+    {
+     "kind": "TEST",
+     "day": 314,
+     "lot": "L013",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 314,
+     "accession": "ACC75"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 332,
+     "into": "L018",
+     "from": "L003",
+     "seeds": 69
+    },
+    {
+     "kind": "REQUEST",
+     "day": 341,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "TEST",
+     "day": 346,
+     "lot": "L012",
+     "test": 81
+    },
+    {
+     "kind": "TOPUP",
+     "day": 353,
+     "into": "L019",
+     "from": "L020",
+     "seeds": 145
+    },
+    {
+     "kind": "SPLIT",
+     "day": 359,
+     "parent": "L001",
+     "child": "L022",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 369,
+     "lot": "L002",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 376,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 390,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "TEST",
+     "day": 395,
+     "lot": "L014",
+     "test": 74
+    },
+    {
+     "kind": "REQUEST",
+     "day": 410,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "TEST",
+     "day": 428,
+     "lot": "L014",
+     "test": 81
+    },
+    {
+     "kind": "TOPUP",
+     "day": 433,
+     "into": "L002",
+     "from": "L003",
+     "seeds": 168
+    },
+    {
+     "kind": "SPLIT",
+     "day": 451,
+     "parent": "L016",
+     "child": "L023",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 462,
+     "lot": "L020",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 462,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 480,
+     "parent": "L012",
+     "child": "L024",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 497,
+     "into": "L024",
+     "from": "L014",
+     "seeds": 213
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 504,
+     "lot": "L001",
+     "seeds": 129
+    },
+    {
+     "kind": "TEST",
+     "day": 513,
+     "lot": "L019",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 513,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 525,
+     "into": "L011",
+     "from": "L012",
+     "seeds": 70
+    },
+    {
+     "kind": "REQUEST",
+     "day": 535,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 552,
+     "accession": "ACC52"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 562,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 568,
+     "accession": "ACC26"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 574,
+     "accession": "ACC75"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 583,
+     "accession": "ACC75"
+    }
+   ]
+  },
+  "answers": [
+   "L006",
+   "L005",
+   "L011",
+   "L005",
+   "L011",
+   "L006",
+   "L002",
+   "L002",
+   "L002",
+   "L007",
+   "L019",
+   "-",
+   "-",
+   "L019",
+   "L019",
+   "L024",
+   "L024"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC19": 80,
+    "ACC15": 80,
+    "ACC12": 75
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC19",
+     "seeds": 258,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 2,
+     "lot": "L002",
+     "accession": "ACC19",
+     "seeds": 265,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L003",
+     "accession": "ACC19",
+     "seeds": 566,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 7,
+     "lot": "L004",
+     "accession": "ACC19",
+     "seeds": 298,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L005",
+     "accession": "ACC19",
+     "seeds": 328,
+     "test": 75
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 14,
+     "lot": "L006",
+     "accession": "ACC15",
+     "seeds": 679,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 15,
+     "lot": "L007",
+     "accession": "ACC15",
+     "seeds": 605,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 19,
+     "lot": "L008",
+     "accession": "ACC15",
+     "seeds": 548,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L009",
+     "accession": "ACC15",
+     "seeds": 481,
+     "test": 75
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 22,
+     "lot": "L010",
+     "accession": "ACC15",
+     "seeds": 289,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L011",
+     "accession": "ACC12",
+     "seeds": 584,
+     "test": 69
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 29,
+     "lot": "L012",
+     "accession": "ACC12",
+     "seeds": 616,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 33,
+     "lot": "L013",
+     "accession": "ACC12",
+     "seeds": 536,
+     "test": 69
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 35,
+     "lot": "L014",
+     "accession": "ACC12",
+     "seeds": 676,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 36,
+     "lot": "L015",
+     "accession": "ACC12",
+     "seeds": 480,
+     "test": 77
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 56,
+     "lot": "L006",
+     "seeds": 95
+    },
+    {
+     "kind": "TOPUP",
+     "day": 61,
+     "into": "L007",
+     "from": "L010",
+     "seeds": 165
+    },
+    {
+     "kind": "TOPUP",
+     "day": 79,
+     "into": "L008",
+     "from": "L006",
+     "seeds": 168
+    },
+    {
+     "kind": "TEST",
+     "day": 92,
+     "lot": "L012",
+     "test": 76
+    },
+    {
+     "kind": "SPLIT",
+     "day": 97,
+     "parent": "L007",
+     "child": "L016",
+     "seeds": 100
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 116,
+     "lot": "L015",
+     "seeds": 82
+    },
+    {
+     "kind": "TEST",
+     "day": 134,
+     "lot": "L008",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 134,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 143,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 186
+    },
+    {
+     "kind": "TOPUP",
+     "day": 156,
+     "into": "L012",
+     "from": "L011",
+     "seeds": 123
+    },
+    {
+     "kind": "REQUEST",
+     "day": 160,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 165,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 180,
+     "parent": "L016",
+     "child": "L017",
+     "seeds": 60
+    },
+    {
+     "kind": "TOPUP",
+     "day": 195,
+     "into": "L005",
+     "from": "L003",
+     "seeds": 174
+    },
+    {
+     "kind": "SPLIT",
+     "day": 202,
+     "parent": "L006",
+     "child": "L018",
+     "seeds": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 208,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "TEST",
+     "day": 224,
+     "lot": "L002",
+     "test": 81
+    },
+    {
+     "kind": "TOPUP",
+     "day": 236,
+     "into": "L010",
+     "from": "L007",
+     "seeds": 167
+    },
+    {
+     "kind": "REGEN",
+     "day": 245,
+     "lot": "L002",
+     "new_lot": "L019",
+     "seeds": 356,
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 251,
+     "accession": "ACC12"
+    },
+    {
+     "kind": "TEST",
+     "day": 266,
+     "lot": "L006",
+     "test": 81
+    },
+    {
+     "kind": "TOPUP",
+     "day": 271,
+     "into": "L014",
+     "from": "L012",
+     "seeds": 87
+    },
+    {
+     "kind": "TOPUP",
+     "day": 275,
+     "into": "L006",
+     "from": "L009",
+     "seeds": 194
+    },
+    {
+     "kind": "SPLIT",
+     "day": 284,
+     "parent": "L011",
+     "child": "L020",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 302,
+     "into": "L005",
+     "from": "L001",
+     "seeds": 140
+    },
+    {
+     "kind": "REGEN",
+     "day": 306,
+     "lot": "L003",
+     "new_lot": "L021",
+     "seeds": 628,
+     "test": 87
+    },
+    {
+     "kind": "TOPUP",
+     "day": 313,
+     "into": "L016",
+     "from": "L010",
+     "seeds": 73
+    },
+    {
+     "kind": "REQUEST",
+     "day": 330,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 337,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 342,
+     "parent": "L011",
+     "child": "L022",
+     "seeds": 99
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 349,
+     "lot": "L017",
+     "seeds": 40
+    },
+    {
+     "kind": "REQUEST",
+     "day": 357,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 361,
+     "parent": "L015",
+     "child": "L023",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 377,
+     "lot": "L006",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 377,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "TEST",
+     "day": 390,
+     "lot": "L016",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 390,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 400,
+     "parent": "L015",
+     "child": "L024",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 412,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "TEST",
+     "day": 416,
+     "lot": "L021",
+     "test": 81
+    },
+    {
+     "kind": "REGEN",
+     "day": 427,
+     "lot": "L014",
+     "new_lot": "L025",
+     "seeds": 652,
+     "test": 77
+    },
+    {
+     "kind": "TEST",
+     "day": 434,
+     "lot": "L014",
+     "test": 91
+    },
+    {
+     "kind": "SPLIT",
+     "day": 452,
+     "parent": "L005",
+     "child": "L026",
+     "seeds": 209
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 463,
+     "lot": "L002",
+     "seeds": 162
+    },
+    {
+     "kind": "REQUEST",
+     "day": 467,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 475,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 487,
+     "parent": "L023",
+     "child": "L027",
+     "seeds": 59
+    },
+    {
+     "kind": "REGEN",
+     "day": 494,
+     "lot": "L024",
+     "new_lot": "L028",
+     "seeds": 674,
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 512,
+     "into": "L025",
+     "from": "L013",
+     "seeds": 218
+    },
+    {
+     "kind": "TOPUP",
+     "day": 520,
+     "into": "L022",
+     "from": "L028",
+     "seeds": 159
+    },
+    {
+     "kind": "REQUEST",
+     "day": 529,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 545,
+     "accession": "ACC19"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 559,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 569,
+     "accession": "ACC15"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 579,
+     "accession": "ACC12"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 593,
+     "accession": "ACC12"
+    }
+   ]
+  },
+  "answers": [
+   "L006",
+   "L006",
+   "L006",
+   "L001",
+   "L012",
+   "L008",
+   "L001",
+   "L001",
+   "L006",
+   "L006",
+   "L006",
+   "L006",
+   "L019",
+   "L019",
+   "L019",
+   "L006",
+   "L006",
+   "L028",
+   "L028"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC40": 75,
+    "ACC72": 75,
+    "ACC50": 75
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC40",
+     "seeds": 453,
+     "test": 72
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 3,
+     "lot": "L002",
+     "accession": "ACC40",
+     "seeds": 236,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 6,
+     "lot": "L003",
+     "accession": "ACC40",
+     "seeds": 330,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 11,
+     "lot": "L004",
+     "accession": "ACC40",
+     "seeds": 588,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L005",
+     "accession": "ACC40",
+     "seeds": 648,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 13,
+     "lot": "L006",
+     "accession": "ACC72",
+     "seeds": 344,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 14,
+     "lot": "L007",
+     "accession": "ACC72",
+     "seeds": 417,
+     "test": 69
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 18,
+     "lot": "L008",
+     "accession": "ACC72",
+     "seeds": 219,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 19,
+     "lot": "L009",
+     "accession": "ACC72",
+     "seeds": 293,
+     "test": 72
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L010",
+     "accession": "ACC72",
+     "seeds": 254,
+     "test": 70
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L011",
+     "accession": "ACC50",
+     "seeds": 513,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 28,
+     "lot": "L012",
+     "accession": "ACC50",
+     "seeds": 650,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 29,
+     "lot": "L013",
+     "accession": "ACC50",
+     "seeds": 532,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 33,
+     "lot": "L014",
+     "accession": "ACC50",
+     "seeds": 491,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 38,
+     "lot": "L015",
+     "accession": "ACC50",
+     "seeds": 592,
+     "test": 83
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 54,
+     "lot": "L012",
+     "seeds": 149
+    },
+    {
+     "kind": "TOPUP",
+     "day": 62,
+     "into": "L001",
+     "from": "L005",
+     "seeds": 142
+    },
+    {
+     "kind": "REQUEST",
+     "day": 80,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 84,
+     "lot": "L004",
+     "seeds": 187
+    },
+    {
+     "kind": "TOPUP",
+     "day": 101,
+     "into": "L009",
+     "from": "L007",
+     "seeds": 164
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 110,
+     "lot": "L004",
+     "seeds": 175
+    },
+    {
+     "kind": "REGEN",
+     "day": 118,
+     "lot": "L003",
+     "new_lot": "L016",
+     "seeds": 588,
+     "test": 77
+    },
+    {
+     "kind": "TOPUP",
+     "day": 131,
+     "into": "L006",
+     "from": "L010",
+     "seeds": 172
+    },
+    {
+     "kind": "TOPUP",
+     "day": 149,
+     "into": "L013",
+     "from": "L012",
+     "seeds": 182
+    },
+    {
+     "kind": "TEST",
+     "day": 159,
+     "lot": "L014",
+     "test": 80
+    },
+    {
+     "kind": "SPLIT",
+     "day": 171,
+     "parent": "L006",
+     "child": "L017",
+     "seeds": 306
+    },
+    {
+     "kind": "TOPUP",
+     "day": 182,
+     "into": "L015",
+     "from": "L014",
+     "seeds": 146
+    },
+    {
+     "kind": "REQUEST",
+     "day": 191,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 206,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "TEST",
+     "day": 214,
+     "lot": "L011",
+     "test": 83
+    },
+    {
+     "kind": "SPLIT",
+     "day": 229,
+     "parent": "L014",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 241,
+     "lot": "L017",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 241,
+     "accession": "ACC72"
+    },
+    {
+     "kind": "TEST",
+     "day": 252,
+     "lot": "L009",
+     "test": 90
+    },
+    {
+     "kind": "TOPUP",
+     "day": 269,
+     "into": "L003",
+     "from": "L001",
+     "seeds": 169
+    },
+    {
+     "kind": "SPLIT",
+     "day": 285,
+     "parent": "L010",
+     "child": "L019",
+     "seeds": 42
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 289,
+     "lot": "L006",
+     "seeds": 60
+    },
+    {
+     "kind": "SPLIT",
+     "day": 293,
+     "parent": "L002",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 308,
+     "into": "L016",
+     "from": "L005",
+     "seeds": 175
+    },
+    {
+     "kind": "TOPUP",
+     "day": 326,
+     "into": "L015",
+     "from": "L013",
+     "seeds": 212
+    },
+    {
+     "kind": "REQUEST",
+     "day": 339,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "TEST",
+     "day": 355,
+     "lot": "L013",
+     "test": 90
+    },
+    {
+     "kind": "SPLIT",
+     "day": 361,
+     "parent": "L007",
+     "child": "L021",
+     "seeds": 100
+    },
+    {
+     "kind": "REGEN",
+     "day": 371,
+     "lot": "L004",
+     "new_lot": "L022",
+     "seeds": 334,
+     "test": 93
+    },
+    {
+     "kind": "REGEN",
+     "day": 390,
+     "lot": "L007",
+     "new_lot": "L023",
+     "seeds": 447,
+     "test": 86
+    },
+    {
+     "kind": "SPLIT",
+     "day": 403,
+     "parent": "L005",
+     "child": "L024",
+     "seeds": 100
+    },
+    {
+     "kind": "SPLIT",
+     "day": 416,
+     "parent": "L020",
+     "child": "L025",
+     "seeds": 59
+    },
+    {
+     "kind": "TOPUP",
+     "day": 421,
+     "into": "L024",
+     "from": "L016",
+     "seeds": 120
+    },
+    {
+     "kind": "TEST",
+     "day": 434,
+     "lot": "L024",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 434,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 444,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 450,
+     "into": "L012",
+     "from": "L014",
+     "seeds": 106
+    },
+    {
+     "kind": "REQUEST",
+     "day": 469,
+     "accession": "ACC72"
+    },
+    {
+     "kind": "REGEN",
+     "day": 484,
+     "lot": "L022",
+     "new_lot": "L026",
+     "seeds": 437,
+     "test": 95
+    },
+    {
+     "kind": "REQUEST",
+     "day": 493,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 507,
+     "accession": "ACC72"
+    },
+    {
+     "kind": "REGEN",
+     "day": 515,
+     "lot": "L007",
+     "new_lot": "L027",
+     "seeds": 301,
+     "test": 82
+    },
+    {
+     "kind": "SPLIT",
+     "day": 527,
+     "parent": "L004",
+     "child": "L028",
+     "seeds": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 531,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 547,
+     "accession": "ACC40"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 557,
+     "accession": "ACC72"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 570,
+     "accession": "ACC72"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 577,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 583,
+     "accession": "ACC50"
+    }
+   ]
+  },
+  "answers": [
+   "L002",
+   "L002",
+   "L012",
+   "L006",
+   "L002",
+   "L024",
+   "L011",
+   "L017",
+   "L011",
+   "L017",
+   "L024",
+   "L024",
+   "L017",
+   "L017",
+   "L011",
+   "L013"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC45": 75,
+    "ACC14": 90,
+    "ACC37": 85
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC45",
+     "seeds": 668,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L002",
+     "accession": "ACC45",
+     "seeds": 618,
+     "test": 69
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 8,
+     "lot": "L003",
+     "accession": "ACC45",
+     "seeds": 542,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L004",
+     "accession": "ACC45",
+     "seeds": 229,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L005",
+     "accession": "ACC45",
+     "seeds": 321,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 13,
+     "lot": "L006",
+     "accession": "ACC14",
+     "seeds": 288,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 15,
+     "lot": "L007",
+     "accession": "ACC14",
+     "seeds": 699,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 18,
+     "lot": "L008",
+     "accession": "ACC14",
+     "seeds": 328,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L009",
+     "accession": "ACC14",
+     "seeds": 682,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 26,
+     "lot": "L010",
+     "accession": "ACC14",
+     "seeds": 601,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 31,
+     "lot": "L011",
+     "accession": "ACC37",
+     "seeds": 416,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L012",
+     "accession": "ACC37",
+     "seeds": 365,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 35,
+     "lot": "L013",
+     "accession": "ACC37",
+     "seeds": 616,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 40,
+     "lot": "L014",
+     "accession": "ACC37",
+     "seeds": 382,
+     "test": 81
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 41,
+     "lot": "L015",
+     "accession": "ACC37",
+     "seeds": 458,
+     "test": 89
+    },
+    {
+     "kind": "SPLIT",
+     "day": 54,
+     "parent": "L001",
+     "child": "L016",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 59,
+     "lot": "L012",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 59,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "TEST",
+     "day": 68,
+     "lot": "L015",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 68,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 74,
+     "into": "L012",
+     "from": "L014",
+     "seeds": 125
+    },
+    {
+     "kind": "TOPUP",
+     "day": 84,
+     "into": "L001",
+     "from": "L005",
+     "seeds": 126
+    },
+    {
+     "kind": "TEST",
+     "day": 88,
+     "lot": "L006",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 88,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "TEST",
+     "day": 107,
+     "lot": "L008",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 107,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 115,
+     "parent": "L009",
+     "child": "L017",
+     "seeds": 310
+    },
+    {
+     "kind": "TOPUP",
+     "day": 131,
+     "into": "L010",
+     "from": "L009",
+     "seeds": 62
+    },
+    {
+     "kind": "TOPUP",
+     "day": 147,
+     "into": "L004",
+     "from": "L003",
+     "seeds": 163
+    },
+    {
+     "kind": "TEST",
+     "day": 160,
+     "lot": "L001",
+     "test": 71
+    },
+    {
+     "kind": "TOPUP",
+     "day": 164,
+     "into": "L004",
+     "from": "L003",
+     "seeds": 153
+    },
+    {
+     "kind": "TOPUP",
+     "day": 174,
+     "into": "L016",
+     "from": "L005",
+     "seeds": 165
+    },
+    {
+     "kind": "SPLIT",
+     "day": 178,
+     "parent": "L014",
+     "child": "L018",
+     "seeds": 217
+    },
+    {
+     "kind": "TEST",
+     "day": 184,
+     "lot": "L009",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 184,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 198,
+     "into": "L006",
+     "from": "L017",
+     "seeds": 82
+    },
+    {
+     "kind": "TOPUP",
+     "day": 206,
+     "into": "L017",
+     "from": "L006",
+     "seeds": 181
+    },
+    {
+     "kind": "TEST",
+     "day": 220,
+     "lot": "L002",
+     "test": 89
+    },
+    {
+     "kind": "REGEN",
+     "day": 232,
+     "lot": "L002",
+     "new_lot": "L019",
+     "seeds": 789,
+     "test": 89
+    },
+    {
+     "kind": "SPLIT",
+     "day": 251,
+     "parent": "L019",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 265,
+     "parent": "L015",
+     "child": "L021",
+     "seeds": 302
+    },
+    {
+     "kind": "REGEN",
+     "day": 273,
+     "lot": "L015",
+     "new_lot": "L022",
+     "seeds": 644,
+     "test": 98
+    },
+    {
+     "kind": "TEST",
+     "day": 284,
+     "lot": "L018",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 284,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 300,
+     "accession": "ACC45"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 312,
+     "lot": "L006",
+     "seeds": 169
+    },
+    {
+     "kind": "REQUEST",
+     "day": 317,
+     "accession": "ACC45"
+    },
+    {
+     "kind": "TEST",
+     "day": 331,
+     "lot": "L002",
+     "test": 76
+    },
+    {
+     "kind": "SPLIT",
+     "day": 343,
+     "parent": "L007",
+     "child": "L023",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 352,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 366,
+     "parent": "L009",
+     "child": "L024",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 372,
+     "lot": "L006",
+     "test": 91
+    },
+    {
+     "kind": "REGEN",
+     "day": 387,
+     "lot": "L010",
+     "new_lot": "L025",
+     "seeds": 434,
+     "test": 91
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 392,
+     "lot": "L013",
+     "seeds": 120
+    },
+    {
+     "kind": "REQUEST",
+     "day": 404,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 413,
+     "into": "L005",
+     "from": "L001",
+     "seeds": 120
+    },
+    {
+     "kind": "SPLIT",
+     "day": 425,
+     "parent": "L015",
+     "child": "L026",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 440,
+     "parent": "L007",
+     "child": "L027",
+     "seeds": 235
+    },
+    {
+     "kind": "TOPUP",
+     "day": 453,
+     "into": "L009",
+     "from": "L017",
+     "seeds": 125
+    },
+    {
+     "kind": "REQUEST",
+     "day": 469,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 488,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 506,
+     "lot": "L018",
+     "seeds": 136
+    },
+    {
+     "kind": "SPLIT",
+     "day": 517,
+     "parent": "L011",
+     "child": "L028",
+     "seeds": 267
+    },
+    {
+     "kind": "REQUEST",
+     "day": 523,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 532,
+     "accession": "ACC45"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 536,
+     "accession": "ACC45"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 542,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 557,
+     "accession": "ACC14"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 569,
+     "accession": "ACC37"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 581,
+     "accession": "ACC37"
+    }
+   ]
+  },
+  "answers": [
+   "L012",
+   "L012",
+   "L006",
+   "L006",
+   "L006",
+   "L012",
+   "L016",
+   "L016",
+   "L012",
+   "L012",
+   "L008",
+   "L018",
+   "L025",
+   "L019",
+   "L019",
+   "L025",
+   "L025",
+   "L022",
+   "L022"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC58": 90,
+    "ACC76": 80,
+    "ACC47": 90
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC58",
+     "seeds": 321,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 1,
+     "lot": "L002",
+     "accession": "ACC58",
+     "seeds": 459,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 6,
+     "lot": "L003",
+     "accession": "ACC58",
+     "seeds": 503,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 11,
+     "lot": "L004",
+     "accession": "ACC58",
+     "seeds": 429,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 13,
+     "lot": "L005",
+     "accession": "ACC58",
+     "seeds": 448,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L006",
+     "accession": "ACC76",
+     "seeds": 525,
+     "test": 76
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 17,
+     "lot": "L007",
+     "accession": "ACC76",
+     "seeds": 266,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L008",
+     "accession": "ACC76",
+     "seeds": 555,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L009",
+     "accession": "ACC76",
+     "seeds": 421,
+     "test": 77
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 28,
+     "lot": "L010",
+     "accession": "ACC76",
+     "seeds": 391,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 33,
+     "lot": "L011",
+     "accession": "ACC47",
+     "seeds": 650,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 37,
+     "lot": "L012",
+     "accession": "ACC47",
+     "seeds": 578,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 39,
+     "lot": "L013",
+     "accession": "ACC47",
+     "seeds": 695,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 41,
+     "lot": "L014",
+     "accession": "ACC47",
+     "seeds": 563,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L015",
+     "accession": "ACC47",
+     "seeds": 517,
+     "test": 87
+    },
+    {
+     "kind": "REGEN",
+     "day": 56,
+     "lot": "L007",
+     "new_lot": "L016",
+     "seeds": 707,
+     "test": 87
+    },
+    {
+     "kind": "REGEN",
+     "day": 65,
+     "lot": "L003",
+     "new_lot": "L017",
+     "seeds": 509,
+     "test": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 78,
+     "into": "L015",
+     "from": "L011",
+     "seeds": 84
+    },
+    {
+     "kind": "REQUEST",
+     "day": 95,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 108,
+     "lot": "L014",
+     "seeds": 193
+    },
+    {
+     "kind": "TOPUP",
+     "day": 115,
+     "into": "L011",
+     "from": "L012",
+     "seeds": 128
+    },
+    {
+     "kind": "REQUEST",
+     "day": 126,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "TEST",
+     "day": 138,
+     "lot": "L016",
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 138,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 157,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 163,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "TEST",
+     "day": 169,
+     "lot": "L014",
+     "test": 95
+    },
+    {
+     "kind": "TOPUP",
+     "day": 177,
+     "into": "L008",
+     "from": "L007",
+     "seeds": 136
+    },
+    {
+     "kind": "TEST",
+     "day": 185,
+     "lot": "L007",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 185,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 200,
+     "parent": "L002",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 213,
+     "into": "L002",
+     "from": "L004",
+     "seeds": 201
+    },
+    {
+     "kind": "TOPUP",
+     "day": 222,
+     "into": "L011",
+     "from": "L014",
+     "seeds": 108
+    },
+    {
+     "kind": "TEST",
+     "day": 227,
+     "lot": "L002",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 227,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 233,
+     "parent": "L017",
+     "child": "L019",
+     "seeds": 100
+    },
+    {
+     "kind": "REGEN",
+     "day": 252,
+     "lot": "L012",
+     "new_lot": "L020",
+     "seeds": 790,
+     "test": 92
+    },
+    {
+     "kind": "TOPUP",
+     "day": 271,
+     "into": "L013",
+     "from": "L014",
+     "seeds": 150
+    },
+    {
+     "kind": "TEST",
+     "day": 286,
+     "lot": "L006",
+     "test": 81
+    },
+    {
+     "kind": "TEST",
+     "day": 292,
+     "lot": "L007",
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 292,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 309,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 317,
+     "parent": "L019",
+     "child": "L021",
+     "seeds": 60
+    },
+    {
+     "kind": "SPLIT",
+     "day": 335,
+     "parent": "L015",
+     "child": "L022",
+     "seeds": 209
+    },
+    {
+     "kind": "TOPUP",
+     "day": 345,
+     "into": "L008",
+     "from": "L010",
+     "seeds": 101
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 353,
+     "lot": "L016",
+     "seeds": 81
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 358,
+     "lot": "L010",
+     "seeds": 126
+    },
+    {
+     "kind": "TOPUP",
+     "day": 376,
+     "into": "L013",
+     "from": "L022",
+     "seeds": 166
+    },
+    {
+     "kind": "REQUEST",
+     "day": 380,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "REGEN",
+     "day": 396,
+     "lot": "L018",
+     "new_lot": "L023",
+     "seeds": 712,
+     "test": 96
+    },
+    {
+     "kind": "TOPUP",
+     "day": 411,
+     "into": "L013",
+     "from": "L020",
+     "seeds": 131
+    },
+    {
+     "kind": "TEST",
+     "day": 415,
+     "lot": "L007",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 421,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "TEST",
+     "day": 431,
+     "lot": "L008",
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 431,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 443,
+     "lot": "L007",
+     "seeds": 103
+    },
+    {
+     "kind": "TOPUP",
+     "day": 462,
+     "into": "L010",
+     "from": "L006",
+     "seeds": 160
+    },
+    {
+     "kind": "SPLIT",
+     "day": 478,
+     "parent": "L023",
+     "child": "L024",
+     "seeds": 155
+    },
+    {
+     "kind": "TEST",
+     "day": 490,
+     "lot": "L014",
+     "test": 97
+    },
+    {
+     "kind": "TEST",
+     "day": 504,
+     "lot": "L011",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 504,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "REGEN",
+     "day": 521,
+     "lot": "L012",
+     "new_lot": "L025",
+     "seeds": 603,
+     "test": 96
+    },
+    {
+     "kind": "REQUEST",
+     "day": 527,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 536,
+     "accession": "ACC58"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 551,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 568,
+     "accession": "ACC76"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 573,
+     "accession": "ACC47"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 579,
+     "accession": "ACC47"
+    }
+   ]
+  },
+  "answers": [
+   "L001",
+   "L001",
+   "L008",
+   "L001",
+   "L001",
+   "L008",
+   "L001",
+   "L006",
+   "L001",
+   "L002",
+   "L006",
+   "L006",
+   "L011",
+   "L002",
+   "L002",
+   "L006",
+   "L006",
+   "L011",
+   "L011"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC69": 85,
+    "ACC61": 90,
+    "ACC38": 75
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC69",
+     "seeds": 225,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 4,
+     "lot": "L002",
+     "accession": "ACC69",
+     "seeds": 671,
+     "test": 83
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L003",
+     "accession": "ACC69",
+     "seeds": 454,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 8,
+     "lot": "L004",
+     "accession": "ACC69",
+     "seeds": 239,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L005",
+     "accession": "ACC69",
+     "seeds": 600,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L006",
+     "accession": "ACC61",
+     "seeds": 458,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 15,
+     "lot": "L007",
+     "accession": "ACC61",
+     "seeds": 251,
+     "test": 85
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 18,
+     "lot": "L008",
+     "accession": "ACC61",
+     "seeds": 584,
+     "test": 99
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L009",
+     "accession": "ACC61",
+     "seeds": 341,
+     "test": 85
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 27,
+     "lot": "L010",
+     "accession": "ACC61",
+     "seeds": 220,
+     "test": 99
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 30,
+     "lot": "L011",
+     "accession": "ACC38",
+     "seeds": 559,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 32,
+     "lot": "L012",
+     "accession": "ACC38",
+     "seeds": 375,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L013",
+     "accession": "ACC38",
+     "seeds": 234,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 38,
+     "lot": "L014",
+     "accession": "ACC38",
+     "seeds": 629,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L015",
+     "accession": "ACC38",
+     "seeds": 524,
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 51,
+     "into": "L003",
+     "from": "L004",
+     "seeds": 160
+    },
+    {
+     "kind": "TEST",
+     "day": 68,
+     "lot": "L011",
+     "test": 78
+    },
+    {
+     "kind": "REQUEST",
+     "day": 82,
+     "accession": "ACC61"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 87,
+     "into": "L011",
+     "from": "L015",
+     "seeds": 207
+    },
+    {
+     "kind": "TOPUP",
+     "day": 104,
+     "into": "L003",
+     "from": "L005",
+     "seeds": 208
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 109,
+     "lot": "L013",
+     "seeds": 154
+    },
+    {
+     "kind": "TOPUP",
+     "day": 124,
+     "into": "L001",
+     "from": "L003",
+     "seeds": 212
+    },
+    {
+     "kind": "REGEN",
+     "day": 133,
+     "lot": "L010",
+     "new_lot": "L016",
+     "seeds": 398,
+     "test": 97
+    },
+    {
+     "kind": "REQUEST",
+     "day": 140,
+     "accession": "ACC69"
+    },
+    {
+     "kind": "REGEN",
+     "day": 147,
+     "lot": "L009",
+     "new_lot": "L017",
+     "seeds": 388,
+     "test": 96
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 152,
+     "lot": "L017",
+     "seeds": 185
+    },
+    {
+     "kind": "TEST",
+     "day": 157,
+     "lot": "L003",
+     "test": 98
+    },
+    {
+     "kind": "TEST",
+     "day": 163,
+     "lot": "L012",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 177,
+     "accession": "ACC69"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 191,
+     "accession": "ACC69"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 202,
+     "parent": "L001",
+     "child": "L018",
+     "seeds": 299
+    },
+    {
+     "kind": "SPLIT",
+     "day": 206,
+     "parent": "L009",
+     "child": "L019",
+     "seeds": 296
+    },
+    {
+     "kind": "REGEN",
+     "day": 214,
+     "lot": "L011",
+     "new_lot": "L020",
+     "seeds": 738,
+     "test": 78
+    },
+    {
+     "kind": "TOPUP",
+     "day": 233,
+     "into": "L004",
+     "from": "L003",
+     "seeds": 101
+    },
+    {
+     "kind": "TEST",
+     "day": 249,
+     "lot": "L014",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 249,
+     "accession": "ACC38"
+    },
+    {
+     "kind": "TEST",
+     "day": 266,
+     "lot": "L017",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 277,
+     "accession": "ACC38"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 294,
+     "into": "L008",
+     "from": "L019",
+     "seeds": 89
+    },
+    {
+     "kind": "SPLIT",
+     "day": 302,
+     "parent": "L012",
+     "child": "L021",
+     "seeds": 243
+    },
+    {
+     "kind": "REQUEST",
+     "day": 318,
+     "accession": "ACC38"
+    },
+    {
+     "kind": "TEST",
+     "day": 330,
+     "lot": "L002",
+     "test": 89
+    },
+    {
+     "kind": "TOPUP",
+     "day": 347,
+     "into": "L009",
+     "from": "L010",
+     "seeds": 168
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 354,
+     "lot": "L008",
+     "seeds": 164
+    },
+    {
+     "kind": "SPLIT",
+     "day": 364,
+     "parent": "L008",
+     "child": "L022",
+     "seeds": 99
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 374,
+     "lot": "L015",
+     "seeds": 141
+    },
+    {
+     "kind": "TOPUP",
+     "day": 381,
+     "into": "L005",
+     "from": "L004",
+     "seeds": 65
+    },
+    {
+     "kind": "REGEN",
+     "day": 396,
+     "lot": "L022",
+     "new_lot": "L023",
+     "seeds": 537,
+     "test": 99
+    },
+    {
+     "kind": "REGEN",
+     "day": 411,
+     "lot": "L011",
+     "new_lot": "L024",
+     "seeds": 686,
+     "test": 94
+    },
+    {
+     "kind": "REQUEST",
+     "day": 421,
+     "accession": "ACC38"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 429,
+     "into": "L001",
+     "from": "L002",
+     "seeds": 202
+    },
+    {
+     "kind": "TOPUP",
+     "day": 440,
+     "into": "L017",
+     "from": "L019",
+     "seeds": 74
+    },
+    {
+     "kind": "TEST",
+     "day": 449,
+     "lot": "L012",
+     "test": 74
+    },
+    {
+     "kind": "TOPUP",
+     "day": 465,
+     "into": "L023",
+     "from": "L019",
+     "seeds": 103
+    },
+    {
+     "kind": "SPLIT",
+     "day": 484,
+     "parent": "L014",
+     "child": "L025",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 493,
+     "into": "L009",
+     "from": "L016",
+     "seeds": 183
+    },
+    {
+     "kind": "REQUEST",
+     "day": 512,
+     "accession": "ACC61"
+    },
+    {
+     "kind": "REGEN",
+     "day": 530,
+     "lot": "L001",
+     "new_lot": "L026",
+     "seeds": 735,
+     "test": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 543,
+     "accession": "ACC69"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 547,
+     "accession": "ACC69"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 553,
+     "accession": "ACC61"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 566,
+     "accession": "ACC61"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 573,
+     "accession": "ACC38"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 581,
+     "accession": "ACC38"
+    }
+   ]
+  },
+  "answers": [
+   "L006",
+   "L001",
+   "L001",
+   "L001",
+   "L012",
+   "L012",
+   "L012",
+   "L012",
+   "-",
+   "L002",
+   "L002",
+   "-",
+   "-",
+   "L014",
+   "L014"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC29": 75,
+    "ACC31": 75,
+    "ACC48": 80
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC29",
+     "seeds": 450,
+     "test": 74
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L002",
+     "accession": "ACC29",
+     "seeds": 647,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L003",
+     "accession": "ACC29",
+     "seeds": 655,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L004",
+     "accession": "ACC29",
+     "seeds": 635,
+     "test": 76
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L005",
+     "accession": "ACC29",
+     "seeds": 410,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 17,
+     "lot": "L006",
+     "accession": "ACC31",
+     "seeds": 277,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L007",
+     "accession": "ACC31",
+     "seeds": 277,
+     "test": 72
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L008",
+     "accession": "ACC31",
+     "seeds": 484,
+     "test": 74
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 27,
+     "lot": "L009",
+     "accession": "ACC31",
+     "seeds": 333,
+     "test": 71
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 30,
+     "lot": "L010",
+     "accession": "ACC31",
+     "seeds": 539,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L011",
+     "accession": "ACC48",
+     "seeds": 614,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 36,
+     "lot": "L012",
+     "accession": "ACC48",
+     "seeds": 576,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 41,
+     "lot": "L013",
+     "accession": "ACC48",
+     "seeds": 519,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L014",
+     "accession": "ACC48",
+     "seeds": 400,
+     "test": 78
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 45,
+     "lot": "L015",
+     "accession": "ACC48",
+     "seeds": 234,
+     "test": 94
+    },
+    {
+     "kind": "TEST",
+     "day": 65,
+     "lot": "L014",
+     "test": 83
+    },
+    {
+     "kind": "SPLIT",
+     "day": 76,
+     "parent": "L014",
+     "child": "L016",
+     "seeds": 209
+    },
+    {
+     "kind": "SPLIT",
+     "day": 81,
+     "parent": "L012",
+     "child": "L017",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 94,
+     "parent": "L003",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 109,
+     "accession": "ACC48"
+    },
+    {
+     "kind": "REGEN",
+     "day": 114,
+     "lot": "L015",
+     "new_lot": "L019",
+     "seeds": 438,
+     "test": 93
+    },
+    {
+     "kind": "SPLIT",
+     "day": 122,
+     "parent": "L012",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 132,
+     "into": "L001",
+     "from": "L002",
+     "seeds": 198
+    },
+    {
+     "kind": "REGEN",
+     "day": 142,
+     "lot": "L011",
+     "new_lot": "L021",
+     "seeds": 394,
+     "test": 82
+    },
+    {
+     "kind": "TEST",
+     "day": 154,
+     "lot": "L007",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 154,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 160,
+     "into": "L002",
+     "from": "L005",
+     "seeds": 131
+    },
+    {
+     "kind": "TEST",
+     "day": 166,
+     "lot": "L001",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 166,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 176,
+     "into": "L010",
+     "from": "L009",
+     "seeds": 104
+    },
+    {
+     "kind": "TEST",
+     "day": 187,
+     "lot": "L003",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 187,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 192,
+     "into": "L001",
+     "from": "L003",
+     "seeds": 133
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 196,
+     "lot": "L019",
+     "seeds": 216
+    },
+    {
+     "kind": "TEST",
+     "day": 201,
+     "lot": "L018",
+     "test": 81
+    },
+    {
+     "kind": "TOPUP",
+     "day": 209,
+     "into": "L019",
+     "from": "L021",
+     "seeds": 131
+    },
+    {
+     "kind": "TOPUP",
+     "day": 223,
+     "into": "L009",
+     "from": "L006",
+     "seeds": 159
+    },
+    {
+     "kind": "REQUEST",
+     "day": 242,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "REGEN",
+     "day": 253,
+     "lot": "L010",
+     "new_lot": "L022",
+     "seeds": 764,
+     "test": 84
+    },
+    {
+     "kind": "TOPUP",
+     "day": 263,
+     "into": "L019",
+     "from": "L016",
+     "seeds": 179
+    },
+    {
+     "kind": "REQUEST",
+     "day": 273,
+     "accession": "ACC48"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 290,
+     "into": "L005",
+     "from": "L001",
+     "seeds": 164
+    },
+    {
+     "kind": "REGEN",
+     "day": 301,
+     "lot": "L012",
+     "new_lot": "L023",
+     "seeds": 579,
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 312,
+     "into": "L008",
+     "from": "L010",
+     "seeds": 66
+    },
+    {
+     "kind": "TEST",
+     "day": 317,
+     "lot": "L001",
+     "test": 85
+    },
+    {
+     "kind": "SPLIT",
+     "day": 332,
+     "parent": "L022",
+     "child": "L024",
+     "seeds": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 338,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 350,
+     "lot": "L010",
+     "seeds": 102
+    },
+    {
+     "kind": "SPLIT",
+     "day": 355,
+     "parent": "L002",
+     "child": "L025",
+     "seeds": 307
+    },
+    {
+     "kind": "TEST",
+     "day": 368,
+     "lot": "L016",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 368,
+     "accession": "ACC48"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 379,
+     "parent": "L007",
+     "child": "L026",
+     "seeds": 99
+    },
+    {
+     "kind": "REGEN",
+     "day": 396,
+     "lot": "L010",
+     "new_lot": "L027",
+     "seeds": 519,
+     "test": 81
+    },
+    {
+     "kind": "SPLIT",
+     "day": 408,
+     "parent": "L002",
+     "child": "L028",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 415,
+     "lot": "L009",
+     "test": 94
+    },
+    {
+     "kind": "SPLIT",
+     "day": 419,
+     "parent": "L028",
+     "child": "L029",
+     "seeds": 60
+    },
+    {
+     "kind": "REGEN",
+     "day": 433,
+     "lot": "L020",
+     "new_lot": "L030",
+     "seeds": 537,
+     "test": 89
+    },
+    {
+     "kind": "TOPUP",
+     "day": 443,
+     "into": "L004",
+     "from": "L005",
+     "seeds": 150
+    },
+    {
+     "kind": "REQUEST",
+     "day": 459,
+     "accession": "ACC48"
+    },
+    {
+     "kind": "TEST",
+     "day": 476,
+     "lot": "L029",
+     "test": 74
+    },
+    {
+     "kind": "TOPUP",
+     "day": 488,
+     "into": "L014",
+     "from": "L015",
+     "seeds": 177
+    },
+    {
+     "kind": "REQUEST",
+     "day": 502,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 517,
+     "lot": "L023",
+     "seeds": 252
+    },
+    {
+     "kind": "TEST",
+     "day": 533,
+     "lot": "L011",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 545,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 561,
+     "accession": "ACC29"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 574,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 590,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 598,
+     "accession": "ACC48"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 613,
+     "accession": "ACC48"
+    }
+   ]
+  },
+  "answers": [
+   "L011",
+   "L006",
+   "L001",
+   "L001",
+   "L001",
+   "L012",
+   "L001",
+   "L013",
+   "L021",
+   "L001",
+   "L001",
+   "L001",
+   "L009",
+   "L009",
+   "L023",
+   "L023"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC49": 85,
+    "ACC63": 90,
+    "ACC16": 85
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC49",
+     "seeds": 579,
+     "test": 83
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L002",
+     "accession": "ACC49",
+     "seeds": 579,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L003",
+     "accession": "ACC49",
+     "seeds": 256,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L004",
+     "accession": "ACC49",
+     "seeds": 214,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L005",
+     "accession": "ACC49",
+     "seeds": 225,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L006",
+     "accession": "ACC63",
+     "seeds": 302,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 23,
+     "lot": "L007",
+     "accession": "ACC63",
+     "seeds": 301,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L008",
+     "accession": "ACC63",
+     "seeds": 258,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 28,
+     "lot": "L009",
+     "accession": "ACC63",
+     "seeds": 448,
+     "test": 85
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 31,
+     "lot": "L010",
+     "accession": "ACC63",
+     "seeds": 426,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 35,
+     "lot": "L011",
+     "accession": "ACC16",
+     "seeds": 586,
+     "test": 93
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 39,
+     "lot": "L012",
+     "accession": "ACC16",
+     "seeds": 524,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 41,
+     "lot": "L013",
+     "accession": "ACC16",
+     "seeds": 402,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 45,
+     "lot": "L014",
+     "accession": "ACC16",
+     "seeds": 375,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 48,
+     "lot": "L015",
+     "accession": "ACC16",
+     "seeds": 425,
+     "test": 98
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 63,
+     "lot": "L014",
+     "seeds": 229
+    },
+    {
+     "kind": "REQUEST",
+     "day": 80,
+     "accession": "ACC49"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 96,
+     "into": "L007",
+     "from": "L006",
+     "seeds": 128
+    },
+    {
+     "kind": "TOPUP",
+     "day": 114,
+     "into": "L011",
+     "from": "L015",
+     "seeds": 103
+    },
+    {
+     "kind": "TOPUP",
+     "day": 124,
+     "into": "L004",
+     "from": "L001",
+     "seeds": 112
+    },
+    {
+     "kind": "TOPUP",
+     "day": 135,
+     "into": "L005",
+     "from": "L003",
+     "seeds": 175
+    },
+    {
+     "kind": "REQUEST",
+     "day": 139,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 151,
+     "into": "L003",
+     "from": "L004",
+     "seeds": 206
+    },
+    {
+     "kind": "TOPUP",
+     "day": 164,
+     "into": "L010",
+     "from": "L007",
+     "seeds": 145
+    },
+    {
+     "kind": "TOPUP",
+     "day": 180,
+     "into": "L002",
+     "from": "L005",
+     "seeds": 153
+    },
+    {
+     "kind": "TOPUP",
+     "day": 198,
+     "into": "L002",
+     "from": "L003",
+     "seeds": 188
+    },
+    {
+     "kind": "TOPUP",
+     "day": 202,
+     "into": "L006",
+     "from": "L009",
+     "seeds": 124
+    },
+    {
+     "kind": "TOPUP",
+     "day": 207,
+     "into": "L002",
+     "from": "L005",
+     "seeds": 123
+    },
+    {
+     "kind": "TOPUP",
+     "day": 212,
+     "into": "L007",
+     "from": "L009",
+     "seeds": 164
+    },
+    {
+     "kind": "TOPUP",
+     "day": 219,
+     "into": "L010",
+     "from": "L008",
+     "seeds": 85
+    },
+    {
+     "kind": "TOPUP",
+     "day": 238,
+     "into": "L002",
+     "from": "L001",
+     "seeds": 82
+    },
+    {
+     "kind": "SPLIT",
+     "day": 243,
+     "parent": "L007",
+     "child": "L016",
+     "seeds": 99
+    },
+    {
+     "kind": "SPLIT",
+     "day": 262,
+     "parent": "L013",
+     "child": "L017",
+     "seeds": 218
+    },
+    {
+     "kind": "SPLIT",
+     "day": 275,
+     "parent": "L012",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 288,
+     "into": "L016",
+     "from": "L007",
+     "seeds": 75
+    },
+    {
+     "kind": "TEST",
+     "day": 304,
+     "lot": "L009",
+     "test": 91
+    },
+    {
+     "kind": "TOPUP",
+     "day": 322,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 211
+    },
+    {
+     "kind": "SPLIT",
+     "day": 339,
+     "parent": "L015",
+     "child": "L019",
+     "seeds": 282
+    },
+    {
+     "kind": "SPLIT",
+     "day": 356,
+     "parent": "L009",
+     "child": "L020",
+     "seeds": 120
+    },
+    {
+     "kind": "REGEN",
+     "day": 367,
+     "lot": "L009",
+     "new_lot": "L021",
+     "seeds": 765,
+     "test": 92
+    },
+    {
+     "kind": "SPLIT",
+     "day": 378,
+     "parent": "L016",
+     "child": "L022",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 384,
+     "lot": "L004",
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 392,
+     "into": "L017",
+     "from": "L019",
+     "seeds": 171
+    },
+    {
+     "kind": "REQUEST",
+     "day": 403,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 410,
+     "into": "L010",
+     "from": "L006",
+     "seeds": 187
+    },
+    {
+     "kind": "TEST",
+     "day": 417,
+     "lot": "L019",
+     "test": 87
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 428,
+     "lot": "L021",
+     "seeds": 261
+    },
+    {
+     "kind": "TOPUP",
+     "day": 432,
+     "into": "L012",
+     "from": "L014",
+     "seeds": 116
+    },
+    {
+     "kind": "TOPUP",
+     "day": 437,
+     "into": "L004",
+     "from": "L005",
+     "seeds": 94
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 455,
+     "lot": "L017",
+     "seeds": 159
+    },
+    {
+     "kind": "REGEN",
+     "day": 463,
+     "lot": "L012",
+     "new_lot": "L023",
+     "seeds": 408,
+     "test": 90
+    },
+    {
+     "kind": "TEST",
+     "day": 476,
+     "lot": "L007",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 476,
+     "accession": "ACC63"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 494,
+     "parent": "L021",
+     "child": "L024",
+     "seeds": 151
+    },
+    {
+     "kind": "TOPUP",
+     "day": 502,
+     "into": "L023",
+     "from": "L013",
+     "seeds": 154
+    },
+    {
+     "kind": "SPLIT",
+     "day": 521,
+     "parent": "L011",
+     "child": "L025",
+     "seeds": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 532,
+     "accession": "ACC49"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 545,
+     "accession": "ACC49"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 558,
+     "accession": "ACC63"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 574,
+     "accession": "ACC63"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 591,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 604,
+     "accession": "ACC16"
+    }
+   ]
+  },
+  "answers": [
+   "L002",
+   "L011",
+   "L012",
+   "L020",
+   "-",
+   "-",
+   "L020",
+   "L020",
+   "L019",
+   "L019"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC20": 85,
+    "ACC55": 75,
+    "ACC50": 90
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC20",
+     "seeds": 490,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 3,
+     "lot": "L002",
+     "accession": "ACC20",
+     "seeds": 315,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 7,
+     "lot": "L003",
+     "accession": "ACC20",
+     "seeds": 569,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 12,
+     "lot": "L004",
+     "accession": "ACC20",
+     "seeds": 374,
+     "test": 84
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L005",
+     "accession": "ACC20",
+     "seeds": 493,
+     "test": 83
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L006",
+     "accession": "ACC55",
+     "seeds": 567,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L007",
+     "accession": "ACC55",
+     "seeds": 516,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 26,
+     "lot": "L008",
+     "accession": "ACC55",
+     "seeds": 522,
+     "test": 80
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 28,
+     "lot": "L009",
+     "accession": "ACC55",
+     "seeds": 626,
+     "test": 70
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 32,
+     "lot": "L010",
+     "accession": "ACC55",
+     "seeds": 426,
+     "test": 98
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 35,
+     "lot": "L011",
+     "accession": "ACC50",
+     "seeds": 663,
+     "test": 92
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 40,
+     "lot": "L012",
+     "accession": "ACC50",
+     "seeds": 434,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 43,
+     "lot": "L013",
+     "accession": "ACC50",
+     "seeds": 632,
+     "test": 91
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 45,
+     "lot": "L014",
+     "accession": "ACC50",
+     "seeds": 324,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 47,
+     "lot": "L015",
+     "accession": "ACC50",
+     "seeds": 665,
+     "test": 95
+    },
+    {
+     "kind": "TOPUP",
+     "day": 55,
+     "into": "L003",
+     "from": "L005",
+     "seeds": 113
+    },
+    {
+     "kind": "TOPUP",
+     "day": 64,
+     "into": "L004",
+     "from": "L003",
+     "seeds": 115
+    },
+    {
+     "kind": "TEST",
+     "day": 75,
+     "lot": "L012",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 82,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "TEST",
+     "day": 91,
+     "lot": "L010",
+     "test": 83
+    },
+    {
+     "kind": "TEST",
+     "day": 97,
+     "lot": "L005",
+     "test": 84
+    },
+    {
+     "kind": "SPLIT",
+     "day": 113,
+     "parent": "L010",
+     "child": "L016",
+     "seeds": 100
+    },
+    {
+     "kind": "SPLIT",
+     "day": 121,
+     "parent": "L014",
+     "child": "L017",
+     "seeds": 280
+    },
+    {
+     "kind": "SPLIT",
+     "day": 133,
+     "parent": "L013",
+     "child": "L018",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 150,
+     "into": "L018",
+     "from": "L017",
+     "seeds": 93
+    },
+    {
+     "kind": "REQUEST",
+     "day": 155,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 171,
+     "into": "L017",
+     "from": "L011",
+     "seeds": 125
+    },
+    {
+     "kind": "TEST",
+     "day": 181,
+     "lot": "L006",
+     "test": 93
+    },
+    {
+     "kind": "TOPUP",
+     "day": 186,
+     "into": "L011",
+     "from": "L012",
+     "seeds": 215
+    },
+    {
+     "kind": "TOPUP",
+     "day": 199,
+     "into": "L004",
+     "from": "L005",
+     "seeds": 137
+    },
+    {
+     "kind": "TEST",
+     "day": 206,
+     "lot": "L014",
+     "test": 84
+    },
+    {
+     "kind": "TOPUP",
+     "day": 220,
+     "into": "L011",
+     "from": "L012",
+     "seeds": 64
+    },
+    {
+     "kind": "SPLIT",
+     "day": 234,
+     "parent": "L011",
+     "child": "L019",
+     "seeds": 99
+    },
+    {
+     "kind": "TEST",
+     "day": 253,
+     "lot": "L001",
+     "test": 92
+    },
+    {
+     "kind": "TEST",
+     "day": 268,
+     "lot": "L017",
+     "test": 84
+    },
+    {
+     "kind": "SPLIT",
+     "day": 272,
+     "parent": "L006",
+     "child": "L020",
+     "seeds": 186
+    },
+    {
+     "kind": "REQUEST",
+     "day": 279,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 293,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 172
+    },
+    {
+     "kind": "SPLIT",
+     "day": 311,
+     "parent": "L001",
+     "child": "L021",
+     "seeds": 100
+    },
+    {
+     "kind": "TEST",
+     "day": 329,
+     "lot": "L013",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 329,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 343,
+     "into": "L013",
+     "from": "L017",
+     "seeds": 85
+    },
+    {
+     "kind": "SPLIT",
+     "day": 353,
+     "parent": "L021",
+     "child": "L022",
+     "seeds": 60
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 371,
+     "lot": "L021",
+     "seeds": 20
+    },
+    {
+     "kind": "TEST",
+     "day": 376,
+     "lot": "L005",
+     "test": 83
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 388,
+     "lot": "L005",
+     "seeds": 114
+    },
+    {
+     "kind": "TEST",
+     "day": 404,
+     "lot": "L001",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 404,
+     "accession": "ACC20"
+    },
+    {
+     "kind": "REGEN",
+     "day": 413,
+     "lot": "L004",
+     "new_lot": "L023",
+     "seeds": 662,
+     "test": 95
+    },
+    {
+     "kind": "TOPUP",
+     "day": 425,
+     "into": "L013",
+     "from": "L015",
+     "seeds": 101
+    },
+    {
+     "kind": "REQUEST",
+     "day": 441,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 455,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 466,
+     "parent": "L002",
+     "child": "L024",
+     "seeds": 252
+    },
+    {
+     "kind": "TEST",
+     "day": 473,
+     "lot": "L024",
+     "test": 86
+    },
+    {
+     "kind": "TOPUP",
+     "day": 482,
+     "into": "L012",
+     "from": "L013",
+     "seeds": 160
+    },
+    {
+     "kind": "REGEN",
+     "day": 490,
+     "lot": "L006",
+     "new_lot": "L025",
+     "seeds": 789,
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 507,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 511,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 515,
+     "into": "L011",
+     "from": "L018",
+     "seeds": 113
+    },
+    {
+     "kind": "TEST",
+     "day": 528,
+     "lot": "L003",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 528,
+     "accession": "ACC20"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 534,
+     "accession": "ACC20"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 547,
+     "accession": "ACC20"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 563,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 567,
+     "accession": "ACC55"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 583,
+     "accession": "ACC50"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 587,
+     "accession": "ACC50"
+    }
+   ]
+  },
+  "answers": [
+   "L011",
+   "L011",
+   "L006",
+   "L011",
+   "L001",
+   "L020",
+   "-",
+   "L020",
+   "L020",
+   "L001",
+   "L001",
+   "L001",
+   "L025",
+   "L025",
+   "-",
+   "-"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC21": 85,
+    "ACC27": 75,
+    "ACC18": 75
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC21",
+     "seeds": 280,
+     "test": 90
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 4,
+     "lot": "L002",
+     "accession": "ACC21",
+     "seeds": 689,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 7,
+     "lot": "L003",
+     "accession": "ACC21",
+     "seeds": 258,
+     "test": 81
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 9,
+     "lot": "L004",
+     "accession": "ACC21",
+     "seeds": 679,
+     "test": 83
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 11,
+     "lot": "L005",
+     "accession": "ACC21",
+     "seeds": 326,
+     "test": 82
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 16,
+     "lot": "L006",
+     "accession": "ACC27",
+     "seeds": 450,
+     "test": 70
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 21,
+     "lot": "L007",
+     "accession": "ACC27",
+     "seeds": 580,
+     "test": 77
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 25,
+     "lot": "L008",
+     "accession": "ACC27",
+     "seeds": 669,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 28,
+     "lot": "L009",
+     "accession": "ACC27",
+     "seeds": 524,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 29,
+     "lot": "L010",
+     "accession": "ACC27",
+     "seeds": 679,
+     "test": 76
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 32,
+     "lot": "L011",
+     "accession": "ACC18",
+     "seeds": 473,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 36,
+     "lot": "L012",
+     "accession": "ACC18",
+     "seeds": 252,
+     "test": 88
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 39,
+     "lot": "L013",
+     "accession": "ACC18",
+     "seeds": 489,
+     "test": 95
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 41,
+     "lot": "L014",
+     "accession": "ACC18",
+     "seeds": 451,
+     "test": 73
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 42,
+     "lot": "L015",
+     "accession": "ACC18",
+     "seeds": 210,
+     "test": 92
+    },
+    {
+     "kind": "SPLIT",
+     "day": 58,
+     "parent": "L014",
+     "child": "L016",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 76,
+     "into": "L011",
+     "from": "L015",
+     "seeds": 118
+    },
+    {
+     "kind": "SPLIT",
+     "day": 91,
+     "parent": "L012",
+     "child": "L017",
+     "seeds": 99
+    },
+    {
+     "kind": "REGEN",
+     "day": 96,
+     "lot": "L006",
+     "new_lot": "L018",
+     "seeds": 743,
+     "test": 77
+    },
+    {
+     "kind": "TEST",
+     "day": 106,
+     "lot": "L006",
+     "test": 77
+    },
+    {
+     "kind": "REQUEST",
+     "day": 106,
+     "accession": "ACC27"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 119,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 135,
+     "parent": "L015",
+     "child": "L019",
+     "seeds": 52
+    },
+    {
+     "kind": "TOPUP",
+     "day": 154,
+     "into": "L009",
+     "from": "L008",
+     "seeds": 163
+    },
+    {
+     "kind": "TEST",
+     "day": 158,
+     "lot": "L003",
+     "test": 87
+    },
+    {
+     "kind": "REQUEST",
+     "day": 158,
+     "accession": "ACC21"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 170,
+     "into": "L009",
+     "from": "L010",
+     "seeds": 112
+    },
+    {
+     "kind": "TOPUP",
+     "day": 177,
+     "into": "L018",
+     "from": "L010",
+     "seeds": 172
+    },
+    {
+     "kind": "SPLIT",
+     "day": 194,
+     "parent": "L005",
+     "child": "L020",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 209,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "TEST",
+     "day": 225,
+     "lot": "L011",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 225,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 229,
+     "into": "L016",
+     "from": "L014",
+     "seeds": 179
+    },
+    {
+     "kind": "TEST",
+     "day": 248,
+     "lot": "L007",
+     "test": 69
+    },
+    {
+     "kind": "REQUEST",
+     "day": 259,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 273,
+     "into": "L020",
+     "from": "L005",
+     "seeds": 93
+    },
+    {
+     "kind": "SPLIT",
+     "day": 282,
+     "parent": "L007",
+     "child": "L021",
+     "seeds": 100
+    },
+    {
+     "kind": "REQUEST",
+     "day": 295,
+     "accession": "ACC27"
+    },
+    {
+     "kind": "TEST",
+     "day": 307,
+     "lot": "L006",
+     "test": 76
+    },
+    {
+     "kind": "REQUEST",
+     "day": 307,
+     "accession": "ACC27"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 311,
+     "accession": "ACC21"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 322,
+     "into": "L007",
+     "from": "L008",
+     "seeds": 87
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 339,
+     "lot": "L021",
+     "seeds": 80
+    },
+    {
+     "kind": "TOPUP",
+     "day": 343,
+     "into": "L001",
+     "from": "L020",
+     "seeds": 163
+    },
+    {
+     "kind": "TOPUP",
+     "day": 352,
+     "into": "L009",
+     "from": "L006",
+     "seeds": 108
+    },
+    {
+     "kind": "TOPUP",
+     "day": 371,
+     "into": "L003",
+     "from": "L001",
+     "seeds": 208
+    },
+    {
+     "kind": "SPLIT",
+     "day": 379,
+     "parent": "L015",
+     "child": "L022",
+     "seeds": 20
+    },
+    {
+     "kind": "TOPUP",
+     "day": 388,
+     "into": "L020",
+     "from": "L003",
+     "seeds": 102
+    },
+    {
+     "kind": "TEST",
+     "day": 401,
+     "lot": "L004",
+     "test": 86
+    },
+    {
+     "kind": "TOPUP",
+     "day": 410,
+     "into": "L018",
+     "from": "L009",
+     "seeds": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 414,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 426,
+     "parent": "L007",
+     "child": "L023",
+     "seeds": 170
+    },
+    {
+     "kind": "TOPUP",
+     "day": 435,
+     "into": "L003",
+     "from": "L005",
+     "seeds": 103
+    },
+    {
+     "kind": "TEST",
+     "day": 449,
+     "lot": "L002",
+     "test": 79
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 461,
+     "lot": "L022",
+     "seeds": 0
+    },
+    {
+     "kind": "TOPUP",
+     "day": 469,
+     "into": "L006",
+     "from": "L023",
+     "seeds": 68
+    },
+    {
+     "kind": "TOPUP",
+     "day": 483,
+     "into": "L004",
+     "from": "L002",
+     "seeds": 79
+    },
+    {
+     "kind": "SPLIT",
+     "day": 491,
+     "parent": "L023",
+     "child": "L024",
+     "seeds": 62
+    },
+    {
+     "kind": "SPLIT",
+     "day": 508,
+     "parent": "L016",
+     "child": "L025",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 526,
+     "into": "L002",
+     "from": "L020",
+     "seeds": 102
+    },
+    {
+     "kind": "REQUEST",
+     "day": 539,
+     "accession": "ACC21"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 548,
+     "accession": "ACC21"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 558,
+     "accession": "ACC27"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 564,
+     "accession": "ACC27"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 575,
+     "accession": "ACC18"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 585,
+     "accession": "ACC18"
+    }
+   ]
+  },
+  "answers": [
+   "L007",
+   "L011",
+   "L001",
+   "L011",
+   "L011",
+   "L011",
+   "L008",
+   "L008",
+   "L001",
+   "L011",
+   "L004",
+   "L004",
+   "-",
+   "-",
+   "L011",
+   "L011"
+  ]
+ },
+ {
+  "campaign": {
+   "standards": {
+    "ACC68": 85,
+    "ACC16": 80,
+    "ACC31": 90
+   },
+   "events": [
+    {
+     "kind": "DEPOSIT",
+     "day": 0,
+     "lot": "L001",
+     "accession": "ACC68",
+     "seeds": 490,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 4,
+     "lot": "L002",
+     "accession": "ACC68",
+     "seeds": 564,
+     "test": 90
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 5,
+     "lot": "L003",
+     "accession": "ACC68",
+     "seeds": 240,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 10,
+     "lot": "L004",
+     "accession": "ACC68",
+     "seeds": 224,
+     "test": 79
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 11,
+     "lot": "L005",
+     "accession": "ACC68",
+     "seeds": 486,
+     "test": 99
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 15,
+     "lot": "L006",
+     "accession": "ACC16",
+     "seeds": 673,
+     "test": 86
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 20,
+     "lot": "L007",
+     "accession": "ACC16",
+     "seeds": 499,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 24,
+     "lot": "L008",
+     "accession": "ACC16",
+     "seeds": 394,
+     "test": 97
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 29,
+     "lot": "L009",
+     "accession": "ACC16",
+     "seeds": 345,
+     "test": 76
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 34,
+     "lot": "L010",
+     "accession": "ACC16",
+     "seeds": 612,
+     "test": 77
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 36,
+     "lot": "L011",
+     "accession": "ACC31",
+     "seeds": 680,
+     "test": 89
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 40,
+     "lot": "L012",
+     "accession": "ACC31",
+     "seeds": 444,
+     "test": 96
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 43,
+     "lot": "L013",
+     "accession": "ACC31",
+     "seeds": 646,
+     "test": 94
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 44,
+     "lot": "L014",
+     "accession": "ACC31",
+     "seeds": 314,
+     "test": 87
+    },
+    {
+     "kind": "DEPOSIT",
+     "day": 46,
+     "lot": "L015",
+     "accession": "ACC31",
+     "seeds": 268,
+     "test": 86
+    },
+    {
+     "kind": "TEST",
+     "day": 63,
+     "lot": "L015",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 63,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 68,
+     "parent": "L001",
+     "child": "L016",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 86,
+     "into": "L016",
+     "from": "L003",
+     "seeds": 184
+    },
+    {
+     "kind": "TOPUP",
+     "day": 99,
+     "into": "L004",
+     "from": "L016",
+     "seeds": 218
+    },
+    {
+     "kind": "TOPUP",
+     "day": 114,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 143
+    },
+    {
+     "kind": "TOPUP",
+     "day": 118,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 102
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 124,
+     "lot": "L010",
+     "seeds": 261
+    },
+    {
+     "kind": "TEST",
+     "day": 136,
+     "lot": "L004",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 136,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 142,
+     "parent": "L010",
+     "child": "L017",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 160,
+     "into": "L006",
+     "from": "L009",
+     "seeds": 102
+    },
+    {
+     "kind": "SPLIT",
+     "day": 165,
+     "parent": "L015",
+     "child": "L018",
+     "seeds": 228
+    },
+    {
+     "kind": "TEST",
+     "day": 170,
+     "lot": "L016",
+     "test": 88
+    },
+    {
+     "kind": "TEST",
+     "day": 181,
+     "lot": "L017",
+     "test": 81
+    },
+    {
+     "kind": "REQUEST",
+     "day": 181,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 189,
+     "into": "L015",
+     "from": "L014",
+     "seeds": 207
+    },
+    {
+     "kind": "TEST",
+     "day": 199,
+     "lot": "L011",
+     "test": 92
+    },
+    {
+     "kind": "REQUEST",
+     "day": 199,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 210,
+     "parent": "L010",
+     "child": "L019",
+     "seeds": 212
+    },
+    {
+     "kind": "SPLIT",
+     "day": 223,
+     "parent": "L011",
+     "child": "L020",
+     "seeds": 99
+    },
+    {
+     "kind": "REQUEST",
+     "day": 239,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 249,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "TEST",
+     "day": 254,
+     "lot": "L013",
+     "test": 91
+    },
+    {
+     "kind": "REQUEST",
+     "day": 254,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 260,
+     "parent": "L004",
+     "child": "L021",
+     "seeds": 168
+    },
+    {
+     "kind": "TOPUP",
+     "day": 271,
+     "into": "L003",
+     "from": "L004",
+     "seeds": 180
+    },
+    {
+     "kind": "REGEN",
+     "day": 276,
+     "lot": "L011",
+     "new_lot": "L022",
+     "seeds": 481,
+     "test": 92
+    },
+    {
+     "kind": "TEST",
+     "day": 291,
+     "lot": "L013",
+     "test": 96
+    },
+    {
+     "kind": "TOPUP",
+     "day": 300,
+     "into": "L007",
+     "from": "L009",
+     "seeds": 93
+    },
+    {
+     "kind": "SPLIT",
+     "day": 311,
+     "parent": "L005",
+     "child": "L023",
+     "seeds": 100
+    },
+    {
+     "kind": "TOPUP",
+     "day": 315,
+     "into": "L006",
+     "from": "L007",
+     "seeds": 145
+    },
+    {
+     "kind": "TEST",
+     "day": 334,
+     "lot": "L009",
+     "test": 79
+    },
+    {
+     "kind": "TEST",
+     "day": 338,
+     "lot": "L019",
+     "test": 75
+    },
+    {
+     "kind": "TEST",
+     "day": 348,
+     "lot": "L006",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 348,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "SPLIT",
+     "day": 352,
+     "parent": "L019",
+     "child": "L024",
+     "seeds": 99
+    },
+    {
+     "kind": "TOPUP",
+     "day": 357,
+     "into": "L011",
+     "from": "L018",
+     "seeds": 198
+    },
+    {
+     "kind": "SPLIT",
+     "day": 375,
+     "parent": "L001",
+     "child": "L025",
+     "seeds": 277
+    },
+    {
+     "kind": "REQUEST",
+     "day": 382,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 399,
+     "into": "L003",
+     "from": "L005",
+     "seeds": 111
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 407,
+     "lot": "L008",
+     "seeds": 84
+    },
+    {
+     "kind": "TOPUP",
+     "day": 422,
+     "into": "L004",
+     "from": "L025",
+     "seeds": 93
+    },
+    {
+     "kind": "TEST",
+     "day": 429,
+     "lot": "L008",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 429,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "TOPUP",
+     "day": 447,
+     "into": "L022",
+     "from": "L011",
+     "seeds": 148
+    },
+    {
+     "kind": "TOPUP",
+     "day": 455,
+     "into": "L001",
+     "from": "L025",
+     "seeds": 152
+    },
+    {
+     "kind": "TEST",
+     "day": 473,
+     "lot": "L004",
+     "test": 86
+    },
+    {
+     "kind": "REQUEST",
+     "day": 488,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 498,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "TEST",
+     "day": 506,
+     "lot": "L009",
+     "test": 82
+    },
+    {
+     "kind": "REQUEST",
+     "day": 506,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "WITHDRAW",
+     "day": 513,
+     "lot": "L022",
+     "seeds": 79
+    },
+    {
+     "kind": "TOPUP",
+     "day": 526,
+     "into": "L017",
+     "from": "L008",
+     "seeds": 158
+    },
+    {
+     "kind": "REQUEST",
+     "day": 538,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 554,
+     "accession": "ACC68"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 560,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 566,
+     "accession": "ACC16"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 576,
+     "accession": "ACC31"
+    },
+    {
+     "kind": "REQUEST",
+     "day": 588,
+     "accession": "ACC31"
+    }
+   ]
+  },
+  "answers": [
+   "L012",
+   "L001",
+   "L006",
+   "L011",
+   "L001",
+   "L011",
+   "L011",
+   "L006",
+   "L006",
+   "L006",
+   "L004",
+   "L004",
+   "L006",
+   "L004",
+   "L004",
+   "L006",
+   "L006",
+   "L013",
+   "L013"
+  ]
+ }
+]
