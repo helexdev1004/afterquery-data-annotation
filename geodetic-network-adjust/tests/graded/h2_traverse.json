@@ -1,0 +1,746 @@
+{
+  "name": "h2_traverse",
+  "notes": "open traverse closed at both ends",
+  "datum": {
+    "fixed": [
+      "P00",
+      "P14"
+    ]
+  },
+  "points": {
+    "P00": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "P01": {
+      "x": 949.46708,
+      "y": 0.63353
+    },
+    "P02": {
+      "x": 1899.76712,
+      "y": 2.75817
+    },
+    "P03": {
+      "x": 2849.90873,
+      "y": 3.39402
+    },
+    "P04": {
+      "x": 3800.8799,
+      "y": 4.16931
+    },
+    "P05": {
+      "x": 4749.47861,
+      "y": 4.12195
+    },
+    "P06": {
+      "x": 5700.24826,
+      "y": 3.64434
+    },
+    "P07": {
+      "x": 6650.1786,
+      "y": 2.98926
+    },
+    "P08": {
+      "x": 7599.96234,
+      "y": 1.39816
+    },
+    "P09": {
+      "x": 8549.55216,
+      "y": -0.13222
+    },
+    "P10": {
+      "x": 9499.83177,
+      "y": -1.71364
+    },
+    "P11": {
+      "x": 10450.80383,
+      "y": -3.05618
+    },
+    "P12": {
+      "x": 11400.5548,
+      "y": -3.40988
+    },
+    "P13": {
+      "x": 12349.95621,
+      "y": -3.78062
+    },
+    "P14": {
+      "x": 13300.0,
+      "y": -3.92981
+    }
+  },
+  "observations": [
+    {
+      "id": "h2_traverse-d001",
+      "type": "distance",
+      "from": "P00",
+      "to": "P01",
+      "value_m": 949.99976,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a002",
+      "type": "azimuth",
+      "from": "P00",
+      "to": "P01",
+      "value_deg": 89.917340721,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d003",
+      "type": "distance",
+      "from": "P01",
+      "to": "P02",
+      "value_m": 949.9927,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a004",
+      "type": "azimuth",
+      "from": "P01",
+      "to": "P02",
+      "value_deg": 89.926592536,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d005",
+      "type": "distance",
+      "from": "P02",
+      "to": "P03",
+      "value_m": 949.99628,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a006",
+      "type": "azimuth",
+      "from": "P02",
+      "to": "P03",
+      "value_deg": 89.945888823,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d007",
+      "type": "distance",
+      "from": "P03",
+      "to": "P04",
+      "value_m": 950.00349,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a008",
+      "type": "azimuth",
+      "from": "P03",
+      "to": "P04",
+      "value_deg": 89.970801264,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d009",
+      "type": "distance",
+      "from": "P04",
+      "to": "P05",
+      "value_m": 950.0017,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a010",
+      "type": "azimuth",
+      "from": "P04",
+      "to": "P05",
+      "value_deg": 90.000218951,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d011",
+      "type": "distance",
+      "from": "P05",
+      "to": "P06",
+      "value_m": 950.00227,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a012",
+      "type": "azimuth",
+      "from": "P05",
+      "to": "P06",
+      "value_deg": 90.028339821,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d013",
+      "type": "distance",
+      "from": "P06",
+      "to": "P07",
+      "value_m": 950.0061,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a014",
+      "type": "azimuth",
+      "from": "P06",
+      "to": "P07",
+      "value_deg": 90.054612726,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d015",
+      "type": "distance",
+      "from": "P07",
+      "to": "P08",
+      "value_m": 950.00277,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a016",
+      "type": "azimuth",
+      "from": "P07",
+      "to": "P08",
+      "value_deg": 90.073440814,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d017",
+      "type": "distance",
+      "from": "P08",
+      "to": "P09",
+      "value_m": 950.00328,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a018",
+      "type": "azimuth",
+      "from": "P08",
+      "to": "P09",
+      "value_deg": 90.082589639,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d019",
+      "type": "distance",
+      "from": "P09",
+      "to": "P10",
+      "value_m": 950.00095,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a020",
+      "type": "azimuth",
+      "from": "P09",
+      "to": "P10",
+      "value_deg": 90.082104795,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d021",
+      "type": "distance",
+      "from": "P10",
+      "to": "P11",
+      "value_m": 950.00499,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a022",
+      "type": "azimuth",
+      "from": "P10",
+      "to": "P11",
+      "value_deg": 90.072263918,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d023",
+      "type": "distance",
+      "from": "P11",
+      "to": "P12",
+      "value_m": 950.00606,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a024",
+      "type": "azimuth",
+      "from": "P11",
+      "to": "P12",
+      "value_deg": 90.052608042,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d025",
+      "type": "distance",
+      "from": "P12",
+      "to": "P13",
+      "value_m": 950.00079,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a026",
+      "type": "azimuth",
+      "from": "P12",
+      "to": "P13",
+      "value_deg": 90.027727399,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d027",
+      "type": "distance",
+      "from": "P13",
+      "to": "P14",
+      "value_m": 950.00321,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a028",
+      "type": "azimuth",
+      "from": "P13",
+      "to": "P14",
+      "value_deg": 89.998525966,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d029",
+      "type": "distance",
+      "from": "P00",
+      "to": "P01",
+      "value_m": 950.0074,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a030",
+      "type": "azimuth",
+      "from": "P00",
+      "to": "P01",
+      "value_deg": 89.917455115,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d031",
+      "type": "distance",
+      "from": "P01",
+      "to": "P02",
+      "value_m": 950.00205,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a032",
+      "type": "azimuth",
+      "from": "P01",
+      "to": "P02",
+      "value_deg": 89.926599674,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d033",
+      "type": "distance",
+      "from": "P02",
+      "to": "P03",
+      "value_m": 950.00401,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a034",
+      "type": "azimuth",
+      "from": "P02",
+      "to": "P03",
+      "value_deg": 89.946075725,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d035",
+      "type": "distance",
+      "from": "P03",
+      "to": "P04",
+      "value_m": 950.00499,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a036",
+      "type": "azimuth",
+      "from": "P03",
+      "to": "P04",
+      "value_deg": 89.970439822,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d037",
+      "type": "distance",
+      "from": "P04",
+      "to": "P05",
+      "value_m": 949.99722,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a038",
+      "type": "azimuth",
+      "from": "P04",
+      "to": "P05",
+      "value_deg": 89.99986501,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d039",
+      "type": "distance",
+      "from": "P05",
+      "to": "P06",
+      "value_m": 949.9954,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a040",
+      "type": "azimuth",
+      "from": "P05",
+      "to": "P06",
+      "value_deg": 90.027586556,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d041",
+      "type": "distance",
+      "from": "P06",
+      "to": "P07",
+      "value_m": 949.99238,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a042",
+      "type": "azimuth",
+      "from": "P06",
+      "to": "P07",
+      "value_deg": 90.055329863,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d043",
+      "type": "distance",
+      "from": "P07",
+      "to": "P08",
+      "value_m": 950.0031,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a044",
+      "type": "azimuth",
+      "from": "P07",
+      "to": "P08",
+      "value_deg": 90.073628866,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d045",
+      "type": "distance",
+      "from": "P08",
+      "to": "P09",
+      "value_m": 949.99828,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a046",
+      "type": "azimuth",
+      "from": "P08",
+      "to": "P09",
+      "value_deg": 90.084061127,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d047",
+      "type": "distance",
+      "from": "P09",
+      "to": "P10",
+      "value_m": 949.99973,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a048",
+      "type": "azimuth",
+      "from": "P09",
+      "to": "P10",
+      "value_deg": 90.08215769,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d049",
+      "type": "distance",
+      "from": "P10",
+      "to": "P11",
+      "value_m": 950.00194,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a050",
+      "type": "azimuth",
+      "from": "P10",
+      "to": "P11",
+      "value_deg": 90.072714298,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d051",
+      "type": "distance",
+      "from": "P11",
+      "to": "P12",
+      "value_m": 949.99876,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a052",
+      "type": "azimuth",
+      "from": "P11",
+      "to": "P12",
+      "value_deg": 90.053150883,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d053",
+      "type": "distance",
+      "from": "P12",
+      "to": "P13",
+      "value_m": 949.99652,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a054",
+      "type": "azimuth",
+      "from": "P12",
+      "to": "P13",
+      "value_deg": 90.028061362,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d055",
+      "type": "distance",
+      "from": "P13",
+      "to": "P14",
+      "value_m": 950.00559,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a056",
+      "type": "azimuth",
+      "from": "P13",
+      "to": "P14",
+      "value_deg": 89.998263074,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d057",
+      "type": "distance",
+      "from": "P00",
+      "to": "P01",
+      "value_m": 950.00418,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a058",
+      "type": "azimuth",
+      "from": "P00",
+      "to": "P01",
+      "value_deg": 89.917747161,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d059",
+      "type": "distance",
+      "from": "P01",
+      "to": "P02",
+      "value_m": 950.00228,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a060",
+      "type": "azimuth",
+      "from": "P01",
+      "to": "P02",
+      "value_deg": 89.92822128,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d061",
+      "type": "distance",
+      "from": "P02",
+      "to": "P03",
+      "value_m": 950.00487,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a062",
+      "type": "azimuth",
+      "from": "P02",
+      "to": "P03",
+      "value_deg": 89.945612181,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d063",
+      "type": "distance",
+      "from": "P03",
+      "to": "P04",
+      "value_m": 950.00095,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a064",
+      "type": "azimuth",
+      "from": "P03",
+      "to": "P04",
+      "value_deg": 89.971671935,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d065",
+      "type": "distance",
+      "from": "P04",
+      "to": "P05",
+      "value_m": 950.00619,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a066",
+      "type": "azimuth",
+      "from": "P04",
+      "to": "P05",
+      "value_deg": 90.000645938,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d067",
+      "type": "distance",
+      "from": "P05",
+      "to": "P06",
+      "value_m": 949.99775,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a068",
+      "type": "azimuth",
+      "from": "P05",
+      "to": "P06",
+      "value_deg": 90.029172653,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d069",
+      "type": "distance",
+      "from": "P06",
+      "to": "P07",
+      "value_m": 950.00075,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a070",
+      "type": "azimuth",
+      "from": "P06",
+      "to": "P07",
+      "value_deg": 90.054126928,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d071",
+      "type": "distance",
+      "from": "P07",
+      "to": "P08",
+      "value_m": 949.99968,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a072",
+      "type": "azimuth",
+      "from": "P07",
+      "to": "P08",
+      "value_deg": 90.073487364,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d073",
+      "type": "distance",
+      "from": "P08",
+      "to": "P09",
+      "value_m": 950.00126,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a074",
+      "type": "azimuth",
+      "from": "P08",
+      "to": "P09",
+      "value_deg": 90.082543224,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d075",
+      "type": "distance",
+      "from": "P09",
+      "to": "P10",
+      "value_m": 949.99968,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a076",
+      "type": "azimuth",
+      "from": "P09",
+      "to": "P10",
+      "value_deg": 90.083133013,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d077",
+      "type": "distance",
+      "from": "P10",
+      "to": "P11",
+      "value_m": 950.00232,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a078",
+      "type": "azimuth",
+      "from": "P10",
+      "to": "P11",
+      "value_deg": 90.072211828,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d079",
+      "type": "distance",
+      "from": "P11",
+      "to": "P12",
+      "value_m": 950.00219,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a080",
+      "type": "azimuth",
+      "from": "P11",
+      "to": "P12",
+      "value_deg": 90.053440852,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d081",
+      "type": "distance",
+      "from": "P12",
+      "to": "P13",
+      "value_m": 950.00351,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a082",
+      "type": "azimuth",
+      "from": "P12",
+      "to": "P13",
+      "value_deg": 90.028397955,
+      "sigma_arcsec": 2.0
+    },
+    {
+      "id": "h2_traverse-d083",
+      "type": "distance",
+      "from": "P13",
+      "to": "P14",
+      "value_m": 950.00148,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h2_traverse-a084",
+      "type": "azimuth",
+      "from": "P13",
+      "to": "P14",
+      "value_deg": 89.999085963,
+      "sigma_arcsec": 2.0
+    }
+  ]
+}

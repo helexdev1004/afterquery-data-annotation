@@ -1,0 +1,69 @@
+{
+  "name": "h1_weak_datum",
+  "notes": "distances only from a single fixed station",
+  "datum": {
+    "fixed": [
+      "W1"
+    ]
+  },
+  "points": {
+    "W1": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "W2": {
+      "x": 699.9232,
+      "y": 99.98328
+    },
+    "W3": {
+      "x": 300.23051,
+      "y": 800.17233
+    },
+    "W4": {
+      "x": 950.31515,
+      "y": 750.49497
+    }
+  },
+  "observations": [
+    {
+      "id": "h1_weak_datum-d001",
+      "type": "distance",
+      "from": "W1",
+      "to": "W2",
+      "value_m": 707.10533,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h1_weak_datum-d002",
+      "type": "distance",
+      "from": "W1",
+      "to": "W3",
+      "value_m": 854.40106,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h1_weak_datum-d003",
+      "type": "distance",
+      "from": "W2",
+      "to": "W3",
+      "value_m": 806.231,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h1_weak_datum-d004",
+      "type": "distance",
+      "from": "W2",
+      "to": "W4",
+      "value_m": 696.42733,
+      "sigma_m": 0.004
+    },
+    {
+      "id": "h1_weak_datum-d005",
+      "type": "distance",
+      "from": "W3",
+      "to": "W4",
+      "value_m": 651.92737,
+      "sigma_m": 0.004
+    }
+  ]
+}
