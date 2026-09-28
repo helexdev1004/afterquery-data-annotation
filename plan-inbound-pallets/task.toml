@@ -1,0 +1,102 @@
+artifacts = ["/app/inbound_plan.csv"]
+
+[task]
+name = "afterquery/plan-inbound-pallets"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Turning suppliers' advance shipping notices into cartons, weight and pallet
+positions is the weekly work of an inbound planner or receiving supervisor at a
+distribution centre: dock doors and racking are booked from it. The data is
+synthetic and was made truth first. Every line of every delivery was generated
+as so many sealed inner packs of one of 451 items, and the 42
+sealed plan lines were worked out from those inner packs with the rules in the
+centre's note. Each supplier's notice file was written afterwards, the way that
+supplier's system writes one. The sealed figures are exact and nothing is
+computed at marking time.
+
+The note gives every rule the marking uses. Followed to the letter it gets
+14 of 42, because three suppliers' files are plainly not as it
+describes: one writes the SKU with a leading zero and a check digit, one writes
+quantities with thousands separators, one sends a semicolon file with quantities
+written 120,00. Each is obvious on sight and each spoils a supplier's seven
+notices where only 4 lines may be wrong.
+
+The deciding fact is the quantity itself. The note says a notice gives single
+units. 2 suppliers' systems were mapped to the wrong field when
+they were connected, and send the number of inner packs. One of the two also
+has an odd file format; the other matches the note in every visible respect.
+The note's reading fails silently: dividing an inner-pack count by the pack
+size still gives cartons, kilograms and pallets, smaller ones, and a delivery
+of two pallets is as ordinary as one of nine. The cost is 14
+lines. The size of the numbers gives nothing away, because suppliers differ in
+scale by far more than a pack size and the two in question are the large ones:
+the middle quantity on their lines sits inside the range of the other four.
+What a true unit count cannot avoid is being a whole number of inner packs,
+item by item, since a supplier ships sealed packs. Against the item master's
+pack size, every line of the four honest suppliers divides exactly; of the
+other two suppliers' lines at most 0.43 do. The note never says that
+suppliers ship whole packs, and the pack size is a column the working-out needs
+anyway.
+
+tests/receiving_check.py measures all of this against the sealed plan and
+refuses to pass otherwise: of 16 readings the right one gets
+42 and the best other 35, against a bar of 38.
+"""
+
+solution_explanation = """
+solution/dock_plan.py reads only /app and writes /app/inbound_plan.csv with
+the standard library. It reads each supplier's file in its own format -
+stripping the leading zero and check digit from a SKU, dropping thousands
+separators, taking a comma as the decimal mark in the semicolon file. For each
+supplier it then takes the share of lines whose quantity is a whole number of
+the item's inner packs; where that share is well short of one, the quantities
+are taken to be inner packs already. Inner packs become cartons, rounded up
+line by line; weight is inner packs times the inner-pack weight plus cartons
+times the carton tare; pallet positions are the sum of cartons over cartons per
+pallet, rounded up for the delivery. In the task's own container it gets
+42 of 42.
+"""
+
+verification_explanation = """
+The verifier reads /app/inbound_plan.csv with the csv module and compares each
+listed notice's cartons and pallet positions exactly, and its gross weight
+within 0.5 kg, with /tests/sealed.json; at most 4 of the
+42 lines may be wrong. Nothing of the agent's is imported or run. The
+sealed plan exists only in the verifier image, /tests is mode 700 there, and
+the agent's container never mounts it. Half a kilogram covers rounding in a sum
+of a dozen or so products and nothing else. For the two suppliers in question
+no item has a pack size of one, so the note's reading gets none of their
+notices right by chance. Nothing in the agent's container attests any figure,
+no purchase order or total is shipped, and a plan made on the note's reading is
+as self-consistent as the right one. The reward is binary and is written to
+/logs/verifier/reward.txt on every path; an empty container scores 0 and the
+reference scores 1. The generator is seeded and shipped.
+"""
+
+category = "Operations"
+subcategory = "Warehouse Receiving"
+tags = ["warehouse", "inbound-planning", "units-of-measure", "data-cleaning", "python"]
+expert_time_estimate_hours = 4
+relevant_experience = """
+Anyone who has run a receiving dock has booked two doors for a delivery that
+turned out to need nine, and traced it to a supplier whose system sends packs
+where everyone else sends units.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
