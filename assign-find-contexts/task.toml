@@ -1,0 +1,204 @@
+artifacts = ["/app/contexts.csv"]
+
+[task]
+name = "afterquery/assign-find-contexts"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+Assigning finds to their contexts from the section drawings is real and ordinary
+post-excavation work. An excavation that closes with its finds unphased leaves
+exactly this job behind it, and finds specialists, site archivists and the
+post-excavation teams of archaeological units do it whenever a site comes to be
+written up years after it was dug. The awkward parts of it here - a supervisor
+who booked depths below the turf instead of below datum, another whose drawings
+were digitised at the wrong scale, a third who booked levels above Ordnance
+datum - are the ones a site archive actually has in it rather than invented
+ones.
+
+The data is synthetic and was built truth first. The deposits of 5
+trenches were laid down and the pits cut through them before anything was
+recorded, and each of 400 finds was dropped into a known context. The
+section drawings and the finds register were written afterwards, the way this
+site's supervisors would have kept them. Every answer is therefore exact by
+construction rather than a judgement made later, and the archive is static
+files, so nothing is computed at marking time.
+
+Forty of the finds are to be given a context number, marked exactly, and 36
+of the 40 carry the task. Naming one context for all forty gets
+3.
+
+The arithmetic is not withheld. MANUAL.md gives all of it: the datum, how a
+find's offset and depth are booked, that a boundary runs straight between its
+digitised points, that a cut feature's fill takes a find inside its outline,
+which context takes a find on a boundary, and how the two teams that dug each
+trench numbered their contexts. The work is in the doing. Every find has to be
+located inside digitised geometry where layers thin to nothing and pits cut
+across them, which is a computation over 4619 digitised points and not a
+sum; and the answer is a context rather than a quantity, so there is nothing to
+fit and nothing to regress. Taking the archive exactly as it stands phases
+0 of 40.
+
+Five things about the archive have to be got from the records themselves. None
+is written down anywhere, and each is settled by something in the records that
+cannot be right otherwise.
+
+The first is that one supervisor booked his finds' depths below his trench's
+own bench mark and never reduced them to site datum, as the manual requires. As
+booked, many of his finds stand above the turf; the bench mark's depth below
+datum is on record for every trench and puts them right.
+
+The second is that one supervisor's sections were digitised with the offset and
+depth columns exchanged, so his offsets stop at a few metres and his depths run
+the length of the trench.
+
+The third is that one supervisor's drawings were digitised at twice the scale:
+they run to twice the length the trench is recorded as having.
+
+The fourth is that one supervisor booked his finds' depths as levels above
+Ordnance datum, which the datum's stated level converts.
+
+The fifth is not any supervisor's habit, and it is the one that decides the
+task. Two teams dug every trench, one out from the zero peg and one in from the
+far end, and the far team numbered the same deposits a hundred higher, so a
+find's context number depends on which side of the meeting point it lay. The
+meeting point is taped from the zero peg, as everything about a trench is. A
+find's offset is not: a find is plotted onto its section's drawing and booked
+with the offset it has there. And a section is drawn by someone standing in the
+trench and facing it, working from left to right, so a trench's two drawings
+run opposite ways about and one of them runs towards the zero peg, not from it.
+Along that drawing the meeting point stands at the trench's length less the
+taped figure. MANUAL.md says how a find is booked and how the meeting point is
+taped, and says nothing of which way a drawing runs; what settles it is the
+drawings' own hands. Each team drew its own length of each section, one with a
+point every metre or so and the other with a point every forty centimetres or
+so, so every drawing changes hands where the teams met. In all 10
+drawings that change falls within 79 cm of the meeting point read one
+way about and no nearer than 333 cm to it read the other, the points
+standing at least 2.1 times closer on one side than the other. It is not the
+same drawing in every trench: the north drawing runs from the zero peg in
+2 of the 5 trenches and the south drawing in the rest, so a
+solver who sees that the drawings run opposite ways but takes the north one for
+granted phases 25 of the 40. Taking every drawing to run from the
+zero peg costs 18 of the 40 finds - and nothing goes visibly
+wrong for a solver who does. Every find is located on its own drawing in that
+drawing's own frame, so every find in the register lands inside the deposits
+and as many land in the pits as ought to, whatever the solver thinks of the
+meeting point; no pit stands in both of a trench's drawings, the layers are not
+the same thickness on both sides of a trench, and no drawing carries a point at
+the meeting point, so nothing in one drawing can be laid against the other.
+Unlike the four supervisors' habits, which can each be checked against the
+trench kept to the manual, there is no clean trench for this one, because it is
+true of every trench on the site.
+
+tests/gates.py scores all 128 ways of reading those five, together with
+the one rule of the manual that is easy to leave out - that a cut feature's fill
+takes the finds inside its outline. Every figure quoted here comes from its
+output. The whole account phases all 40. The best account that is not the
+whole one phases 32, so missing any single one of them fails. The bar
+is 36, which leaves four finds of room for a slip and still sits 4
+clear of every partial account. It also refuses to pass unless every drawing's
+change of hands really does settle which way that drawing runs, since a reading
+the records did not settle would be a guess and not a finding; unless nothing in
+one drawing of a trench can be matched against the other; and unless the
+register's finds lie as close to the context boundaries as chance would put
+them, so that there is no regularity in the data for a reading to be tested
+against.
+"""
+
+solution_explanation = """
+solution/phase.py reads only what the agent's container carries and writes
+/app/contexts.csv. With solution/site_model.py and solution/ref.py it is about
+three hundred lines and imports nothing outside the standard library.
+
+It reads the digitised sections, the finds register and the trench list, and
+finds the supervisors' habits from the records rather than assuming them: the
+trench whose offsets are smaller than its depths, the trench whose drawings run
+to twice its recorded length, the trench whose find depths are levels near a
+hundred metres, and the trench whose finds stand above the ground until its
+bench mark's depth is added. It puts each right. It locates each find on the
+drawing it was booked against, at the offset booked: inside a cut feature's
+outline it takes the feature's fill, and otherwise the layer whose top boundary
+is at or above it and whose bottom boundary is below it. It then finds where
+each drawing changes hands - where the spacing of its digitised points changes
+most sharply, leaving out the points a pit's edges put there - and takes the
+drawing to run from the zero peg if that change stands nearer the taped meeting
+point than the trench's length less it, and towards the zero peg otherwise. A
+find's offset along a drawing that runs towards the peg is taken from the
+trench's length before it is set against the meeting point, and a find beyond
+the meeting point takes the far team's number, a hundred higher.
+
+Every quantity is a whole number of centimetres and every comparison against a
+boundary is made exactly, so nothing anywhere turns on floating point and two
+correct implementations must agree exactly. No find to be phased lies on a
+boundary or within five centimetres of the meeting point read either way about,
+so neither the rule for a find on a boundary nor anybody's rounding decides an
+answer. Run against the shipped archive it phases 40 of 40.
+"""
+
+verification_explanation = """
+The deliverable is a data file. The verifier reads /app/contexts.csv and never
+executes, imports or loads anything the submission wrote, so there is nothing to
+sandbox and no way for a submission to influence its own score.
+
+40 answers are marked, one for each find to be phased, each a context
+number matched exactly as text. 36 must be right. The sealed contexts live
+only in the verifier image at /tests/truth.json; the agent's container carries
+the manual, the digitised sections, the finds register, the trench list and the
+list of finds, and nothing else. /tests is mode 700 in the verifier image, set
+at build time so it holds under a read-only root, and the agent's container has
+no mount of it at all; the verifier's log directory is likewise unreachable from
+the agent's side.
+
+There is nothing in the agent's container against which a solver could check an
+answer. No find's context is attested anywhere, no total has to come out and
+nothing has to balance, so a wrong set of contexts is exactly as self-consistent
+as the right one. The contexts have to be worked out; they cannot be searched
+for.
+
+tests/gates.py is shipped and can be re-run. It scores all 128 readings
+of the archive against the sealed contexts and refuses to pass if the whole
+account does not phase every find, if any other account reaches the bar, or if
+guessing does. It reports the whole account at 40, the best account that
+is not it at 32, the archive taken as it stands at 0, and
+one context named for everything at 3.
+
+The archive is static files from a seeded generator, so nothing is computed at
+marking time and the answer cannot drift between runs. The reference was run
+against the shipped bundle in the task's own container and phased 40 of
+40; an empty container scores 0.
+"""
+
+category = "Science"
+subcategory = "Archaeology"
+tags = ["archaeology", "stratigraphy", "record-forensics", "geometry", "python"]
+expert_time_estimate_hours = 7
+relevant_experience = """
+Anyone who has had to write up somebody else's excavation will know the shape of
+this. The recording manual covers the ordinary case and the archive is what five
+supervisors made it: one booking depths below his own bench mark, another's
+drawings digitised at the wrong scale, a third working in levels above Ordnance
+datum. Phasing finds from section drawings is the classic instance - a find's
+context is a matter of where it lay in the drawn stratigraphy, cut features take
+what lies inside them, a trench dug by two teams carries two runs of context
+numbers that have to be reconciled, and a section is drawn by someone looking at
+it, so the two faces of a trench run opposite ways about. Reading a finds
+register against digitised sections, and knowing which way a drawing runs, is
+ordinary work for anyone who has worked a site archive.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
