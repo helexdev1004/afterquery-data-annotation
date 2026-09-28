@@ -1,0 +1,35 @@
+{
+ "days": 12,
+ "plates": 59,
+ "plates_turned": 16,
+ "lines": 4720,
+ "bar": 0.9,
+ "needed": 4248,
+ "reference_misjudged_plates": 0,
+ "accounts": {
+  "reference": {
+   "right": 4720,
+   "share": 1.0
+  },
+  "lay-out believed": {
+   "right": 3468,
+   "share": 0.7347
+  },
+  "every plate turned": {
+   "right": 1345,
+   "share": 0.285
+  },
+  "judged by spread": {
+   "right": 2844,
+   "share": 0.6025
+  },
+  "judged by rate": {
+   "right": 2125,
+   "share": 0.4502
+  },
+  "judged by level": {
+   "right": 2203,
+   "share": 0.4667
+  }
+ }
+}
