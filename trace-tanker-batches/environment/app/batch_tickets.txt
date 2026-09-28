@@ -1,0 +1,61 @@
+HEADER H1
+  B41 from 0 L
+  B42 from 452496 L
+  B43 from 856388 L
+  B44 from 1359411 L
+  B45 from 1731649 L
+  B46 from 2178193 L
+  B47 from 2571965 L
+  B48 from 2880236 L
+  B49 from 3173425 L
+  B50 from 3464111 L
+
+HEADER H2
+  B51 from 0 L
+  B52 from 419591 L
+  B53 from 868648 L
+  B54 from 1368614 L
+  B55 from 1812246 L
+  B56 from 2327581 L
+  B57 from 2687725 L
+  B58 from 3206509 L
+
+HEADER H3
+  B59 from 0 L
+  B60 from 302613 L
+  B61 from 789423 L
+  B62 from 1084848 L
+  B63 from 1366053 L
+  B64 from 1639724 L
+  B65 from 1912543 L
+  B66 from 2209820 L
+  B67 from 2495955 L
+  B68 from 2757261 L
+  B69 from 3108792 L
+  B70 from 3423902 L
+
+HEADER H4
+  B71 from 0 L
+  B72 from 358033 L
+  B73 from 826087 L
+  B74 from 1226567 L
+  B75 from 1669666 L
+  B76 from 1991477 L
+  B77 from 2280174 L
+  B78 from 2579767 L
+  B79 from 3066305 L
+  B80 from 3525241 L
+
+HEADER H5
+  B81 from 0 L
+  B82 from 348011 L
+  B83 from 755498 L
+  B84 from 1072434 L
+  B85 from 1437592 L
+  B86 from 1698021 L
+  B87 from 2215243 L
+  B88 from 2477158 L
+  B89 from 2854606 L
+  B90 from 3269817 L
+  B91 from 3566895 L
+

@@ -1,0 +1,109 @@
+artifacts = ["/app/load_batches.csv"]
+
+[task]
+name = "afterquery/trace-tanker-batches"
+
+[metadata]
+author_name = "Inesh Reddy Chappidi"
+author_email = "ineshhreddy249@gmail.com"
+
+difficulty_explanation = """
+When a customer complains about a road tanker load, a fuel terminal's quality
+engineer or stock accountant has to say which pipeline batch it was drawn from
+and what it held at 15 degrees C, from the loading paperwork, the terminal
+automation system's log and the pipeline company's batch tickets. That is the
+whole of this task, and it is routine terminal work. The data is synthetic and
+was made truth first: three days of loading were run ten seconds at a time on
+5 arms, each ten seconds delivering so many true litres of whichever batch
+had reached the arm, and the 40 sealed answers were taken from those true
+litres. The log was written afterwards, as the automation system would have
+written it. The answers are exact and nothing is computed at marking time.
+
+The terminal's note gives every rule used in marking, down to the expansion
+figure. Read literally it gets 8 of 40, because three arms are not
+logged as it says, each glaringly: one totaliser is in cubic metres, one in US
+gallons, and one arm's temperature is in Fahrenheit. Each is a unit and nothing
+more, and each costs an arm's eight loads where 4 may be wrong.
+
+The fact that decides the task is about the meters. The automation system
+turns pulses into litres with the K-factor it has on file for each arm. On
+2 arms that K-factor belongs to another arm's meter: the two meters
+changed places at a service and the configuration did not follow. Those two
+totalisers therefore run about twelve in a hundred fast and slow, which moves
+both of the things asked for - a load's litres, and where on the header the
+load began, which is what the batch tickets are counted in. Nothing says so
+and the literal reading fails silently, giving every load a believable batch
+and volume, at a cost of 16 lines. The ordinary figures are no help:
+each arm's flow controller holds its own rate, anywhere between 2,000 and 2,600
+litres a minute, so an arm running twelve in a hundred out is unremarkable, and
+an arm's rate differs between batches by at most 0.60 in a hundred.
+What a batch does change is second order: how steadily the meter turns from
+one ten seconds to the next. Taking each ten seconds' litres against the mean
+of its neighbours, the batch tickets sort that unsteadiness at least 1.5
+times better under the K-factor of the meter really fitted than under any
+other K-factor on the terminal's list, and feeder upsets common to every batch
+keep a plain table of spread from showing it.
+
+tests/terminal_check.py measures all of this against the sealed answers and
+refuses to pass otherwise: of 16 readings the log's own gets 40,
+the best other 32, against a bar of 36.
+"""
+
+solution_explanation = """
+solution/answer_customer.py reads only /app and writes /app/load_batches.csv
+with the standard library. It reads the automation system's log arm by arm,
+tells a totaliser's unit from the size of a loading ten seconds and a
+temperature's from its level, and brings both to litres and Celsius. For each
+arm it takes every steady ten seconds' litres against the mean of its
+neighbours, and for each K-factor on the terminal's list asks how well the
+header's batch tickets sort those figures when the totaliser is rescaled by
+the K on file over that K; the best is taken as the meter really fitted. A
+load's litres are its two totaliser readings' difference so rescaled, corrected
+by the note's expansion figure at the mean logged temperature of the load, and
+its batch is the ticket the header had reached, in rescaled litres, when the
+load began. In the task's own container it gets 40 of 40.
+"""
+
+verification_explanation = """
+The verifier parses /app/load_batches.csv with the csv module and compares each
+load's batch, as a string, and litres at 15 degrees C, within 25 litres, with
+/tests/sealed.json; at most 4 of the 40 lines may be wrong.
+No code written by the agent is imported or run. The sealed answers exist only
+in the verifier image, /tests is mode 700 there, and the agent's container
+never mounts it. Twenty-five litres in a load of some thirty thousand covers
+the rounding of a logged totaliser and temperature and nothing else; the
+K-factors on the terminal's list stand about six in a hundred apart, so a load
+reckoned with the wrong one is out by well over a thousand litres. Every load
+asked about lies at least 45,000 litres inside one batch, both as the header's
+litres truly ran and as the log shows them, so no batch turns on a few litres.
+Nothing in the agent's container attests any load's batch, no stock balance is
+shipped, and an answer made on the K-factors on file is as self-consistent as
+the right one. The reward is binary and is written to
+/logs/verifier/reward.txt on every path; an empty container scores 0 and the
+reference scores 1. The generator is seeded and shipped.
+"""
+
+category = "Operations"
+subcategory = "Fuel Terminals"
+tags = ["fuel-terminal", "metering", "batch-tracing", "data-cleaning", "python"]
+expert_time_estimate_hours = 5
+relevant_experience = """
+Terminal people will know all of it: an automation system extended arm by arm
+with whatever units the integrator of the day preferred, meters that come back
+from proving onto the wrong arm, and a batch of diesel that makes a turbine
+meter chatter where the last one ran like silk.
+"""
+
+[verifier]
+timeout_sec = 300.0
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 14400.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 10240
+gpus = 0
